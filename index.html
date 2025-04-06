@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>体験村 - 安心と信頼の自然体験キャンプ</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="news.js" defer></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
@@ -13,6 +14,7 @@
       <h1 class="text-3xl font-bold">体験村</h1>
       <nav class="mt-4 md:mt-0">
         <ul class="flex flex-wrap justify-center space-x-4">
+          <li><a href="#news" class="hover:text-blue-200">最新情報</a></li>
           <li><a href="#about" class="hover:text-blue-200">私たちの信頼</a></li>
           <li><a href="#safety" class="hover:text-blue-200">安全管理</a></li>
           <li><a href="#philosophy" class="hover:text-blue-200">教育理念</a></li>
@@ -35,6 +37,19 @@
   </section>
 
   <main class="container mx-auto px-4 py-8 space-y-12">
+    <!-- 最新情報セクション -->
+    <section id="news">
+      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">最新情報</h2>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="mb-4">
+          体験村の最新情報をお届けします。
+        </p>
+        <div id="news-content" class="mt-4">
+          <!-- JavaScriptによって動的にコンテンツが追加されます -->
+        </div>
+      </div>
+    </section>
+    
     <!-- 信頼性セクション -->
     <section id="about">
       <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">私たちの信頼</h2>
