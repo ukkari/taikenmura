@@ -1,0 +1,65 @@
+backend:
+  name: github
+  repo: ukkari/taikenmura
+  branch: main
+  auth_scope: repo # GitHubのリポジトリにアクセスするために必要
+
+# Netlify Identityを使用
+identity_backend:
+  name: netlify-identity
+
+# 画像や添付ファイルのアップロード設定
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# コレクション設定
+collections:
+  # メインページのコレクション
+  - name: "pages"
+    label: "メインページ"
+    files:
+      - name: "home"
+        label: "ホームページ"
+        file: "index.html"
+        fields:
+          - {label: "レイアウト", name: "layout", widget: "hidden", default: "default"}
+          - {label: "タイトル", name: "title", widget: "string"}
+          - {label: "カスタムCSS", name: "custom_css", widget: "text", required: false}
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+
+  # セクションページのコレクション
+  - name: "sections"
+    label: "セクションページ"
+    folder: "sections"
+    create: true
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - {label: "レイアウト", name: "layout", widget: "hidden", default: "default"}
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+
+  # インクルードファイルのコレクション
+  - name: "includes"
+    label: "共通コンポーネント"
+    files:
+      - name: "header"
+        label: "ヘッダー"
+        file: "_includes/header.html"
+        fields:
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - name: "footer"
+        label: "フッター"
+        file: "_includes/footer.html"
+        fields:
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+  
+  # レイアウトファイルのコレクション
+  - name: "layouts"
+    label: "レイアウト"
+    files:
+      - name: "default"
+        label: "デフォルトレイアウト"
+        file: "_layouts/default.html"
+        fields:
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
