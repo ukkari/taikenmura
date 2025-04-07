@@ -1,0 +1,233 @@
+---
+layout: default
+title: プログラム紹介
+---
+
+<main class="container mx-auto px-4 py-8 space-y-12">
+  <!-- 年間プログラムスケジュール詳細 -->
+  <section id="annual-schedule">
+    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">年間プログラムスケジュール</h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-12">
+      <!-- メインイメージ -->
+      <div class="mb-8">
+        <img src="{{ site.baseurl }}/images/programs-main.jpg" alt="年間プログラムスケジュール" class="w-full rounded-lg h-64 object-cover">
+      </div>
+
+      <p class="mb-6">
+        体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールの詳細をご確認ください。
+      </p>
+      
+      <!-- プログラム一覧（画像付き） -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4 text-center">2025年度 プログラム一覧</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- 春のプログラム -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="h-40 overflow-hidden">
+              <img src="https://via.placeholder.com/400x300?text=春のプログラム" alt="春のプログラム" class="w-full h-full object-cover">
+            </div>
+            <div class="p-3 bg-green-50">
+              <h4 class="font-bold text-green-700 mb-1">春のプログラム</h4>
+              <ul class="text-xs space-y-1 mb-2">
+                <li>・春の火あそびキャンプ (5/3-5/5)</li>
+                <li>・春の田植え親子キャンプ (5/31-6/1)</li>
+              </ul>
+              <a href="#spring-fire" class="text-xs text-green-700 hover:underline">詳細を見る →</a>
+            </div>
+          </div>
+          
+          <!-- 夏のプログラム -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="h-40 overflow-hidden">
+              <img src="https://via.placeholder.com/400x300?text=夏のプログラム" alt="夏のプログラム" class="w-full h-full object-cover">
+            </div>
+            <div class="p-3 bg-yellow-50">
+              <h4 class="font-bold text-yellow-700 mb-1">夏のプログラム</h4>
+              <ul class="text-xs space-y-1 mb-2">
+                <li>・まっ黒わんぱく夏休み (7/27-8/8)</li>
+                <li>・思いっきり夏キャンプ (8/11-8/17)</li>
+                <li>・あそびばキャンプ (8/20-8/22)</li>
+              </ul>
+              <a href="#summer-long" class="text-xs text-yellow-700 hover:underline">詳細を見る →</a>
+            </div>
+          </div>
+          
+          <!-- 秋のプログラム -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="h-40 overflow-hidden">
+              <img src="https://via.placeholder.com/400x300?text=秋のプログラム" alt="秋のプログラム" class="w-full h-full object-cover">
+            </div>
+            <div class="p-3 bg-orange-50">
+              <h4 class="font-bold text-orange-700 mb-1">秋のプログラム</h4>
+              <ul class="text-xs space-y-1 mb-2">
+                <li>・キャンプ場火あそびキャンプ (9/13-9/15)</li>
+                <li>・秋の稲刈り親子キャンプ (9/27-9/28)</li>
+              </ul>
+              <a href="#autumn-fire" class="text-xs text-orange-700 hover:underline">詳細を見る →</a>
+            </div>
+          </div>
+          
+          <!-- 冬のプログラム -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="h-40 overflow-hidden">
+              <img src="https://via.placeholder.com/400x300?text=冬のプログラム" alt="冬のプログラム" class="w-full h-full object-cover">
+            </div>
+            <div class="p-3 bg-blue-50">
+              <h4 class="font-bold text-blue-700 mb-1">冬のプログラム</h4>
+              <ul class="text-xs space-y-1 mb-2">
+                <li>・天空雪あそびキャンプ【年末】 (12/27-12/29)</li>
+                <li>・天空雪あそびキャンプ（年始） (1/10-1/12)</li>
+                <li>・ガンガン滑ろうキャンプ (1/24-1/25)</li>
+              </ul>
+              <a href="#winter-snow" class="text-xs text-blue-700 hover:underline">詳細を見る →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 春のプログラム -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
+        
+        <!-- 春の火あそびキャンプ -->
+        <div id="spring-fire" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-1">
+              <img src="https://via.placeholder.com/600x400?text=春の火あそびキャンプ" alt="春の火あそびキャンプ" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 md:col-span-2">
+              <h4 class="font-bold text-xl mb-3">キャンプ場コテージ泊！春の火あそびキャンプ</h4>
+              <p class="text-sm font-semibold mb-2">5/3(土)～5/5(月)</p>
+              <p class="mb-4">春の自然の中で火を使った野外活動を体験します。火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます。</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-gray-50 p-4 rounded">
+                  <h5 class="font-bold mb-2">主な活動内容</h5>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>火起こし体験</li>
+                    <li>野外料理（ピザ作り、ダッチオーブン料理）</li>
+                    <li>キャンプファイヤー</li>
+                    <li>春の自然観察</li>
+                    <li>クラフト活動</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                  <h5 class="font-bold mb-2">1日のスケジュール例</h5>
+                  <ul class="list-none pl-0 space-y-1 text-sm">
+                    <li>07:00 起床、朝の準備</li>
+                    <li>08:00 朝食</li>
+                    <li>09:30 午前の活動（火起こし体験）</li>
+                    <li>12:00 昼食（自分たちで作る野外料理）</li>
+                    <li>13:30 午後の活動（クラフト、自然観察）</li>
+                    <li>16:00 自由時間</li>
+                    <li>18:00 夕食</li>
+                    <li>19:30 キャンプファイヤー</li>
+                    <li>21:00 就寝準備</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：20名</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 春の田植え 親子キャンプ -->
+        <div id="spring-rice" class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-1">
+              <img src="https://via.placeholder.com/600x400?text=春の田植え親子キャンプ" alt="春の田植え親子キャンプ" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 md:col-span-2">
+              <h4 class="font-bold text-xl mb-3">春の田植え 親子キャンプ</h4>
+              <p class="text-sm font-semibold mb-2">5/31(土)～6/1(日)</p>
+              <p class="mb-4">親子で田植え体験を通じて食の大切さを学びます。秋には収穫体験も行い、食の循環を体験できるプログラムです。</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-gray-50 p-4 rounded">
+                  <h5 class="font-bold mb-2">主な活動内容</h5>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>田植え体験</li>
+                    <li>農業についての学習</li>
+                    <li>食育ワークショップ</li>
+                    <li>親子で協力する野外炊飯</li>
+                    <li>地元食材を使った料理体験</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                  <h5 class="font-bold mb-2">1日のスケジュール例</h5>
+                  <ul class="list-none pl-0 space-y-1 text-sm">
+                    <li>08:00 集合・オリエンテーション</li>
+                    <li>09:00 田植え体験</li>
+                    <li>12:00 昼食（地元食材を使った料理）</li>
+                    <li>13:30 食育ワークショップ</li>
+                    <li>15:30 自由時間</li>
+                    <li>17:00 野外炊飯（親子で協力）</li>
+                    <li>19:00 キャンプファイヤー</li>
+                    <li>21:00 就寝準備</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学生とその保護者</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：15組</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 夏のプログラム -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-yellow-700 border-b-2 border-yellow-200 pb-2 mb-6">夏のプログラム</h3>
+        
+        <!-- まっ黒わんぱく夏休み -->
+        <div id="summer-long" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-1">
+              <img src="https://via.placeholder.com/600x800?text=まっ黒わんぱく夏休み" alt="まっ黒わんぱく夏休み" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 md:col-span-2">
+              <h4 class="font-bold text-xl mb-3">まっ黒わんぱく夏休み</h4>
+              <p class="text-sm font-semibold mb-2">7/27(日)～8/8(金)</p>
+              <p class="mb-4">
+                体験村の夏の看板プログラム。12泊13日の長期キャンプで、子どもたちの自主性と協調性を育みます。<br>
+                自然の中での長期生活を通じて、生きる力と仲間との絆を深めます。<br>
+                毎年多くのリピーターがいる人気プログラムです。<br>
+                ※対象：小学4年生～中学3年生
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div>
+          <img src="{{ site.baseurl }}/images/program-highlights.jpg" alt="プログラムのハイライト" class="rounded-lg w-full h-64 object-cover mb-2">
+          <p class="text-sm text-gray-600">プログラムのハイライト</p>
+        </div>
+        <div>
+          <img src="{{ site.baseurl }}/images/camp-activities.jpg" alt="キャンプ活動の様子" class="rounded-lg w-full h-64 object-cover mb-2">
+          <p class="text-sm text-gray-600">様々なキャンプ活動の様子</p>
+        </div>
+      </div>
+      
+      <div class="mt-8 text-center">
+        <a href="{{ site.baseurl }}/#annual-programs" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
+      </div>
+    </div>
+  </section>
+</main>

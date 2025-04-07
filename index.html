@@ -1,352 +1,264 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>一般社団法人自然体験村 - 安心と信頼の自然体験キャンプ</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="news.js" defer></script>
-  <style>
-    .slideshow-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      z-index: 0;
-    }
-    .slide {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .slide.active {
-      opacity: 1;
-    }
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    @keyframes fade {
-      from {opacity: 0.4} 
-      to {opacity: 1}
-    }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- ヘッダー -->
-  <header class="bg-blue-600 text-white sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-      <div class="flex items-center justify-between w-full md:w-auto">
-        <a href="index.html">
-          <img src="./images/logo.jpeg" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
-        </a>
-        <h1 class="text-2xl md:text-3xl font-bold">
-          <a href="index.html">一般社団法人自然体験村</a>
-        </h1>
-        <button id="mobile-menu-button" class="md:hidden text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
-        <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
-          <li><a href="index.html#news" class="hover:text-blue-200 block py-2 md:py-0">最新情報</a></li>
-          <li><a href="./sections/trust.html" class="hover:text-blue-200 block py-2 md:py-0">私たちの信頼</a></li>
-          <li><a href="./sections/safety.html" class="hover:text-blue-200 block py-2 md:py-0">安全管理</a></li>
-          <li><a href="./sections/philosophy.html" class="hover:text-blue-200 block py-2 md:py-0">教育理念</a></li>
-          <li><a href="./sections/programs.html" class="hover:text-blue-200 block py-2 md:py-0">プログラム</a></li>
-          <li><a href="./sections/staff.html" class="hover:text-blue-200 block py-2 md:py-0">スタッフ紹介</a></li>
-          <li><a href="./sections/testimonials.html" class="hover:text-blue-200 block py-2 md:py-0">参加者の声</a></li>
-          <li><a href="./sections/faq.html" class="hover:text-blue-200 block py-2 md:py-0">FAQ</a></li>
-          <li><a href="./sections/contact.html" class="hover:text-blue-200 block py-2 md:py-0">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+---
+layout: default
+title: 安心と信頼の自然体験キャンプ
+custom_css: |
+  .slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+  }
+  .slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .slide.active {
+    opacity: 1;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+  }
+---
 
-  <!-- ヒーロースライドショーセクション -->
-  <section class="relative h-96 bg-cover bg-center" id="hero-slideshow">
-    <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
-    <div class="container mx-auto h-full flex items-center justify-center relative z-20">
-      <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">安心・信頼の自然体験キャンプ</h2>
+<!-- ヒーロースライドショーセクション -->
+<section class="relative h-96 bg-cover bg-center" id="hero-slideshow">
+  <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+  <div class="container mx-auto h-full flex items-center justify-center relative z-20">
+    <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">安心・信頼の自然体験キャンプ</h2>
+  </div>
+  <div class="slideshow-container absolute inset-0">
+    <div class="slide fade active" style="background-image: url('{{ site.baseurl }}/images/hero.jpg');"></div>
+    <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ2');"></div>
+    <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ3');"></div>
+  </div>
+</section>
+
+<main class="container mx-auto px-4 py-8 space-y-12">
+  <!-- 最新情報セクション -->
+  <section id="news">
+    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">最新情報</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="mb-4">
+        体験村の最新情報をお届けします。
+      </p>
+      <div id="news-content" class="mt-4">
+        <!-- JavaScriptによって動的にコンテンツが追加されます -->
+      </div>
     </div>
-    <div class="slideshow-container absolute inset-0">
-      <div class="slide fade active" style="background-image: url('./images/hero.jpg');"></div>
-      <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ2');"></div>
-      <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ3');"></div>
+  </section>
+  
+  <!-- 年間プログラム紹介セクション -->
+  <section id="programs">
+    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">年間プログラム</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="mb-6">
+        自然体験村では、季節に応じた様々なプログラムを提供しています。子どもたちの「生きる力」を育む体験の場をご用意しています。
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">夏のプログラム</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>まっ黒わんぱく夏休み（8-12泊）</li>
+            <li>思いっきり夏キャンプ（3-5泊）</li>
+            <li>一日体験プログラム</li>
+          </ul>
+        </div>
+        
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">冬のプログラム</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>天空雪あそびキャンプ（2-4泊）</li>
+            <li>スキー・スノーボード教室</li>
+            <li>雪国文化体験</li>
+            <li>かまくら作り体験</li>
+          </ul>
+        </div>
+        
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">春のプログラム</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>新緑ハイキング</li>
+            <li>田植え体験</li>
+            <li>山菜採り</li>
+          </ul>
+        </div>
+        
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">秋のプログラム</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>稲刈り体験</li>
+            <li>紅葉ハイキング</li>
+            <li>収穫祭</li>
+            <li>きのこ狩り</li>
+            <li>星空観察会</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-6 text-center">
+        <a href="{{ site.baseurl }}/sections/programs.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">プログラム詳細を見る</a>
+      </div>
+      
+      <div class="mt-4 text-sm text-gray-600">
+        ※プログラムは予告なく変更になる場合があります。最新情報は各プログラムページをご確認ください。
+      </div>
     </div>
   </section>
 
-  <main class="container mx-auto px-4 py-8 space-y-12">
-    <!-- 最新情報セクション -->
-    <section id="news">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">最新情報</h2>
-      <div class="bg-white p-6 rounded-lg shadow">
+  <!-- 信頼・安全管理・教育理念セクション -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section id="trust">
+      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">私たちの信頼</h2>
+      <div class="bg-white p-6 rounded-lg shadow h-full">
         <p class="mb-4">
-          体験村の最新情報をお届けします。
+          20年以上の実績と、数多くの子どもたちの成長を見守ってきた経験があります。保護者の皆様に安心してお子様を預けていただけるよう、私たちの取り組みをご紹介します。
         </p>
-        <div id="news-content" class="mt-4">
-          <!-- JavaScriptによって動的にコンテンツが追加されます -->
+        <img src="{{ site.baseurl }}/images/trust.jpg" alt="信頼の歴史" class="w-full h-48 object-cover rounded-lg mb-4">
+        <div class="text-right">
+          <a href="{{ site.baseurl }}/sections/trust.html" class="text-blue-600 hover:underline font-medium">もっと見る</a>
         </div>
       </div>
     </section>
     
-    <!-- 年間プログラム紹介セクション -->
-    <section id="annual-programs">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">年間のプログラム</h2>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <p class="mb-6">
-          体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールの抜粋です。
+    <section id="safety">
+      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">安全管理</h2>
+      <div class="bg-white p-6 rounded-lg shadow h-full">
+        <p class="mb-4">
+          子どもたちの安全を第一に考え、徹底した安全管理体制を整えています。スタッフ全員が救急法を習得し、定期的な安全研修を実施しています。
         </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div class="bg-green-50 p-4 rounded">
-            <h3 class="font-bold text-lg mb-2 text-green-700">春</h3>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>春の火あそびキャンプ <br><span class="text-sm">5/3～5/5</span></li>
-              <li>春の田植え親子キャンプ <br><span class="text-sm">5/31～6/1</span></li>
-            </ul>
-          </div>
-          
-          <div class="bg-yellow-50 p-4 rounded">
-            <h3 class="font-bold text-lg mb-2 text-yellow-700">夏</h3>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>まっ黒わんぱく夏休み <br><span class="text-sm">7/27～8/8</span></li>
-              <li>思いっきり夏キャンプ <br><span class="text-sm">8/11～8/17</span></li>
-              <li>あそびばキャンプ <br><span class="text-sm">8/20～8/22</span></li>
-            </ul>
-          </div>
-          
-          <div class="bg-orange-50 p-4 rounded">
-            <h3 class="font-bold text-lg mb-2 text-orange-700">秋</h3>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>キャンプ場火あそびキャンプ <br><span class="text-sm">9/13～9/15</span></li>
-              <li>秋の稲刈り親子キャンプ <br><span class="text-sm">9/27～9/28</span></li>
-            </ul>
-          </div>
-          
-          <div class="bg-blue-50 p-4 rounded">
-            <h3 class="font-bold text-lg mb-2 text-blue-700">冬</h3>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>天空雪あそびキャンプ【年末】 <br><span class="text-sm">12/27～12/29</span></li>
-              <li>天空雪あそびキャンプ（年始） <br><span class="text-sm">1/10～1/12</span></li>
-              <li>ガンガン滑ろうキャンプ <br><span class="text-sm">1/24～1/25</span></li>
-              <li>思いっきり雪まみれキャンプ <br><span class="text-sm">2/14～2/15</span></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="bg-gray-100 p-4 rounded mb-4">
-          <h3 class="font-bold mb-2">参加対象</h3>
-          <p class="text-sm">基本的には小学校3年生～中学校3年生（プログラムにより異なります）</p>
-        </div>
-        
-        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-          <a href="./sections/programs.html#annual-schedule" class="text-blue-600 hover:underline font-medium inline-block">詳しい年間プログラムスケジュールを見る</a>
+        <img src="{{ site.baseurl }}/images/safety.jpg" alt="安全管理体制" class="w-full h-48 object-cover rounded-lg mb-4">
+        <div class="text-right">
+          <a href="{{ site.baseurl }}/sections/safety.html" class="text-blue-600 hover:underline font-medium">もっと見る</a>
         </div>
       </div>
     </section>
     
-    <!-- 信頼性・安全管理・教育理念セクション -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-      <!-- 信頼性セクション -->
-      <section id="about">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">私たちの信頼</h2>
-        <div class="bg-white p-6 rounded-lg shadow h-full">
-          <p class="mb-4">
-            体験村は、1999年より新潟県南魚沼市で地域の子どもたちに安全かつ豊かな自然体験を提供してきました。延べ〇〇名の参加実績や、各種行政・団体からの信頼を得て、多くの保護者から安心してお子様をお預けいただいています。
-          </p>
-          <img src="https://via.placeholder.com/800x400" alt="実績・信頼のイメージ" class="w-full rounded mb-4">
-          <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-            <a href="./sections/trust.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
-          </div>
+    <section id="philosophy">
+      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">教育理念</h2>
+      <div class="bg-white p-6 rounded-lg shadow h-full">
+        <p class="mb-4">
+          「生きる力」を育む体験活動を通じて、子どもたちの自主性・協調性・創造性を伸ばします。自然の中での直接体験が、子どもたちの成長に大きな影響を与えると考えています。
+        </p>
+        <img src="{{ site.baseurl }}/images/philosophy.jpg" alt="教育理念" class="w-full h-48 object-cover rounded-lg mb-4">
+        <div class="text-right">
+          <a href="{{ site.baseurl }}/sections/philosophy.html" class="text-blue-600 hover:underline font-medium">もっと見る</a>
         </div>
-      </section>
+      </div>
+    </section>
+  </div>
 
-      <!-- 安全管理セクション -->
-      <section id="safety">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">安全管理への取り組み</h2>
-        <div class="bg-white p-6 rounded-lg shadow h-full">
-          <p class="mb-4">
-            私たちは、スタッフの厳格な研修、徹底した安全マニュアルの整備、現地でのリスク管理を実施することで、常にお子様の安全を最優先に考えています。参加前の健康チェックや、緊急時対応体制、各種保険の加入など、万全の体制でキャンプを運営しています。
-          </p>
-          <img src="https://via.placeholder.com/800x400" alt="安全管理のイメージ" class="w-full rounded mb-4">
-          <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-            <a href="./sections/safety.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
-          </div>
+  <!-- スタッフ紹介セクション -->
+  <section id="staff">
+    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">スタッフ紹介</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="mb-6">
+        体験村のプログラムを支える経験豊富なスタッフをご紹介します。子どもたちの成長をサポートするプロフェッショナルです。
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <img src="{{ site.baseurl }}/images/staff1.jpg" alt="スタッフ1" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+          <h3 class="font-bold">山田 太郎</h3>
+          <p class="text-sm text-gray-600">プロデューサー/代表理事</p>
         </div>
-      </section>
-
-      <!-- 教育理念セクション -->
-      <section id="philosophy">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">教育理念と育む価値</h2>
-        <div class="bg-white p-6 rounded-lg shadow h-full">
-          <p class="mb-4">
-            体験村では、子どもたちが自ら考え、行動する力（非認知能力）や、協調性、自己肯定感を育むことを重視しています。自然の中での体験を通じて、自己発見や仲間との絆、未来への自信を育む教育プログラムを提供します。
-          </p>
-          <img src="https://via.placeholder.com/800x400" alt="教育理念のイメージ" class="w-full rounded mb-4">
-          <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-            <a href="./sections/philosophy.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
-          </div>
+        <div class="text-center">
+          <img src="{{ site.baseurl }}/images/staff2.jpg" alt="スタッフ2" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+          <h3 class="font-bold">鈴木 花子</h3>
+          <p class="text-sm text-gray-600">プログラムディレクター</p>
         </div>
-      </section>
+        <div class="text-center">
+          <img src="{{ site.baseurl }}/images/staff3.jpg" alt="スタッフ3" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+          <h3 class="font-bold">佐藤 健太</h3>
+          <p class="text-sm text-gray-600">安全管理責任者</p>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+        <a href="{{ site.baseurl }}/sections/staff.html" class="text-blue-600 hover:underline font-medium">スタッフ一覧を見る</a>
+      </div>
     </div>
+  </section>
 
-
-    <!-- スタッフ紹介セクション -->
-    <section id="staff">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">スタッフ紹介</h2>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <p class="mb-6">
-          経験豊富なキャンプリーダーと、安全管理に優れた専門スタッフが、お子様の成長と安全をサポートします。各スタッフは厳しい研修を受け、必要な資格を保持しており、安心してキャンプを楽しんでいただけます。
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-          <div class="bg-gray-100 p-4 rounded text-center">
-            <img src="https://via.placeholder.com/300x300" alt="プロデューサー 武宮敬介" class="rounded-full mx-auto mb-4">
-            <p class="font-bold">武宮敬介</p>
-            <p>プロデューサー</p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded text-center">
-            <img src="https://via.placeholder.com/300x300" alt="キャンプ指導者" class="rounded-full mx-auto mb-4">
-            <p class="font-bold">スタッフA</p>
-            <p>キャンプ指導者</p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded text-center">
-            <img src="https://via.placeholder.com/300x300" alt="安全管理責任者" class="rounded-full mx-auto mb-4">
-            <p class="font-bold">スタッフB</p>
-            <p>安全管理責任者</p>
-          </div>
+  <!-- 参加者の声セクション -->
+  <section id="testimonials">
+    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">参加者の声</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="mb-6">
+        体験村のプログラムに参加した子どもたちや保護者の方々からの声をご紹介します。
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <img src="{{ site.baseurl }}/images/quote.png" alt="引用符" class="w-8 h-8 mb-2">
+          <p class="italic">「初めてのキャンプで不安でしたが、すぐに友達ができて毎日が楽しかったです。来年も絶対に参加したいです！」</p>
+          <p class="text-right mt-2 font-bold">小学5年生 男子</p>
         </div>
-        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-          <a href="./sections/staff.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <img src="{{ site.baseurl }}/images/quote.png" alt="引用符" class="w-8 h-8 mb-2">
+          <p class="italic">「自分で考えて行動する力が身についたと感じます。帰宅後も進んで家の手伝いをするようになりました。」</p>
+          <p class="text-right mt-2 font-bold">保護者 40代女性</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <img src="{{ site.baseurl }}/images/quote.png" alt="引用符" class="w-8 h-8 mb-2">
+          <p class="italic">「自然の中での体験は、学校では学べない貴重なものでした。スタッフの方々の温かいサポートに感謝しています。」</p>
+          <p class="text-right mt-2 font-bold">小学6年生 女子</p>
         </div>
       </div>
-    </section>
-
-    <!-- 参加者の声セクション -->
-    <section id="testimonials">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">参加者の声</h2>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <p class="mb-6">
-          実際にキャンプに参加された子どもたちや保護者の声をご紹介します。体験を通じて得た自信や成長、安心してお子様を託せるというお声が、私たちの取り組みの証です。
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-          <div class="bg-gray-100 p-4 rounded">
-            <img src="https://via.placeholder.com/300x200" alt="体験談1" class="rounded mb-2">
-            <p>"子どもが自分で考えて行動できるようになりました。"</p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded">
-            <img src="https://via.placeholder.com/300x200" alt="体験談2" class="rounded mb-2">
-            <p>"スタッフの温かいサポートで安心して任せられました。"</p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded">
-            <img src="https://via.placeholder.com/300x200" alt="体験談3" class="rounded mb-2">
-            <p>"安全管理が徹底されており、保護者として非常に安心です。"</p>
-          </div>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-          <a href="./sections/testimonials.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
-        </div>
+      <div class="mt-6 text-center">
+        <a href="{{ site.baseurl }}/sections/testimonials.html" class="text-blue-600 hover:underline font-medium">もっと見る</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQセクション -->
-    <section id="faq">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">よくある質問</h2>
-      <div class="bg-white p-6 rounded-lg shadow space-y-4">
-        <div>
-          <h3 class="font-bold">Q1: 初めてのキャンプですが、大丈夫でしょうか？</h3>
-          <p>A1: 安全管理体制やスタッフの充実した研修により、初参加のお子様も安心してご参加いただけます。</p>
+  <!-- よくある質問セクション -->
+  <section id="faq">
+    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">よくある質問</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <div class="space-y-4">
+        <div class="border-b pb-4">
+          <h3 class="font-bold text-lg">Q: 初めての参加でも大丈夫ですか？</h3>
+          <p>A: はい、毎年多くの初参加者を受け入れています。経験豊富なスタッフがサポートしますので、安心してご参加ください。</p>
+        </div>
+        <div class="border-b pb-4">
+          <h3 class="font-bold text-lg">Q: アレルギーがある場合は参加できますか？</h3>
+          <p>A: 食物アレルギーなど、健康上の配慮が必要な場合は事前にご相談ください。可能な限り対応いたします。</p>
         </div>
         <div>
-          <h3 class="font-bold">Q2: 送迎や保険の対応はありますか？</h3>
-          <p>A2: 全国からの参加をサポートするため、送迎バスの手配や各種保険に加入し、万一の事故にも対応できる体制を整えています。</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-          <a href="./sections/faq.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
+          <h3 class="font-bold text-lg">Q: キャンプに必要な持ち物は？</h3>
+          <p>A: 各プログラムごとに詳細な持ち物リストをお送りします。基本的な生活用品と動きやすい服装をご用意ください。</p>
         </div>
       </div>
-    </section>
-
-    <!-- お問い合わせセクション -->
-    <section id="contact">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">お問い合わせ</h2>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <p class="mb-4">
-          ご不明な点やご質問がございましたら、以下の連絡先までお気軽にお問い合わせください。
-        </p>
-        <p class="mb-4">
-          住所: 新潟県南魚沼市下一日市855<br>
-          TEL: 025-783-3377<br>
-          Eメール: <a href="mailto:taikenmura4124@gmail.com" class="text-blue-600 hover:underline">taikenmura4124@gmail.com</a>
-        </p>
-        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-          <a href="./sections/contact.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
-        </div>
+      <div class="mt-6 text-center">
+        <a href="{{ site.baseurl }}/sections/faq.html" class="text-blue-600 hover:underline font-medium">もっと見る</a>
       </div>
-    </section>
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-gray-800 text-gray-300 py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 体験村. All rights reserved.</p>
     </div>
-  </footer>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        // モバイルメニューの表示/非表示を切り替え
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
-        }
-      });
-      
-      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
-      const navLinks = document.querySelectorAll('#mobile-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // モバイル表示時のみメニューを閉じる
-          if (window.innerWidth < 768) { // md breakpointは768px
-            mobileMenu.classList.add('hidden');
-          }
-        });
-      });
-      
-      // スライドショー制御
-      let slideIndex = 0;
-      const slides = document.querySelectorAll('.slide');
-      
-      // 初期表示
-      slides[0].classList.add('active');
-      
-      // スライドショーの自動切り替え
-      function showSlides() {
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].classList.remove('active');
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].classList.add('active');
-        setTimeout(showSlides, 5000); // 5秒ごとに切り替え
-      }
-      
-      // スライドショー開始
-      setTimeout(showSlides, 5000);
-    });
-  </script>
-</body>
-</html>
+  </section>
 
+  <!-- お問い合わせセクション -->
+  <section id="contact">
+    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">お問い合わせ</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="mb-4">
+        体験村のプログラムについてのご質問やお申し込みは、以下の連絡先までお気軽にお問い合わせください。
+      </p>
+      <p class="text-lg">
+        TEL: 025-783-3377<br>
+        Email: taikenmura4124@gmail.com<br>
+        受付時間: 平日9:00〜17:00
+      </p>
+      <div class="mt-6 text-center">
+        <a href="{{ site.baseurl }}/sections/contact.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
+      </div>
+    </div>
+  </section>
+</main>

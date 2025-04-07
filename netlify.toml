@@ -1,0 +1,13 @@
+[build]
+  command = "gem install jekyll bundler && bundle install && jekyll build"
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+  RUBY_VERSION = "3.1.2"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
