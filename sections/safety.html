@@ -1,173 +1,82 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>安全管理への取り組み - 一般社団法人自然体験村</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- ヘッダー -->
-  <header class="bg-blue-600 text-white sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-      <div class="flex items-center justify-between w-full md:w-auto">
-        <a href="../index.html">
-          <img src="../images/logo.jpeg" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
-        </a>
-        <h1 class="text-2xl md:text-3xl font-bold">
-          <a href="../index.html">一般社団法人自然体験村</a>
-        </h1>
-        <button id="mobile-menu-button" class="md:hidden text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
-        <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
-          <li><a href="../index.html#news" class="hover:text-blue-200">最新情報</a></li>
-          <li><a href="./trust.html" class="hover:text-blue-200">私たちの信頼</a></li>
-          <li><a href="./safety.html" class="hover:text-blue-200">安全管理</a></li>
-          <li><a href="./philosophy.html" class="hover:text-blue-200">教育理念</a></li>
-          <li><a href="./programs.html" class="hover:text-blue-200">プログラム</a></li>
-          <li><a href="./staff.html" class="hover:text-blue-200">スタッフ紹介</a></li>
-          <li><a href="./testimonials.html" class="hover:text-blue-200">参加者の声</a></li>
-          <li><a href="./faq.html" class="hover:text-blue-200">FAQ</a></li>
-          <li><a href="./contact.html" class="hover:text-blue-200">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+---
+layout: default
+title: 安全管理への取り組み
+---
 
-  <main class="container mx-auto px-4 py-8 space-y-12">
-    <!-- 安全管理セクション詳細 -->
-    <section>
-      <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">安全管理への取り組み</h2>
+<main class="container mx-auto px-4 py-8 space-y-12">
+  <!-- 安全管理セクション詳細 -->
+  <section>
+    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">安全管理への取り組み</h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow">
+      <!-- メインイメージ -->
+      <div class="mb-8">
+        <img src="{{ site.baseurl }}/images/safety-main.jpg" alt="安全管理の様子" class="w-full rounded-lg h-64 object-cover">
+      </div>
+
+      <p class="mb-6">体験村では、お子様の安全を最優先事項として、以下のような取り組みを行っています：</p>
       
-      <div class="bg-white p-6 rounded-lg shadow">
-        <!-- メインイメージ -->
-        <div class="mb-8">
-          <img src="../images/safety-main.jpg" alt="安全管理の様子" class="w-full rounded-lg h-64 object-cover">
-        </div>
-
-        <p class="mb-6">体験村では、お子様の安全を最優先事項として、以下のような取り組みを行っています：</p>
-        
-        <h3 class="font-bold mt-6 text-xl text-blue-700">キャンプにおける安全対策の考え方</h3>
-        <div class="bg-gray-50 p-4 rounded shadow-sm mt-2 mb-6">
-          <p>楽しい企画は安全によって築かれています。プログラム全体、活動の各瞬間において安全を最優先しています。何よりも参加者とその家族が安心して参加できるよう、常に安全管理を徹底しています。安全対策に終わりはなく、日々の活動においてひとつひとつ万全を期しています。</p>
-        </div>
-        
-        <div class="space-y-6 mt-6">
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">スタッフ研修と資格</h4>
-            <p>全スタッフは救急救命講習を受講し、多くが野外活動指導者資格を保持しています。CONEリスクマネジャー資格を持つスタッフが、自然体験活動のリスクを事前に洗い出し、予見できる危険に対策を講じています。1〜2年に一度、リスクマネジメント研修に参加し、最新の安全管理知識を更新しています。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/staff-training.jpg" alt="スタッフ研修の様子" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">スタッフ安全研修の様子</p>
-            </div>
-          </div>
+      <h3 class="font-bold mt-6 text-xl text-blue-700">キャンプにおける安全対策の考え方</h3>
+      <div class="bg-gray-50 p-4 rounded shadow-sm mt-2 mb-6">
+        <p>楽しい企画は安全によって築かれています。プログラム全体、活動の各瞬間において安全を最優先しています。何よりも参加者とその家族が安心して参加できるよう、常に安全管理を徹底しています。安全対策に終わりはなく、日々の活動においてひとつひとつ万全を期しています。</p>
+      </div>
+      
+      <div class="space-y-6 mt-6">
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">スタッフ研修と資格</h4>
+          <p>全スタッフは救急救命講習を受講し、多くが野外活動指導者資格を保持しています。CONEリスクマネジャー資格を持つスタッフが、自然体験活動のリスクを事前に洗い出し、予見できる危険に対策を講じています。1〜2年に一度、リスクマネジメント研修に参加し、最新の安全管理知識を更新しています。</p>
           
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">安全マニュアルと緊急時対応</h4>
-            <p>安全管理マニュアルを作成し、毎年秋に内容の再確認を行っています。企画作成時に活動ごとの下見を実施し、危険箇所を特定して対策方法を明確にしています。事故発生時の連絡フローチャートを作成し、ミーティング時に全スタッフで安全対策と連絡体制を確認しています。緊急時には、近隣の医療機関と連携した迅速な対応体制を整えており、24時間体制で保護者への連絡体制も確保しています。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/safety-manual.jpg" alt="安全マニュアルと緊急時対応" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">安全マニュアルと緊急時対応フローチャート</p>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">子どもの活動と安全管理</h4>
-            <p>子どもたちが自由に活動する場面でも、安全管理と楽しさを両立させるよう配慮しています。過去の事例を共有し、リーダーの危険予測意識を高めています。子どもやリーダー由来の問題も含め、似たような場面に遭遇した時に思い出せるよう、事前に情報共有を行っています。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/children-activities.jpg" alt="子どもの活動と安全管理" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">子どもたちの活動における安全管理</p>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">保険と補償</h4>
-            <p>万が一の事故に備え、傷害保険、賠償責任保険に加入しています。参加費には保険料が含まれており、追加費用なく安心してご参加いただけます。</p>
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/staff-training.jpg" alt="スタッフ研修の様子" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">スタッフ安全研修の様子</p>
           </div>
         </div>
         
-        <p class="mt-6">安全管理は一過性のものではなく、常に改善を続けるプロセスと考えています。毎回のキャンプ後には安全面の振り返りを行い、より安全なプログラム運営に努めています。</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div>
-            <img src="../images/safety-training.jpg" alt="安全講習の様子" class="rounded-lg w-full h-64 object-cover mb-2">
-            <p class="text-sm text-gray-600">スタッフ安全講習の様子</p>
-          </div>
-          <div>
-            <img src="../images/equipment-check.jpg" alt="安全装備点検" class="rounded-lg w-full h-64 object-cover mb-2">
-            <p class="text-sm text-gray-600">活動前の安全装備点検</p>
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">安全マニュアルと緊急時対応</h4>
+          <p>安全管理マニュアルを作成し、毎年秋に内容の再確認を行っています。企画作成時に活動ごとの下見を実施し、危険箇所を特定して対策方法を明確にしています。事故発生時の連絡フローチャートを作成し、ミーティング時に全スタッフで安全対策と連絡体制を確認しています。緊急時には、近隣の医療機関と連携した迅速な対応体制を整えており、24時間体制で保護者への連絡体制も確保しています。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/safety-manual.jpg" alt="安全マニュアルと緊急時対応" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">安全マニュアルと緊急時対応フローチャート</p>
           </div>
         </div>
         
-        <div class="mt-8 text-center">
-          <a href="../index.html#safety" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">子どもの活動と安全管理</h4>
+          <p>子どもたちが自由に活動する場面でも、安全管理と楽しさを両立させるよう配慮しています。過去の事例を共有し、リーダーの危険予測意識を高めています。子どもやリーダー由来の問題も含め、似たような場面に遭遇した時に思い出せるよう、事前に情報共有を行っています。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/children-activities.jpg" alt="子どもの活動と安全管理" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">子どもたちの活動における安全管理</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">保険と補償</h4>
+          <p>万が一の事故に備え、傷害保険、賠償責任保険に加入しています。参加費には保険料が含まれており、追加費用なく安心してご参加いただけます。</p>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-blue-800 text-white py-8">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between">
+      
+      <p class="mt-6">安全管理は一過性のものではなく、常に改善を続けるプロセスと考えています。毎回のキャンプ後には安全面の振り返りを行い、より安全なプログラム運営に努めています。</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <div>
-          <h3 class="text-xl font-bold mb-4">一般社団法人自然体験村</h3>
-          <p>〒949-6680</p>
-          <p>新潟県南魚沼市下一日市855</p>
-          <p>TEL: 025-783-3377</p>
-          <p>Email: taikenmura4124@gmail.com</p>
+          <img src="{{ site.baseurl }}/images/safety-training.jpg" alt="安全講習の様子" class="rounded-lg w-full h-64 object-cover mb-2">
+          <p class="text-sm text-gray-600">スタッフ安全講習の様子</p>
         </div>
-        <div class="mt-6 md:mt-0">
-          <h3 class="text-xl font-bold mb-4">リンク</h3>
-          <ul class="space-y-2">
-            <li><a href="../index.html" class="hover:text-blue-200">ホーム</a></li>
-            <li><a href="../index.html#programs" class="hover:text-blue-200">プログラム</a></li>
-            <li><a href="../index.html#contact" class="hover:text-blue-200">お問い合わせ</a></li>
-          </ul>
+        <div>
+          <img src="{{ site.baseurl }}/images/equipment-check.jpg" alt="安全装備点検" class="rounded-lg w-full h-64 object-cover mb-2">
+          <p class="text-sm text-gray-600">活動前の安全装備点検</p>
         </div>
       </div>
+      
       <div class="mt-8 text-center">
-        <p>&copy; 2025 一般社団法人自然体験村 All Rights Reserved.</p>
+        <a href="{{ site.baseurl }}/#safety" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
       </div>
     </div>
-  </footer>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        // モバイルメニューの表示/非表示を切り替え
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
-        }
-      });
-      
-      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
-      const navLinks = document.querySelectorAll('#mobile-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // モバイル表示時のみメニューを閉じる
-          if (window.innerWidth < 768) { // md breakpointは768px
-            mobileMenu.classList.add('hidden');
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+  </section>
+</main>
