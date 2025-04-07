@@ -58,37 +58,45 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "タイトル", name: "title", widget: "string", default: "春"}
-                  - label: "イベント", name: "events", widget: "list", fields: [
-                      {label: "イベント名", name: "name", widget: "string"},
-                      {label: "日程", name: "date", widget: "string"}
-                    ]}
+                  - label: "イベント"
+                    name: "events"
+                    widget: "list"
+                    fields:
+                      - {label: "イベント名", name: "name", widget: "string"}
+                      - {label: "日程", name: "date", widget: "string"}
               - label: "夏のプログラム"
                 name: "summer"
                 widget: "object"
                 fields:
                   - {label: "タイトル", name: "title", widget: "string", default: "夏"}
-                  - label: "イベント", name: "events", widget: "list", fields: [
-                      {label: "イベント名", name: "name", widget: "string"},
-                      {label: "日程", name: "date", widget: "string"}
-                    ]}
+                  - label: "イベント"
+                    name: "events"
+                    widget: "list"
+                    fields:
+                      - {label: "イベント名", name: "name", widget: "string"}
+                      - {label: "日程", name: "date", widget: "string"}
               - label: "秋のプログラム"
                 name: "autumn"
                 widget: "object"
                 fields:
                   - {label: "タイトル", name: "title", widget: "string", default: "秋"}
-                  - label: "イベント", name: "events", widget: "list", fields: [
-                      {label: "イベント名", name: "name", widget: "string"},
-                      {label: "日程", name: "date", widget: "string"}
-                    ]}
+                  - label: "イベント"
+                    name: "events"
+                    widget: "list"
+                    fields:
+                      - {label: "イベント名", name: "name", widget: "string"}
+                      - {label: "日程", name: "date", widget: "string"}
               - label: "冬のプログラム"
                 name: "winter"
                 widget: "object"
                 fields:
                   - {label: "タイトル", name: "title", widget: "string", default: "冬"}
-                  - label: "イベント", name: "events", widget: "list", fields: [
-                      {label: "イベント名", name: "name", widget: "string"},
-                      {label: "日程", name: "date", widget: "string"}
-                    ]}
+                  - label: "イベント"
+                    name: "events"
+                    widget: "list"
+                    fields:
+                      - {label: "イベント名", name: "name", widget: "string"}
+                      - {label: "日程", name: "date", widget: "string"}
               - {label: "参加対象", name: "target", widget: "string"}
               - {label: "詳細リンクテキスト", name: "link_text", widget: "string", default: "詳しい年間プログラムスケジュールを見る"}
           - label: "私たちの信頼"
