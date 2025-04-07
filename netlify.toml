@@ -1,5 +1,5 @@
 [build]
-  command = "gem install bundler && bundle install && bundle exec jekyll build"
+  command = "gem install jekyll bundler && bundle install && bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
