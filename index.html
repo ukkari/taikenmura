@@ -6,6 +6,36 @@
   <title>一般社団法人自然体験村 - 安心と信頼の自然体験キャンプ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="news.js" defer></script>
+  <style>
+    .slideshow-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 0;
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @keyframes fade {
+      from {opacity: 0.4} 
+      to {opacity: 1}
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
@@ -40,11 +70,16 @@
     </div>
   </header>
 
-  <!-- ヒーローセクション -->
-  <section class="relative h-96 bg-cover bg-center" style="background-image: url('./images/hero.jpg');">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="container mx-auto h-full flex items-center justify-center relative z-10">
+  <!-- ヒーロースライドショーセクション -->
+  <section class="relative h-96 bg-cover bg-center" id="hero-slideshow">
+    <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+    <div class="container mx-auto h-full flex items-center justify-center relative z-20">
       <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">安心・信頼の自然体験キャンプ</h2>
+    </div>
+    <div class="slideshow-container absolute inset-0">
+      <div class="slide fade active" style="background-image: url('./images/hero.jpg');"></div>
+      <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ2');"></div>
+      <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ3');"></div>
     </div>
   </section>
 
@@ -58,6 +93,74 @@
         </p>
         <div id="news-content" class="mt-4">
           <!-- JavaScriptによって動的にコンテンツが追加されます -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- 年間プログラム紹介セクション -->
+    <section id="annual-programs">
+      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">年間のプログラム</h2>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="mb-6">
+          体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールをご確認ください。
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-green-700">春のプログラム</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>キャンプ場コテージ泊！春の火あそびキャンプ <br><span class="text-sm">5/3(土)～5/5(月)</span></li>
+              <li>春の田植え 親子キャンプ <br><span class="text-sm">5/31(土)～6/1(日)</span></li>
+            </ul>
+          </div>
+          
+          <div class="bg-yellow-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-yellow-700">夏のプログラム</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>まっ黒わんぱく夏休み
+                <ul class="list-none pl-5 text-sm">
+                  <li>- わくわく12泊: 7/27(日)～8/8(金)</li>
+                  <li>- スタート3泊: 7/27(日)～7/30(水)</li>
+                  <li>- チャレンジ6泊: 7/31(木)～8/6(水)</li>
+                  <li>- ゆったり8泊: 7/31(木)～8/8(金)</li>
+                </ul>
+              </li>
+              <li>思いっきり夏キャンプ どきどき6泊 <br><span class="text-sm">8/11(月)～8/17(日)</span></li>
+              <li>あそびばキャンプ <br><span class="text-sm">8/20(水)～8/22(金)</span></li>
+            </ul>
+          </div>
+          
+          <div class="bg-orange-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-orange-700">秋のプログラム</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>キャンプ場 火あそびキャンプ <br><span class="text-sm">9/13(土)～9/15(月)</span></li>
+              <li>秋の稲刈り 親子キャンプ <br><span class="text-sm">9/27(土)～9/28(日)</span></li>
+            </ul>
+          </div>
+          
+          <div class="bg-blue-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-blue-700">冬のプログラム</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>天空雪あそびキャンプ【年末】 <br><span class="text-sm">12/27(土)～12/29(月)</span></li>
+              <li>天空雪あそびキャンプ（年始） <br><span class="text-sm">1/10(土)～1/12(月)</span></li>
+              <li>ガンガン滑ろうキャンプ <br><span class="text-sm">1/24(土)～1/25(日)</span></li>
+              <li>思いっきり雪まみれキャンプ <br><span class="text-sm">2/14(土)～2/15(日)</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-gray-100 p-4 rounded">
+          <h3 class="font-bold mb-2">参加対象</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>基本的には小学校3年生～中学校3年生</li>
+            <li>どきどき6泊はさいたま市民限定（小学校4年生～中学校3年生）</li>
+            <li>あそびばキャンプは小学校2年生～中学校3年生</li>
+            <li>ガンガン滑ろうキャンプは小学校3年生～高校3年生</li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
+          <a href="./sections/programs.html" class="text-blue-600 hover:underline font-medium inline-block">詳しいプログラム内容を見る</a>
         </div>
       </div>
     </section>
@@ -259,6 +362,27 @@
           }
         });
       });
+      
+      // スライドショー制御
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+      
+      // 初期表示
+      slides[0].classList.add('active');
+      
+      // スライドショーの自動切り替え
+      function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].classList.remove('active');
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].classList.add('active');
+        setTimeout(showSlides, 5000); // 5秒ごとに切り替え
+      }
+      
+      // スライドショー開始
+      setTimeout(showSlides, 5000);
     });
   </script>
 </body>
