@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} - {% endif %}一般社団法人自然体験村</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% if page.url == "/" %}
+  <script src="{{ site.baseurl }}/news.js" defer></script>
+  {% endif %}
+  {% if page.custom_css %}
+  <style>
+    {{ page.custom_css }}
+  </style>
+  {% endif %}
+</head>
+<body class="bg-gray-50 text-gray-800">
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        // モバイルメニューの表示/非表示を切り替え
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+      
+      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
+      const navLinks = document.querySelectorAll('#mobile-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // モバイル表示時のみメニューを閉じる
+          if (window.innerWidth < 768) { // md breakpointは768px
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      });
+      
+      {% if page.url == "/" %}
+      // スライドショー制御
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+      
+      // 初期表示
+      slides[0].classList.add('active');
+      
+      // スライドショーの自動切り替え
+      function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].classList.remove('active');
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].classList.add('active');
+        setTimeout(showSlides, 5000); // 5秒ごとに切り替え
+      }
+      
+      // スライドショー開始
+      setTimeout(showSlides, 5000);
+      {% endif %}
+    });
+  </script>
+</body>
+</html>

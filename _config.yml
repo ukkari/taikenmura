@@ -1,0 +1,15 @@
+# Site settings
+title: 一般社団法人自然体験村
+description: 安心と信頼の自然体験キャンプ
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
