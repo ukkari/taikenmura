@@ -1,225 +1,134 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>教育理念と育む価値 - 一般社団法人自然体験村</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- ヘッダー -->
-  <header class="bg-blue-600 text-white sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-      <div class="flex items-center justify-between w-full md:w-auto">
-        <a href="../index.html">
-          <img src="../images/logo.jpeg" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
-        </a>
-        <h1 class="text-2xl md:text-3xl font-bold">
-          <a href="../index.html">一般社団法人自然体験村</a>
-        </h1>
-        <button id="mobile-menu-button" class="md:hidden text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
-        <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
-          <li><a href="../index.html#news" class="hover:text-blue-200">最新情報</a></li>
-          <li><a href="./trust.html" class="hover:text-blue-200">私たちの信頼</a></li>
-          <li><a href="./safety.html" class="hover:text-blue-200">安全管理</a></li>
-          <li><a href="./philosophy.html" class="hover:text-blue-200">教育理念</a></li>
-          <li><a href="./programs.html" class="hover:text-blue-200">プログラム</a></li>
-          <li><a href="./staff.html" class="hover:text-blue-200">スタッフ紹介</a></li>
-          <li><a href="./testimonials.html" class="hover:text-blue-200">参加者の声</a></li>
-          <li><a href="./faq.html" class="hover:text-blue-200">FAQ</a></li>
-          <li><a href="./contact.html" class="hover:text-blue-200">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+---
+layout: default
+title: 教育理念と育む価値
+---
 
-  <main class="container mx-auto px-4 py-8 space-y-12">
-    <!-- 教育理念セクション詳細 -->
-    <section>
-      <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">教育理念と育む価値</h2>
+<main class="container mx-auto px-4 py-8 space-y-12">
+  <!-- 教育理念セクション詳細 -->
+  <section>
+    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">教育理念と育む価値</h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow">
+      <!-- メインイメージ -->
+      <div class="mb-8">
+        <img src="{{ site.baseurl }}/images/philosophy-main.jpg" alt="教育理念のイメージ" class="w-full rounded-lg h-64 object-cover">
+      </div>
+
+      <p class="mb-6">体験村の教育理念は、「自然の中での体験を通じて、子どもたちの生きる力を育む」ことです。私たちが大切にしている価値観と教育効果は以下の通りです：</p>
       
-      <div class="bg-white p-6 rounded-lg shadow">
-        <!-- メインイメージ -->
-        <div class="mb-8">
-          <img src="../images/philosophy-main.jpg" alt="教育理念のイメージ" class="w-full rounded-lg h-64 object-cover">
-        </div>
-
-        <p class="mb-6">体験村の教育理念は、「自然の中での体験を通じて、子どもたちの生きる力を育む」ことです。私たちが大切にしている価値観と教育効果は以下の通りです：</p>
-        
-        <h3 class="font-bold mt-6 text-xl text-blue-700">未来につながる人づくり</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">直接体験と体験からの学び</h4>
-            <p>「初めて体験」の機会を大切にし、その体験を共有できる環境を重視しています。子どもの純粋な興味関心を引き出し、新しい体験への意欲を育みます。小さい頃の遊びや経験が「引き出し」となり、様々な場面で活かされていきます。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/direct-experience.jpg" alt="直接体験の様子" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">子どもたちの直接体験の様子</p>
-            </div>
-          </div>
+      <h3 class="font-bold mt-6 text-xl text-blue-700">未来につながる人づくり</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">直接体験と体験からの学び</h4>
+          <p>「初めて体験」の機会を大切にし、その体験を共有できる環境を重視しています。子どもの純粋な興味関心を引き出し、新しい体験への意欲を育みます。小さい頃の遊びや経験が「引き出し」となり、様々な場面で活かされていきます。</p>
           
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">アウトドアフィールドの活用</h4>
-            <p>自然環境をあえて活用し、「遠回り」をすることで経験や技術、発想力を育みます。火や刃物など、正しい使い方と練習を通じて身につけるべきスキルを学び、天候変化など予測できない状況に柔軟に対応する力を養います。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/outdoor-field.jpg" alt="アウトドアフィールドでの活動" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">アウトドアフィールドでの活動の様子</p>
-            </div>
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/direct-experience.jpg" alt="直接体験の様子" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">子どもたちの直接体験の様子</p>
           </div>
         </div>
         
-        <h3 class="font-bold mt-8 text-xl text-blue-700">人づくりの独自性</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">考え方・哲学</h4>
-            <p>子どもの反応や社会の変化に合わせて活動を進化させる柔軟性を持ち、相手の気持ちに寄り添うホスピタリティを大切にしています。ネガティブな状況をポジティブに捉え直す思考法を実践し、地域の特性（雪国）を活かした独自の教育プログラムを提供しています。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/philosophy-approach.jpg" alt="教育哲学の実践" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">子どもたちの反応に合わせた活動の様子</p>
-            </div>
-          </div>
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">アウトドアフィールドの活用</h4>
+          <p>自然環境をあえて活用し、「遠回り」をすることで経験や技術、発想力を育みます。火や刃物など、正しい使い方と練習を通じて身につけるべきスキルを学び、天候変化など予測できない状況に柔軟に対応する力を養います。</p>
           
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">実践方法</h4>
-            <p>活動や場所、人に対して「愛着」を感じてもらうことを重視しています。単なる体験提供ではなく、人との繋がりを通じた学びを大切にし、子ども同士、リーダー同士の相互教育の環境づくりを行っています。楽しさを通じて自然と技術や知識を習得できる環境を構築しています。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/practice-method.jpg" alt="実践方法の様子" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">子ども同士の相互教育の様子</p>
-            </div>
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/outdoor-field.jpg" alt="アウトドアフィールドでの活動" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">アウトドアフィールドでの活動の様子</p>
           </div>
-        </div>
-        
-        <h3 class="font-bold mt-8 text-xl text-blue-700">基本的な教育価値</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">自主性・自立心の育成</h4>
-            <p>親元を離れた環境で、自分自身で考え、判断し、行動する経験を通じて、子どもたちは自立心と責任感を身につけます。「自分でできた」という成功体験が自己肯定感を高めます。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/independence.jpg" alt="自主性を育む活動" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">自分で考え行動する子どもたちの様子</p>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">協調性と社会性の向上</h4>
-            <p>グループ活動を通じて、他者との協力、意見の調整、役割分担などを学びます。多様な価値観を持つ仲間との共同生活は、社会性を育む貴重な機会となります。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/cooperation.jpg" alt="協調性を育む活動" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">グループ活動で協力する子どもたちの様子</p>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">自然への理解と共生</h4>
-            <p>自然の中での活動を通じて、環境への理解を深め、自然と共生する大切さを学びます。自然の厳しさと豊かさを体感することで、生命を尊重する心が育まれます。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/nature-understanding.jpg" alt="自然理解の活動" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">自然観察を通じた学びの様子</p>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 p-4 rounded shadow-sm">
-            <h4 class="font-bold text-lg">非認知能力の育成</h4>
-            <p>忍耐力、チャレンジ精神、感情コントロール、コミュニケーション能力など、学校の勉強だけでは得られない「非認知能力」を育みます。これらは将来の社会生活の基盤となる重要なスキルです。</p>
-            
-            <!-- 画像プレースホルダー -->
-            <div class="mt-4">
-              <img src="../images/non-cognitive.jpg" alt="非認知能力を育む活動" class="w-full rounded-lg h-48 object-cover">
-              <p class="text-sm text-gray-600 mt-1">チャレンジ精神を育む活動の様子</p>
-            </div>
-          </div>
-        </div>
-        
-        <p class="mt-6">体験村では、子どもたちが「できた！」「わかった！」という成功体験を積み重ねることで、自信と成長を実感できるプログラムを提供しています。</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div>
-            <img src="../images/group-activity.jpg" alt="グループ活動の様子" class="rounded-lg w-full h-64 object-cover mb-2">
-            <p class="text-sm text-gray-600">協力して課題に取り組む子どもたち</p>
-          </div>
-          <div>
-            <img src="../images/nature-observation.jpg" alt="自然観察の様子" class="rounded-lg w-full h-64 object-cover mb-2">
-            <p class="text-sm text-gray-600">自然観察を通じた学びの時間</p>
-          </div>
-        </div>
-        
-        <div class="mt-8 text-center">
-          <a href="../index.html#philosophy" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-blue-800 text-white py-8">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between">
+      
+      <h3 class="font-bold mt-8 text-xl text-blue-700">人づくりの独自性</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">考え方・哲学</h4>
+          <p>子どもの反応や社会の変化に合わせて活動を進化させる柔軟性を持ち、相手の気持ちに寄り添うホスピタリティを大切にしています。ネガティブな状況をポジティブに捉え直す思考法を実践し、地域の特性（雪国）を活かした独自の教育プログラムを提供しています。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/philosophy-approach.jpg" alt="教育哲学の実践" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">子どもたちの反応に合わせた活動の様子</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">実践方法</h4>
+          <p>活動や場所、人に対して「愛着」を感じてもらうことを重視しています。単なる体験提供ではなく、人との繋がりを通じた学びを大切にし、子ども同士、リーダー同士の相互教育の環境づくりを行っています。楽しさを通じて自然と技術や知識を習得できる環境を構築しています。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/practice-method.jpg" alt="実践方法の様子" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">子ども同士の相互教育の様子</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="font-bold mt-8 text-xl text-blue-700">基本的な教育価値</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">自主性・自立心の育成</h4>
+          <p>親元を離れた環境で、自分自身で考え、判断し、行動する経験を通じて、子どもたちは自立心と責任感を身につけます。「自分でできた」という成功体験が自己肯定感を高めます。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/independence.jpg" alt="自主性を育む活動" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">自分で考え行動する子どもたちの様子</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">協調性と社会性の向上</h4>
+          <p>グループ活動を通じて、他者との協力、意見の調整、役割分担などを学びます。多様な価値観を持つ仲間との共同生活は、社会性を育む貴重な機会となります。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/cooperation.jpg" alt="協調性を育む活動" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">グループ活動で協力する子どもたちの様子</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">自然への理解と共生</h4>
+          <p>自然の中での活動を通じて、環境への理解を深め、自然と共生する大切さを学びます。自然の厳しさと豊かさを体感することで、生命を尊重する心が育まれます。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/nature-understanding.jpg" alt="自然理解の活動" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">自然観察を通じた学びの様子</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <h4 class="font-bold text-lg">非認知能力の育成</h4>
+          <p>忍耐力、チャレンジ精神、感情コントロール、コミュニケーション能力など、学校の勉強だけでは得られない「非認知能力」を育みます。これらは将来の社会生活の基盤となる重要なスキルです。</p>
+          
+          <!-- 画像プレースホルダー -->
+          <div class="mt-4">
+            <img src="{{ site.baseurl }}/images/non-cognitive.jpg" alt="非認知能力を育む活動" class="w-full rounded-lg h-48 object-cover">
+            <p class="text-sm text-gray-600 mt-1">チャレンジ精神を育む活動の様子</p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="mt-6">体験村では、子どもたちが「できた！」「わかった！」という成功体験を積み重ねることで、自信と成長を実感できるプログラムを提供しています。</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <div>
-          <h3 class="text-xl font-bold mb-4">一般社団法人自然体験村</h3>
-          <p>〒949-6680</p>
-          <p>新潟県南魚沼市下一日市855</p>
-          <p>TEL: 025-783-3377</p>
-          <p>Email: taikenmura4124@gmail.com</p>
+          <img src="{{ site.baseurl }}/images/group-activity.jpg" alt="グループ活動の様子" class="rounded-lg w-full h-64 object-cover mb-2">
+          <p class="text-sm text-gray-600">協力して課題に取り組む子どもたち</p>
         </div>
-        <div class="mt-6 md:mt-0">
-          <h3 class="text-xl font-bold mb-4">リンク</h3>
-          <ul class="space-y-2">
-            <li><a href="../index.html" class="hover:text-blue-200">ホーム</a></li>
-            <li><a href="../index.html#programs" class="hover:text-blue-200">プログラム</a></li>
-            <li><a href="../index.html#contact" class="hover:text-blue-200">お問い合わせ</a></li>
-          </ul>
+        <div>
+          <img src="{{ site.baseurl }}/images/nature-observation.jpg" alt="自然観察の様子" class="rounded-lg w-full h-64 object-cover mb-2">
+          <p class="text-sm text-gray-600">自然観察を通じた学びの時間</p>
         </div>
       </div>
+      
       <div class="mt-8 text-center">
-        <p>&copy; 2025 一般社団法人自然体験村 All Rights Reserved.</p>
+        <a href="{{ site.baseurl }}/#philosophy" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
       </div>
     </div>
-  </footer>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        // モバイルメニューの表示/非表示を切り替え
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
-        }
-      });
-      
-      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
-      const navLinks = document.querySelectorAll('#mobile-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // モバイル表示時のみメニューを閉じる
-          if (window.innerWidth < 768) { // md breakpointは768px
-            mobileMenu.classList.add('hidden');
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+  </section>
+</main>
