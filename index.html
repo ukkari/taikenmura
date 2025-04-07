@@ -6,6 +6,36 @@
   <title>一般社団法人自然体験村 - 安心と信頼の自然体験キャンプ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="news.js" defer></script>
+  <style>
+    .slideshow-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 0;
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @keyframes fade {
+      from {opacity: 0.4} 
+      to {opacity: 1}
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
@@ -40,11 +70,16 @@
     </div>
   </header>
 
-  <!-- ヒーローセクション -->
-  <section class="relative h-96 bg-cover bg-center" style="background-image: url('./images/hero.jpg');">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="container mx-auto h-full flex items-center justify-center relative z-10">
+  <!-- ヒーロースライドショーセクション -->
+  <section class="relative h-96 bg-cover bg-center" id="hero-slideshow">
+    <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+    <div class="container mx-auto h-full flex items-center justify-center relative z-20">
       <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">安心・信頼の自然体験キャンプ</h2>
+    </div>
+    <div class="slideshow-container absolute inset-0">
+      <div class="slide fade active" style="background-image: url('./images/hero.jpg');"></div>
+      <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ2');"></div>
+      <div class="slide fade" style="background-image: url('https://via.placeholder.com/1200x600?text=自然体験キャンプ3');"></div>
     </div>
   </section>
 
@@ -58,6 +93,62 @@
         </p>
         <div id="news-content" class="mt-4">
           <!-- JavaScriptによって動的にコンテンツが追加されます -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- 年間プログラム紹介セクション -->
+    <section id="annual-programs">
+      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">年間のプログラム</h2>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="mb-6">
+          体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールの抜粋です。
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div class="bg-green-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-green-700">春</h3>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>春の火あそびキャンプ <br><span class="text-sm">5/3～5/5</span></li>
+              <li>春の田植え親子キャンプ <br><span class="text-sm">5/31～6/1</span></li>
+            </ul>
+          </div>
+          
+          <div class="bg-yellow-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-yellow-700">夏</h3>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>まっ黒わんぱく夏休み <br><span class="text-sm">7/27～8/8</span></li>
+              <li>思いっきり夏キャンプ <br><span class="text-sm">8/11～8/17</span></li>
+              <li>あそびばキャンプ <br><span class="text-sm">8/20～8/22</span></li>
+            </ul>
+          </div>
+          
+          <div class="bg-orange-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-orange-700">秋</h3>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>キャンプ場火あそびキャンプ <br><span class="text-sm">9/13～9/15</span></li>
+              <li>秋の稲刈り親子キャンプ <br><span class="text-sm">9/27～9/28</span></li>
+            </ul>
+          </div>
+          
+          <div class="bg-blue-50 p-4 rounded">
+            <h3 class="font-bold text-lg mb-2 text-blue-700">冬</h3>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>天空雪あそびキャンプ【年末】 <br><span class="text-sm">12/27～12/29</span></li>
+              <li>天空雪あそびキャンプ（年始） <br><span class="text-sm">1/10～1/12</span></li>
+              <li>ガンガン滑ろうキャンプ <br><span class="text-sm">1/24～1/25</span></li>
+              <li>思いっきり雪まみれキャンプ <br><span class="text-sm">2/14～2/15</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-gray-100 p-4 rounded mb-4">
+          <h3 class="font-bold mb-2">参加対象</h3>
+          <p class="text-sm">基本的には小学校3年生～中学校3年生（プログラムにより異なります）</p>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
+          <a href="./sections/programs.html#annual-schedule" class="text-blue-600 hover:underline font-medium inline-block">詳しい年間プログラムスケジュールを見る</a>
         </div>
       </div>
     </section>
@@ -104,35 +195,6 @@
       </div>
     </section>
 
-    <!-- プログラム紹介セクション -->
-    <section id="programs">
-      <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">プログラム紹介</h2>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <p class="mb-6">
-          体験村では、子どもたちの成長と自立を促す3種類のキャンププログラムをご用意しています。それぞれのプログラムは、子どもたちが自然の中で「全力遊び」を通じて、自主性や協調性、想像力を育むことを目的としています。
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-          <div class="bg-gray-100 p-4 rounded">
-            <img src="https://via.placeholder.com/300x200" alt="まっ黒わんぱく夏休み" class="rounded mb-2">
-            <p class="font-bold">まっ黒わんぱく夏休み</p>
-            <p>メインの長期夏キャンプ</p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded">
-            <img src="https://via.placeholder.com/300x200" alt="思いっきり夏キャンプ" class="rounded mb-2">
-            <p class="font-bold">思いっきり夏キャンプ</p>
-            <p>短めの夏キャンプ体験</p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded">
-            <img src="https://via.placeholder.com/300x200" alt="天空雪あそびキャンプ" class="rounded mb-2">
-            <p class="font-bold">天空雪あそびキャンプ</p>
-            <p>冬休みの雪遊び体験</p>
-          </div>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg mt-4 text-center">
-          <a href="./sections/programs.html" class="text-blue-600 hover:underline font-medium inline-block">もっと見る</a>
-        </div>
-      </div>
-    </section>
 
     <!-- スタッフ紹介セクション -->
     <section id="staff">
@@ -259,6 +321,27 @@
           }
         });
       });
+      
+      // スライドショー制御
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+      
+      // 初期表示
+      slides[0].classList.add('active');
+      
+      // スライドショーの自動切り替え
+      function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].classList.remove('active');
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].classList.add('active');
+        setTimeout(showSlides, 5000); // 5秒ごとに切り替え
+      }
+      
+      // スライドショー開始
+      setTimeout(showSlides, 5000);
     });
   </script>
 </body>
