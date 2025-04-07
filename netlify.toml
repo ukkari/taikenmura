@@ -1,0 +1,14 @@
+[build]
+  publish = "/"
+
+# Netlify Identity向けのリダイレクト設定
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# GitHub認証用のリダイレクト
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

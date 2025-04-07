@@ -1,0 +1,2 @@
+# Netlify Identity向けのリダイレクト設定
+/admin/*  /admin/index.html  200

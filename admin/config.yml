@@ -1,0 +1,142 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: '新規コンテンツを作成: {{collection}} "{{slug}}"'
+    update: 'コンテンツを更新: {{collection}} "{{slug}}"'
+    delete: 'コンテンツを削除: {{collection}} "{{slug}}"'
+    uploadMedia: '画像をアップロード: "{{path}}"'
+    deleteMedia: '画像を削除: "{{path}}"'
+
+local_backend: true
+
+# メディアフォルダの設定
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# 日本語対応
+locale: 'ja'
+
+# エディタの設定
+editor:
+  preview: true
+
+# コレクション（コンテンツタイプ）の定義
+collections:
+  - name: "main"
+    label: "メインページ"
+    files:
+      - name: "home"
+        label: "ホームページ"
+        file: "_cms_content/index.md"
+        format: "frontmatter"
+        create: false
+        fields:
+          - {label: "タイトル", name: "title", widget: "string", default: "一般社団法人自然体験村 - 安心と信頼の自然体験キャンプ"}
+          - {label: "SEO説明", name: "description", widget: "text", required: false}
+          - label: "ヒーロースライドショー"
+            name: "hero_slideshow"
+            widget: "list"
+            summary: "{{fields.alt}}"
+            fields:
+              - {label: "画像", name: "image", widget: "image"}
+              - {label: "代替テキスト", name: "alt", widget: "string"}
+          - label: "最新情報"
+            name: "news_section"
+            widget: "object"
+            fields:
+              - {label: "タイトル", name: "title", widget: "string", default: "最新情報"}
+              - {label: "説明", name: "description", widget: "text"}
+          - label: "年間プログラム"
+            name: "annual_programs"
+            widget: "object"
+            fields:
+              - {label: "タイトル", name: "title", widget: "string", default: "年間のプログラム"}
+              - {label: "説明", name: "description", widget: "text"}
+              - label: "春のプログラム"
+                name: "spring"
+                widget: "object"
+                fields:
+                  - {label: "タイトル", name: "title", widget: "string", default: "春"}
+                  - label: "イベント", name: "events", widget: "list", fields: [
+                      {label: "イベント名", name: "name", widget: "string"},
+                      {label: "日程", name: "date", widget: "string"}
+                    ]}
+              - label: "夏のプログラム"
+                name: "summer"
+                widget: "object"
+                fields:
+                  - {label: "タイトル", name: "title", widget: "string", default: "夏"}
+                  - label: "イベント", name: "events", widget: "list", fields: [
+                      {label: "イベント名", name: "name", widget: "string"},
+                      {label: "日程", name: "date", widget: "string"}
+                    ]}
+              - label: "秋のプログラム"
+                name: "autumn"
+                widget: "object"
+                fields:
+                  - {label: "タイトル", name: "title", widget: "string", default: "秋"}
+                  - label: "イベント", name: "events", widget: "list", fields: [
+                      {label: "イベント名", name: "name", widget: "string"},
+                      {label: "日程", name: "date", widget: "string"}
+                    ]}
+              - label: "冬のプログラム"
+                name: "winter"
+                widget: "object"
+                fields:
+                  - {label: "タイトル", name: "title", widget: "string", default: "冬"}
+                  - label: "イベント", name: "events", widget: "list", fields: [
+                      {label: "イベント名", name: "name", widget: "string"},
+                      {label: "日程", name: "date", widget: "string"}
+                    ]}
+              - {label: "参加対象", name: "target", widget: "string"}
+              - {label: "詳細リンクテキスト", name: "link_text", widget: "string", default: "詳しい年間プログラムスケジュールを見る"}
+          - label: "私たちの信頼"
+            name: "trust"
+            widget: "object"
+            fields:
+              - {label: "タイトル", name: "title", widget: "string", default: "私たちの信頼"}
+              - {label: "説明", name: "description", widget: "text"}
+              - {label: "イメージ", name: "image", widget: "image"}
+              - {label: "リンクテキスト", name: "link_text", widget: "string", default: "もっと見る"}
+          - label: "安全管理"
+            name: "safety"
+            widget: "object"
+            fields:
+              - {label: "タイトル", name: "title", widget: "string", default: "安全管理への取り組み"}
+              - {label: "説明", name: "description", widget: "text"}
+              - {label: "イメージ", name: "image", widget: "image"}
+              - {label: "リンクテキスト", name: "link_text", widget: "string", default: "もっと見る"}
+          - label: "教育理念"
+            name: "philosophy"
+            widget: "object"
+            fields:
+              - {label: "タイトル", name: "title", widget: "string", default: "教育理念と育む価値"}
+              - {label: "説明", name: "description", widget: "text"}
+              - {label: "イメージ", name: "image", widget: "image"}
+              - {label: "リンクテキスト", name: "link_text", widget: "string", default: "もっと見る"}
+          - label: "スタッフ紹介"
+            name: "staff"
+            widget: "object"
+            fields:
+              - {label: "タイトル", name: "title", widget: "string", default: "スタッフ紹介"}
+              - {label: "説明", name: "description", widget: "text"}
+              - label: "スタッフリスト"
+                name: "staff_list"
+                widget: "list"
+                summary: "{{fields.name}} - {{fields.role}}"
+                fields:
+                  - {label: "名前", name: "name", widget: "string"}
+                  - {label: "役割", name: "role", widget: "string"}
+                  - {label: "写真", name: "image", widget: "image"}
+              - {label: "リンクテキスト", name: "link_text", widget: "string", default: "もっと見る"}
+    
+  - name: "sections"
+    label: "セクションページ"
+    folder: "_cms_content/sections"
+    create: true
+    fields:
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "SEO説明", name: "description", widget: "text", required: false}
+      - {label: "ページ識別子", name: "identifier", widget: "select", options: ["trust", "safety", "philosophy", "programs", "staff", "testimonials", "faq", "contact"]}
+      - {label: "本文", name: "body", widget: "markdown"}
