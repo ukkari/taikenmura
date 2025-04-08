@@ -22,6 +22,7 @@ collections:
       - name: "home"
         label: "ホームページ"
         file: "index.html"
+        format: "frontmatter"
         fields:
           - {label: "レイアウト", name: "layout", widget: "hidden", default: "default"}
           - {label: "タイトル", name: "title", widget: "string"}
@@ -47,11 +48,13 @@ collections:
       - name: "header"
         label: "ヘッダー"
         file: "_includes/header.html"
+        format: "raw"
         fields:
           - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
       - name: "footer"
         label: "フッター"
         file: "_includes/footer.html"
+        format: "raw"
         fields:
           - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
   
@@ -62,5 +65,6 @@ collections:
       - name: "default"
         label: "デフォルトレイアウト"
         file: "_layouts/default.html"
+        format: "raw"
         fields:
           - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
