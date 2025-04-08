@@ -5,9 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
   loadingElement.textContent = '読み込み中...';
   newsContainer.appendChild(loadingElement);
 
-  const script = document.createElement('script');
-  script.src = 'https://taiken-mura.blogspot.com/feeds/posts/default?max-results=20&alt=json-in-script&callback=handleBloggerResponse';
-  document.body.appendChild(script);
+  const newsScript = document.createElement('script');
+  newsScript.src = 'https://taiken-mura.blogspot.com/feeds/posts/default?max-results=5&alt=json-in-script&callback=handleNewsResponse';
+  document.body.appendChild(newsScript);
+  
+  const imagesScript = document.createElement('script');
+  imagesScript.src = 'https://taiken-mura.blogspot.com/feeds/posts/default?max-results=20&alt=json-in-script&callback=handleImagesResponse';
+  document.body.appendChild(imagesScript);
   
   window.feedTimeout = setTimeout(function() {
     if (document.getElementById('news-content').contains(loadingElement)) {
@@ -20,18 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 10000);
 });
 
-window.handleBloggerResponse = function(data) {
+window.handleNewsResponse = function(data) {
   clearTimeout(window.feedTimeout);
   
   const newsContainer = document.getElementById('news-content');
-  const imagesContainer = document.getElementById('news-images');
   
   while (newsContainer.firstChild) {
     newsContainer.removeChild(newsContainer.firstChild);
-  }
-  
-  while (imagesContainer.firstChild) {
-    imagesContainer.removeChild(imagesContainer.firstChild);
   }
   
   if (data.feed && data.feed.entry && data.feed.entry.length > 0) {
@@ -65,7 +64,21 @@ window.handleBloggerResponse = function(data) {
     });
     
     newsContainer.appendChild(newsListElement);
-    
+  } else {
+    const noNewsElement = document.createElement('p');
+    noNewsElement.textContent = '最新の情報はありません。';
+    newsContainer.appendChild(noNewsElement);
+  }
+};
+
+window.handleImagesResponse = function(data) {
+  const imagesContainer = document.getElementById('news-images');
+  
+  while (imagesContainer.firstChild) {
+    imagesContainer.removeChild(imagesContainer.firstChild);
+  }
+  
+  if (data.feed && data.feed.entry && data.feed.entry.length > 0) {
     const allImages = [];
     
     data.feed.entry.forEach(entry => {
@@ -119,9 +132,5 @@ window.handleBloggerResponse = function(data) {
       
       imagesContainer.appendChild(imageGrid);
     }
-  } else {
-    const noNewsElement = document.createElement('p');
-    noNewsElement.textContent = '最新の情報はありません。';
-    newsContainer.appendChild(noNewsElement);
   }
 };
