@@ -20,6 +20,8 @@ collections:
   # メインページのコレクション
   - name: "pages"
     label: "メインページ"
+    editor:
+      preview: false
     files:
       - name: "home"
         label: "ホームページ"
@@ -34,6 +36,8 @@ collections:
   # セクションページのコレクション
   - name: "sections"
     label: "セクションページ"
+    editor:
+      preview: false
     folder: "sections"
     create: true
     extension: "html"
@@ -46,6 +50,8 @@ collections:
   # インクルードファイルのコレクション
   - name: "includes"
     label: "共通コンポーネント"
+    editor:
+      preview: false
     files:
       - name: "header"
         label: "ヘッダー"
@@ -63,6 +69,8 @@ collections:
   # レイアウトファイルのコレクション
   - name: "layouts"
     label: "レイアウト"
+    editor:
+      preview: false
     files:
       - name: "default"
         label: "デフォルトレイアウト"
