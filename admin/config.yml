@@ -5,6 +5,8 @@ backend:
   branch: main
   # auth_scope: repo # GitHubのリポジトリにアクセスするために必要
 
+publish_mode: editorial_workflow
+
 # Netlify Identityを使用
 identity_backend:
   name: netlify-identity
