@@ -20,6 +20,7 @@ collections:
   # メインページのコレクション
   - name: "pages"
     label: "メインページ"
+    preview_path: previews/index
     editor:
       preview: false
     files:
@@ -38,8 +39,9 @@ collections:
     label: "セクションページ"
     editor:
       preview: false
+    preview_path: previews/sections/
     folder: "sections"
-    create: true
+    create: false
     extension: "html"
     format: "frontmatter"
     fields:
