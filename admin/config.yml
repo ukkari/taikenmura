@@ -1,3 +1,4 @@
+locale: 'ja'
 backend:
   name: git-gateway
   # name: github
