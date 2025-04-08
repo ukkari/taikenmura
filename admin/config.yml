@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   # name: github
   # repo: ukkari/taikenmura
-  # branch: main
+  branch: main
   # auth_scope: repo # GitHubのリポジトリにアクセスするために必要
 
 # Netlify Identityを使用
