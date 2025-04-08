@@ -256,18 +256,21 @@ custom_css: |
     <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">よくある質問</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <div class="space-y-4">
-        <div class="border-b pb-4">
-          <h3 class="font-bold text-lg">Q: 初めての参加でも大丈夫ですか？</h3>
-          <p>A: はい、毎年多くの初参加者を受け入れています。経験豊富なスタッフがサポートしますので、安心してご参加ください。</p>
+        {% assign featured_questions = "" | split: "" %}
+        {% for category in site.data.faqs %}
+          {% for q in category.questions %}
+            {% if q.featured %}
+              {% assign featured_questions = featured_questions | push: q %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        
+        {% for q in featured_questions limit:3 %}
+        <div class="{% unless forloop.last %}border-b pb-4{% endunless %}">
+          <h3 class="font-bold text-lg">Q: {{ q.question }}</h3>
+          <p>A: {{ q.answer }}</p>
         </div>
-        <div class="border-b pb-4">
-          <h3 class="font-bold text-lg">Q: アレルギーがある場合は参加できますか？</h3>
-          <p>A: 食物アレルギーなど、健康上の配慮が必要な場合は事前にご相談ください。可能な限り対応いたします。</p>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg">Q: キャンプに必要な持ち物は？</h3>
-          <p>A: 各プログラムごとに詳細な持ち物リストをお送りします。基本的な生活用品と動きやすい服装をご用意ください。</p>
-        </div>
+        {% endfor %}
       </div>
       <div class="mt-6 text-center">
         <a href="{{ site.baseurl }}/sections/faq" class="text-blue-600 hover:underline font-medium">もっと見る</a>
