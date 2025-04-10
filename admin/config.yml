@@ -91,6 +91,7 @@ collections:
       - name: "faqs"
         label: "よくある質問"
         file: "_data/faqs.yml"
+        format: "yaml"
         editor:
           preview: false
         description: "よくある質問（FAQ）のデータ"
