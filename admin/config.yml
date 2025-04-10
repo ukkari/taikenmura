@@ -91,10 +91,6 @@ collections:
       - name: "faqs"
         label: "よくある質問"
         file: "_data/faqs.yml"
-        extension: "yml"
-        format: "yml"
-        editor:
-          preview: false
         fields:
           - label: "FAQデータ"
             name: "body"
