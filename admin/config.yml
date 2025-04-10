@@ -94,16 +94,20 @@ collections:
         format: "yml"
         description: "よくある質問（FAQ）のデータ"
         fields:
-          - name: ""
-            label: カテゴリ
-            widget: list
+          - label: "FAQリスト"
+            name: ""
+            widget: "list"
+            label_singular: "カテゴリ"
+            summary: "{{fields.category}}"
             fields:
               - {label: "カテゴリ名", name: "category", widget: "string"}
-              - name: questions
-                label: 質問
-                widget: list
+              - label: "質問リスト"
+                name: "questions"
+                widget: "list"
+                label_singular: "質問"
+                summary: "{{fields.question}}"
                 fields:
                   - {label: "質問", name: "question", widget: "string"}
-                  - {label: "回答", name: "answer", widget: "text"}
+                  - {label: "回答", name: "answer", widget: "markdown"}
                   - {label: "トップページに表示", name: "featured", widget: "boolean", default: false, required: false}
                   - {label: "画像", name: "image", widget: "image", required: false}
