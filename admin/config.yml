@@ -94,7 +94,7 @@ collections:
         format: "yml"
         description: "よくある質問（FAQ）のデータ"
         fields:
-          - name: items
+          - name: ""
             label: カテゴリ
             widget: list
             fields:
