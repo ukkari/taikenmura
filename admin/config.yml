@@ -91,17 +91,13 @@ collections:
       - name: "faqs"
         label: "よくある質問"
         file: "_data/faqs.yml"
+        extension: "yml"
+        format: "yml"
+        editor:
+          preview: false
         fields:
-          - label: "FAQ カテゴリ"
-            name: "faq_categories"
-            widget: "list"
-            fields:
-              - {label: "カテゴリ名", name: "category", widget: "string"}
-              - label: "質問"
-                name: "questions"
-                widget: "list"
-                fields:
-                  - {label: "質問", name: "question", widget: "string"}
-                  - {label: "回答", name: "answer", widget: "text"}
-                  - {label: "トップページに表示", name: "featured", widget: "boolean", required: false}
-                  - {label: "画像", name: "image", widget: "image", required: false}
+          - label: "FAQデータ"
+            name: "body"
+            widget: "code"
+            default_language: "yaml"
+            output_code_only: true
