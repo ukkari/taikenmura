@@ -94,9 +94,11 @@ collections:
         format: "yml"
         description: "よくある質問（FAQ）のデータ"
         fields:
-          - name: ""
-            label: カテゴリ
-            widget: list
+          - label: "カテゴリリスト"
+            name: "faq_categories"
+            widget: "list"
+            summary: "{{category}}"
+            field: {label: カテゴリ, name: category, widget: string}
             fields:
               - {label: "カテゴリ名", name: "category", widget: "string"}
               - name: questions
