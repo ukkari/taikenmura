@@ -18,28 +18,116 @@ title: よくある質問
         体験村のキャンプに関するよくある質問をまとめました。その他のご質問がございましたら、お気軽にお問い合わせください。
       </p>
       
-      {% for category_data in site.data.faqs %}
-      <!-- {{ category_data.category }} -->
+      <!-- 基本的な質問 -->
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">{{ category_data.category }}</h3>
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">基本的な質問</h3>
         
         <div class="space-y-6">
-          {% for q in category_data.questions %}
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: {{ q.question }}</h4>
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 初めてのキャンプですが、大丈夫でしょうか？</h4>
             <div class="pl-6">
-              <p>A: {{ q.answer }}</p>
-              {% if q.image %}
-              <div class="mt-4">
-                <img src="{{ site.baseurl }}/images/{{ q.image }}" alt="{{ q.question }}" class="rounded-lg w-full h-48 object-cover">
-              </div>
-              {% endif %}
+              <p>A: 安全管理体制やスタッフの充実した研修により、初参加のお子様も安心してご参加いただけます。毎年、参加者の約40%が初めてのお子様です。事前説明会や詳細な資料で準備をサポートしますので、ご安心ください。</p>
             </div>
           </div>
-          {% endfor %}
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 送迎や保険の対応はありますか？</h4>
+            <div class="pl-6">
+              <p>A: 全国からの参加をサポートするため、送迎バスの手配や各種保険に加入し、万一の事故にも対応できる体制を整えています。東京、大阪、名古屋からの送迎バスを運行しており、その他の地域からも公共交通機関を利用して参加可能です。また、すべての参加者は傷害保険と賠償責任保険に加入しています。</p>
+            </div>
+          </div>
         </div>
       </div>
-      {% endfor %}
+      
+      <!-- 健康・安全に関する質問 -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">健康・安全に関する質問</h3>
+        
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 食物アレルギーがある場合でも参加できますか？</h4>
+            <div class="pl-6">
+              <p>A: はい、参加可能です。申込時にアレルギーについて詳しくお知らせください。アレルギーの種類や程度によって個別に対応いたします。重度のアレルギーの場合は、事前に個別相談をさせていただくことがあります。</p>
+              <p class="mt-2">対応可能なアレルギー：卵、乳製品、小麦、そば、落花生、えび、かに、その他多数</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 体調不良や怪我をした場合の対応は？</h4>
+            <div class="pl-6">
+              <p>A: 看護師が常駐しており、軽度の体調不良や怪我には迅速に対応します。必要に応じて近隣の医療機関と連携し、適切な医療ケアを提供します。また、緊急時の対応マニュアルを整備し、スタッフ全員が救急法を習得しています。</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 自然災害時の対応は？</h4>
+            <div class="pl-6">
+              <p>A: 気象情報を常に確認し、危険が予測される場合はプログラムの変更や中止を判断します。避難場所や避難経路を事前に確認し、定期的に避難訓練を実施しています。また、非常食や防災用品を備蓄し、万一の事態に備えています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- プログラムに関する質問 -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">プログラムに関する質問</h3>
+        
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 年齢に合わせたプログラム内容ですか？</h4>
+            <div class="pl-6">
+              <p>A: はい、年齢や発達段階に応じたプログラム設計を行っています。低学年向け、高学年向け、中高生向けなど、それぞれの年齢に適した活動内容と難易度を提供しています。また、グループ分けも年齢を考慮して行います。</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 雨天時のプログラムはありますか？</h4>
+            <div class="pl-6">
+              <p>A: 雨天時には、屋内で実施可能な代替プログラムを用意しています。クラフト作り、室内ゲーム、環境学習ワークショップなど、天候に左右されず楽しめる活動を提供します。安全面を考慮しながら、雨の中でしかできない体験活動を行うこともあります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 持ち物・準備に関する質問 -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">持ち物・準備に関する質問</h3>
+        
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 必要な持ち物は何ですか？</h4>
+            <div class="pl-6">
+              <p>A: 各プログラムごとに詳細な持ち物リストをお送りします。基本的には以下のものをご用意ください：</p>
+              <div class="mt-2 pl-4">
+                <ul class="list-disc space-y-1">
+                  <li>着替え（活動用・就寝用）</li>
+                  <li>タオル類</li>
+                  <li>歯ブラシなどの洗面用具</li>
+                  <li>水筒</li>
+                  <li>雨具（レインコート）</li>
+                  <li>帽子</li>
+                </ul>
+              </div>
+              <p class="mt-2">高価な物や貴重品の持参はご遠慮ください。紛失や破損の責任は負いかねます。</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 事前に準備しておくことはありますか？</h4>
+            <div class="pl-6">
+              <p>A: 以下の準備をお勧めします：</p>
+              <div class="mt-2 pl-4">
+                <ul class="list-disc space-y-1">
+                  <li>体力づくり（ウォーキングなど）</li>
+                  <li>持ち物への名前の記入</li>
+                  <li>荷物の詰め方の練習（お子様自身で管理できるように）</li>
+                  <li>健康調査票の記入（アレルギーや既往症などの情報）</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <!-- お問い合わせ関連 -->
       <div class="mt-12 bg-blue-50 p-6 rounded-lg">
