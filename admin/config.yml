@@ -91,23 +91,9 @@ collections:
       - name: "faqs"
         label: "よくある質問"
         file: "_data/faqs.yml"
-        format: "raw"
-        description: "よくある質問（FAQ）のデータ"
         fields:
-          - label: "FAQデータ（YAML形式）"
+          - label: "FAQデータ"
             name: "body"
             widget: "code"
             default_language: "yaml"
             output_code_only: true
-            hint: |
-              以下の形式でYAMLを編集してください：
-              
-              - category: "カテゴリ名"
-                questions:
-                  - question: "質問文"
-                    answer: "回答文"
-                    featured: true  # トップページに表示する場合はtrue
-                  - question: "質問文2"
-                    answer: "回答文2"
-                    # 画像を追加する場合
-                    # image: "画像ファイル名.jpg"
