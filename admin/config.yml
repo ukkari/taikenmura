@@ -81,19 +81,3 @@ collections:
         format: "raw"
         fields:
           - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
-          
-  # FAQデータのコレクション
-  - name: "data"
-    label: "データファイル"
-    editor:
-      preview: false
-    files:
-      - name: "faqs"
-        label: "よくある質問"
-        file: "_data/faqs.yml"
-        fields:
-          - label: "FAQデータ"
-            name: "body"
-            widget: "code"
-            default_language: "yaml"
-            output_code_only: true
