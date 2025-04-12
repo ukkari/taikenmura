@@ -28,7 +28,7 @@
     <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
       <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
         <li><a href="/sections/about" class="hover:text-blue-200 block py-2 md:py-0">体験村について</a></li>
-        <li><a href="/sections/programs" class="hover:text-blue-200 block py-2 md:py-0">プログラム</a></li>
+        <li><a href="/sections/programs" class="hover:text-blue-200 block py-2 md:py-0">キャンプ一覧</a></li>
         <li><a href="/sections/staff" class="hover:text-blue-200 block py-2 md:py-0">スタッフ紹介</a></li>
         <li><a href="/sections/testimonials" class="hover:text-blue-200 block py-2 md:py-0">参加者の声</a></li>
         <li><a href="/sections/faq" class="hover:text-blue-200 block py-2 md:py-0">FAQ</a></li>
@@ -37,6 +37,20 @@
     </nav>
   </div>
 </header>
+
+  <!-- バナー -->
+
+<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed top-[112px] z-40 transition-transform duration-300">
+  <div class="container mx-auto">
+    <a href="https://taiken-mura.blogspot.com/2025/04/2025.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      2025春の田植え 親子キャンプ参加者募集！
+    </a>
+  </div>
+</div>
+
 
 
   <main class="container mx-auto px-4 py-16 text-center">
@@ -101,6 +115,37 @@
           }
         });
       });
+      
+      // バナーのスクロール制御
+      
+      const banner = document.getElementById('banner');
+      const header = document.querySelector('header');
+      let lastScrollTop = 0;
+      const bannerHeight = banner ? banner.offsetHeight : 0;
+      
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (banner) {
+          // ヘッダーの高さ以上スクロールしたらバナーを隠す
+          if (scrollTop > header.offsetHeight) {
+            // 下にスクロールしたときはバナーを隠す
+            if (scrollTop > lastScrollTop) {
+              banner.style.transform = 'translateY(-100%)';
+            } 
+            // 上にスクロールしたときはバナーを表示
+            else {
+              banner.style.transform = 'translateY(0)';
+            }
+          } else {
+            // ヘッダー内にいるときは常に表示
+            banner.style.transform = 'translateY(0)';
+          }
+        }
+        
+        lastScrollTop = scrollTop;
+      });
+      
       
       
     });
