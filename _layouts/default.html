@@ -52,24 +52,42 @@
       const banner = document.getElementById('banner');
       const header = document.querySelector('header');
       let lastScrollTop = 0;
-      const bannerHeight = banner ? banner.offsetHeight : 0;
+      let lastScrollDirection = 'none'; // 'up', 'down', 'none'
+      let scrollThreshold = 5; // スクロール方向を判定するための閾値
+      
+      // バナーの初期位置を設定
+      if (banner) {
+        banner.style.transform = 'translateY(0)';
+      }
       
       window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (banner) {
-          // ヘッダーの高さ以上スクロールしたらバナーを隠す
-          if (scrollTop > header.offsetHeight) {
+          // スクロール方向を判定（より正確に）
+          const scrollDifference = scrollTop - lastScrollTop;
+          let currentDirection = 'none';
+          
+          if (Math.abs(scrollDifference) > scrollThreshold) {
+            currentDirection = scrollDifference > 0 ? 'down' : 'up';
+          }
+          
+          // スクロール方向が変わった場合のみ処理
+          if (currentDirection !== 'none' && currentDirection !== lastScrollDirection) {
             // 下にスクロールしたときはバナーを隠す
-            if (scrollTop > lastScrollTop) {
+            if (currentDirection === 'down' && scrollTop > header.offsetHeight) {
               banner.style.transform = 'translateY(-100%)';
             } 
             // 上にスクロールしたときはバナーを表示
-            else {
+            else if (currentDirection === 'up') {
               banner.style.transform = 'translateY(0)';
             }
-          } else {
-            // ヘッダー内にいるときは常に表示
+            
+            lastScrollDirection = currentDirection;
+          }
+          
+          // ヘッダー内にいるときは常に表示
+          if (scrollTop <= header.offsetHeight) {
             banner.style.transform = 'translateY(0)';
           }
         }
