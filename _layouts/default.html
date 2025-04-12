@@ -56,6 +56,9 @@
           // モバイル表示時のみメニューを閉じる
           if (window.innerWidth < 768) { // md breakpointは768px
             mobileMenu.classList.add('hidden');
+            
+            // モバイルメニューからのナビゲーション時にバナーを非表示にするためのフラグを設定
+            localStorage.setItem('fromMobileMenu', 'true');
           }
         });
       });
@@ -74,8 +77,22 @@
         document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
       }
       
+      // モバイルメニューからのナビゲーション時のバナー状態を確認
+      function checkMobileMenuNavigation() {
+        if (localStorage.getItem('fromMobileMenu') === 'true' && banner) {
+          // モバイルメニューからのナビゲーション時はバナーを非表示
+          banner.style.transform = 'translateY(-100%)';
+          
+          // フラグをクリア（少し遅延させる）
+          setTimeout(() => {
+            localStorage.removeItem('fromMobileMenu');
+          }, 1000);
+        }
+      }
+      
       // 初期設定とリサイズ時に更新
       updateHeaderHeight();
+      checkMobileMenuNavigation();
       window.addEventListener('resize', updateHeaderHeight);
       
       // モバイルメニュー開閉時の処理
