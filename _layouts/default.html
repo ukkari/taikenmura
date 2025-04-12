@@ -52,26 +52,70 @@
       const banner = document.getElementById('banner');
       const header = document.querySelector('header');
       let lastScrollTop = 0;
-      const bannerHeight = banner ? banner.offsetHeight : 0;
+      
+      // デバッグ用の要素を作成
+      const debugElement = document.createElement('div');
+      debugElement.id = 'scroll-debug';
+      debugElement.style.position = 'fixed';
+      debugElement.style.bottom = '10px';
+      debugElement.style.right = '10px';
+      debugElement.style.backgroundColor = 'rgba(0,0,0,0.7)';
+      debugElement.style.color = 'white';
+      debugElement.style.padding = '10px';
+      debugElement.style.borderRadius = '5px';
+      debugElement.style.zIndex = '9999';
+      debugElement.style.fontSize = '12px';
+      debugElement.style.maxWidth = '300px';
+      document.body.appendChild(debugElement);
+      
+      // 初期状態を設定
+      console.log('バナー初期化: ', banner ? 'バナー要素あり' : 'バナー要素なし');
+      if (banner) {
+        console.log('バナー初期スタイル設定');
+        banner.style.transform = 'translateY(0)';
+        banner.style.transition = 'transform 0.3s ease';
+      }
+      
+      // スクロールイベントのデバッグカウンター
+      let scrollEventCount = 0;
       
       window.addEventListener('scroll', function() {
+        scrollEventCount++;
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollDirection = scrollTop > lastScrollTop ? '下' : '上';
+        
+        // デバッグ情報を更新
+        debugElement.innerHTML = `
+          <div>スクロールイベント: ${scrollEventCount}</div>
+          <div>スクロール位置: ${Math.round(scrollTop)}px</div>
+          <div>前回位置: ${Math.round(lastScrollTop)}px</div>
+          <div>スクロール方向: ${scrollDirection}</div>
+          <div>ヘッダー高さ: ${header.offsetHeight}px</div>
+          <div>バナー状態: ${banner ? banner.style.transform : 'なし'}</div>
+        `;
+        
+        console.log(`スクロール: 方向=${scrollDirection}, 位置=${scrollTop}px, 前回=${lastScrollTop}px`);
         
         if (banner) {
-          // ヘッダーの高さ以上スクロールしたらバナーを隠す
+          // ヘッダーの高さ以上スクロールした場合の処理
           if (scrollTop > header.offsetHeight) {
             // 下にスクロールしたときはバナーを隠す
             if (scrollTop > lastScrollTop) {
+              console.log('下スクロール: バナーを隠す');
               banner.style.transform = 'translateY(-100%)';
             } 
             // 上にスクロールしたときはバナーを表示
             else {
+              console.log('上スクロール: バナーを表示');
               banner.style.transform = 'translateY(0)';
             }
           } else {
             // ヘッダー内にいるときは常に表示
+            console.log('ヘッダー内: バナーを表示');
             banner.style.transform = 'translateY(0)';
           }
+        } else {
+          console.log('バナー要素が見つかりません');
         }
         
         lastScrollTop = scrollTop;
