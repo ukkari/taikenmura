@@ -106,9 +106,11 @@
         // モバイルメニューが開いているときはバナーを隠す
         if (banner) {
           if (isMobileMenuOpen) {
-            banner.style.transform = 'translateY(-100%)';
+            // 完全に非表示にする
+            banner.style.display = 'none';
           } else {
-            // メニューが閉じられたときは、スクロール位置に応じてバナーを表示/非表示
+            // メニューが閉じられたときはバナーを再表示し、スクロール位置に応じて表示/非表示
+            banner.style.display = '';
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop <= header.offsetHeight) {
               banner.style.transform = 'translateY(0)';
