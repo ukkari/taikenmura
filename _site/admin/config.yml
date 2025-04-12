@@ -1,0 +1,83 @@
+locale: 'ja'
+backend:
+  name: git-gateway
+  # name: github
+  # repo: ukkari/taikenmura
+  branch: main
+  # auth_scope: repo # GitHubのリポジトリにアクセスするために必要
+
+publish_mode: editorial_workflow
+
+# Netlify Identityを使用
+identity_backend:
+  name: netlify-identity
+
+# 画像や添付ファイルのアップロード設定
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# コレクション設定
+collections:
+  # メインページのコレクション
+  - name: "pages"
+    label: "メインページ"
+    preview_path: previews/index
+    editor:
+      preview: false
+    files:
+      - name: "home"
+        label: "ホームページ"
+        file: "index.html"
+        format: "frontmatter"
+        fields:
+          - {label: "レイアウト", name: "layout", widget: "hidden", default: "default"}
+          - {label: "タイトル", name: "title", widget: "string"}
+          - {label: "カスタムCSS", name: "custom_css", widget: "text", required: false}
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+
+  # セクションページのコレクション
+  - name: "sections"
+    label: "セクションページ"
+    editor:
+      preview: false
+    preview_path: previews/sections/
+    folder: "sections"
+    create: false
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - {label: "レイアウト", name: "layout", widget: "hidden", default: "default"}
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+
+  # インクルードファイルのコレクション
+  - name: "includes"
+    label: "共通コンポーネント"
+    editor:
+      preview: false
+    files:
+      - name: "header"
+        label: "ヘッダー"
+        file: "_includes/header.html"
+        format: "raw"
+        fields:
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - name: "footer"
+        label: "フッター"
+        file: "_includes/footer.html"
+        format: "raw"
+        fields:
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}
+  
+  # レイアウトファイルのコレクション
+  - name: "layouts"
+    label: "レイアウト"
+    editor:
+      preview: false
+    files:
+      - name: "default"
+        label: "デフォルトレイアウト"
+        file: "_layouts/default.html"
+        format: "raw"
+        fields:
+          - {label: "本文", name: "body", widget: "code", default_language: "html", output_code_only: true}

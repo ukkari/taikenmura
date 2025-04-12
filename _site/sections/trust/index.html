@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>私たちの信頼 - 一般社団法人自然体験村</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- ヘッダー -->
+<header class="bg-blue-600 text-white sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+    <div class="flex items-center justify-between w-full md:w-auto">
+      <a href="/">
+        <img src="/images/logo.png" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
+      </a>
+      <h1 class="text-2xl md:text-3xl font-bold">
+        <a href="/">一般社団法人自然体験村</a>
+      </h1>
+      <button id="mobile-menu-button" class="md:hidden text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
+      <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
+        <li><a href="/#news" class="hover:text-blue-200 block py-2 md:py-0">最新情報</a></li>
+        <li><a href="/sections/trust" class="hover:text-blue-200 block py-2 md:py-0">私たちの信頼</a></li>
+        <li><a href="/sections/safety" class="hover:text-blue-200 block py-2 md:py-0">安全管理</a></li>
+        <li><a href="/sections/philosophy" class="hover:text-blue-200 block py-2 md:py-0">教育理念</a></li>
+        <li><a href="/sections/programs" class="hover:text-blue-200 block py-2 md:py-0">プログラム</a></li>
+        <li><a href="/sections/staff" class="hover:text-blue-200 block py-2 md:py-0">スタッフ紹介</a></li>
+        <li><a href="/sections/testimonials" class="hover:text-blue-200 block py-2 md:py-0">参加者の声</a></li>
+        <li><a href="/sections/faq" class="hover:text-blue-200 block py-2 md:py-0">FAQ</a></li>
+        <li><a href="/sections/contact" class="hover:text-blue-200 block py-2 md:py-0">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="container mx-auto px-4 py-8 space-y-12">
+  <!-- 私たちの信頼セクション詳細 -->
+  <section>
+    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">私たちの信頼</h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow">
+      <!-- メインイメージ -->
+      <div class="mb-8">
+        <img src="/images/trust-main.jpg" alt="私たちの信頼" class="w-full rounded-lg h-64 object-cover">
+      </div>
+
+      <p class="mb-6">
+        体験村は、1999年より新潟県南魚沼市で地域の子どもたちに安全かつ豊かな自然体験を提供してきました。これまでに57,000人以上の子どもたちが参加し、子どもの自立心と協調性を育む活動を続けています。
+      </p>
+      
+      <!-- 歴史と実績 -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">歴史と実績</h3>
+        
+        <div class="space-y-6">
+          <p>体験村は、1999年より新潟県南魚沼市で地域の子どもたちに安全かつ豊かな自然体験を提供してきました。これまでに57,000人以上の子どもたちが参加し、子どもの自立心と協調性を育む活動を続けています。</p>
+          
+          <p>親と離れて活動することで、子どもたちは親の有り難みを感じ、親も子どもの良さに気づく機会となります。この「親子で自立・自律」の理念のもと、20年以上にわたり安全で質の高い自然体験プログラムを提供しています。</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <img src="/images/history-1.jpg" alt="設立当初の様子" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">1999年 設立当初の様子</p>
+            </div>
+            <div>
+              <img src="/images/history-2.jpg" alt="現在の活動の様子" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">現在の活動の様子</p>
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 p-6 rounded-lg mt-6">
+            <h4 class="font-bold text-lg mb-3">主な実績</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>累計参加者数：57,000人以上（1999年～現在）</li>
+              <li>年間キャンプ開催数：30回以上</li>
+              <li>リピート率：65%以上</li>
+              <li>参加者満足度：96%（「満足」「とても満足」の合計）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 信頼と評価 -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">信頼と評価</h3>
+        
+        <div class="space-y-6">
+          <p>地域の教育委員会や学校からの信頼も厚く、教育関係者からも高い評価をいただいています。子どもの成長に真剣に向き合い、一人ひとりの可能性を引き出すことを使命としています。</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+              <h4 class="font-bold text-lg text-blue-600 mb-3">教育機関からの評価</h4>
+              <p>地域の学校や教育委員会と連携し、学校教育を補完する体験学習プログラムを提供しています。教育現場からは「学校では得られない貴重な経験の場」として高い評価をいただいています。</p>
+              <div class="mt-4">
+                <img src="/images/education-partners.jpg" alt="教育機関との連携" class="rounded-lg w-full h-48 object-cover">
+              </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+              <h4 class="font-bold text-lg text-blue-600 mb-3">保護者からの信頼</h4>
+              <p>安全管理の徹底と質の高いプログラム内容により、多くの保護者から継続的な信頼をいただいています。「子どもが大きく成長して帰ってきた」という声を多数いただいています。</p>
+              <div class="mt-4">
+                <img src="/images/parent-trust.jpg" alt="保護者からの信頼" class="rounded-lg w-full h-48 object-cover">
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200 mt-6">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">受賞歴・認定</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>2010年 新潟県教育委員会 優良青少年育成団体表彰</li>
+              <li>2015年 文部科学省 青少年の体験活動推進企業表彰 優秀賞</li>
+              <li>2018年 日本アウトドア教育協会 認定プログラム</li>
+              <li>2022年 全国自然体験活動推進協議会 優良団体認定</li>
+            </ul>
+            <div class="mt-4">
+              <img src="/images/awards.jpg" alt="受賞歴・認定" class="rounded-lg w-full h-48 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 安全への取り組み -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">安全への取り組み</h3>
+        
+        <div class="space-y-6">
+          <p>子どもたちの安全を最優先に考え、様々な取り組みを行っています。スタッフ研修の充実、安全マニュアルの整備、緊急時対応訓練など、安心してお子様をお預けいただける環境づくりに努めています。</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <img src="/images/safety-training.jpg" alt="スタッフ安全研修" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">定期的な安全研修の様子</p>
+            </div>
+            <div>
+              <img src="/images/emergency-drill.jpg" alt="緊急時対応訓練" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">緊急時対応訓練の様子</p>
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 p-6 rounded-lg mt-6">
+            <h4 class="font-bold text-lg mb-3">安全管理体制</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>全スタッフの救急救命講習修了（毎年更新）</li>
+              <li>活動別安全マニュアルの整備と定期的な見直し</li>
+              <li>参加者全員の傷害保険・賠償責任保険への加入</li>
+              <li>医療機関との連携体制の構築</li>
+              <li>気象情報の常時監視と活動判断基準の明確化</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 地域との連携 -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">地域との連携</h3>
+        
+        <div class="space-y-6">
+          <p>地域に根ざした活動を大切にし、地元の方々との協力関係を築いています。地域の自然や文化を学ぶプログラムを通じて、子どもたちが地域への愛着を育む機会を提供しています。</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div>
+              <img src="/images/local-farmers.jpg" alt="地元農家との連携" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">地元農家との農業体験</p>
+            </div>
+            <div>
+              <img src="/images/local-craftsmen.jpg" alt="地元職人との連携" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">地元職人による伝統工芸教室</p>
+            </div>
+            <div>
+              <img src="/images/local-festival.jpg" alt="地域行事への参加" class="rounded-lg w-full h-48 object-cover">
+              <p class="text-sm text-gray-600 mt-2">地域行事への参加</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded shadow-sm border border-gray-200 mt-6">
+            <h4 class="font-bold text-lg text-blue-600 mb-3">地域貢献活動</h4>
+            <p>体験村では、地域の自然環境保全活動や地域活性化イベントにも積極的に参加しています。子どもたちと一緒に行う清掃活動や植樹活動は、地域の方々からも喜ばれています。</p>
+            <div class="mt-4">
+              <img src="/images/community-service.jpg" alt="地域貢献活動" class="rounded-lg w-full h-48 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 text-center">
+        <a href="/#about" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <!-- フッター -->
+
+<!-- 詳細なフッター（セクションページ用） -->
+<footer class="bg-blue-800 text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between">
+      <div>
+        <h3 class="text-xl font-bold mb-4">一般社団法人自然体験村</h3>
+        <p>〒949-6680</p>
+        <p>新潟県南魚沼市下一日市855</p>
+        <p>TEL: 025-783-3377</p>
+        <p>Email: taikenmura4124@gmail.com</p>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <h3 class="text-xl font-bold mb-4">リンク</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-blue-200">ホーム</a></li>
+          <li><a href="/#faq" class="hover:text-blue-200">よくある質問</a></li>
+          <li><a href="/#contact" class="hover:text-blue-200">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <p>&copy; 2025 一般社団法人自然体験村 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        // モバイルメニューの表示/非表示を切り替え
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+      
+      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
+      const navLinks = document.querySelectorAll('#mobile-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // モバイル表示時のみメニューを閉じる
+          if (window.innerWidth < 768) { // md breakpointは768px
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      });
+      
+      
+    });
+  </script>
+</body>
+</html>
