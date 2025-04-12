@@ -7,6 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   
+  
+  <style>
+    /* バナーが有効な場合のセクションタイトル用マージン */
+    main section h2 {
+      padding-top: 2.5rem; /* バナーの高さ分の余白を追加 */
+    }
+    @media (max-width: 768px) {
+      main section h2 {
+        padding-top: 3rem; /* モバイル表示ではさらに余白を追加 */
+      }
+    }
+  </style>
+  
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
@@ -40,13 +53,13 @@
 
   <!-- バナー -->
 
-<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed top-[112px] z-40 transition-transform duration-300">
+<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300" style="top: var(--header-height, 112px);">
   <div class="container mx-auto">
-    <a href="https://taiken-mura.blogspot.com/2025/04/2025.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <a href="https://taiken-mura.blogspot.com/2025/04/2025.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      2025春の田植え 親子キャンプ参加者募集！
+      <span class="line-clamp-1">2025春の田植え 親子キャンプ参加者募集！</span>
     </a>
   </div>
 </div>
@@ -75,14 +88,11 @@
               <img src="/images/top/spring.jpg" alt="春のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
             </div>
             <div class="p-3 bg-green-50 h-full flex flex-col">
-              <h4 class="font-bold text-green-700 mb-1">春のプログラム</h4>
+              <h4 class="font-bold text-green-700 mb-1"><a href="#spring-fire" class="text-green-700 underline">春のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
                 <li>・春の火あそびキャンプ (5/3-5/5)</li>
                 <li>・春の田植え親子キャンプ (5/31-6/1)</li>
               </ul>
-              <div class="mt-2">
-                <a href="#spring-fire" class="text-xs text-green-700 hover:underline">詳細を見る →</a>
-              </div>
             </div>
           </div>
           
@@ -92,17 +102,12 @@
               <img src="/images/top/summer.jpg" alt="夏のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
             </div>
             <div class="p-3 bg-yellow-50 h-full flex flex-col">
-              <h4 class="font-bold text-yellow-700 mb-1">夏のプログラム</h4>
+              <h4 class="font-bold text-yellow-700 mb-1"><a href="#summer" class="text-yellow-700 underline">夏のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
                 <li>・まっ黒わんぱく夏休み (7/27-8/8)</li>
                 <li>・思いっきり夏キャンプ (8/11-8/17)</li>
                 <li>・あそびばキャンプ (8/20-8/22)</li>
               </ul>
-              <div class="mt-2">
-                <a href="#summer-long" class="text-xs text-yellow-700 hover:underline">まっ黒わんぱく夏休み →</a>
-                <a href="#summer-dokidoki" class="text-xs text-yellow-700 hover:underline ml-2">思いっきり夏キャンプ →</a>
-                <a href="#summer-asobiba" class="text-xs text-yellow-700 hover:underline ml-2">あそびばキャンプ →</a>
-              </div>
             </div>
           </div>
           
@@ -112,14 +117,11 @@
               <img src="/images/top/fall.jpg" alt="秋のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
             </div>
             <div class="p-3 bg-orange-50 h-full flex flex-col">
-              <h4 class="font-bold text-orange-700 mb-1">秋のプログラム</h4>
+              <h4 class="font-bold text-orange-700 mb-1"><a href="#autumn-fire" class="text-orange-700 underline">秋のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
                 <li>・キャンプ場火あそびキャンプ (9/13-9/15)</li>
                 <li>・秋の稲刈り親子キャンプ (9/27-9/28)</li>
               </ul>
-              <div class="mt-2">
-                <a href="#autumn-fire" class="text-xs text-orange-700 hover:underline">詳細を見る →</a>
-              </div>
             </div>
           </div>
           
@@ -129,15 +131,12 @@
               <img src="/images/top/winter.jpg" alt="冬のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
             </div>
             <div class="p-3 bg-blue-50 h-full flex flex-col">
-              <h4 class="font-bold text-blue-700 mb-1">冬のプログラム</h4>
+              <h4 class="font-bold text-blue-700 mb-1"><a href="#winter-snow" class="text-blue-700 underline">冬のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
                 <li>・天空雪あそびキャンプ【年末】 (12/27-12/29)</li>
                 <li>・天空雪あそびキャンプ（年始） (1/10-1/12)</li>
                 <li>・ガンガン滑ろうキャンプ (1/24-1/25)</li>
               </ul>
-              <div class="mt-2">
-                <a href="#winter-snow" class="text-xs text-blue-700 hover:underline">詳細を見る →</a>
-              </div>
             </div>
           </div>
         </div>
@@ -148,9 +147,7 @@
         <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
         
         <!-- 春の季節写真ギャラリー -->
-        <div class="bg-white rounded-lg shadow overflow-hidden mb-8 p-6">
-          <h4 class="font-bold text-xl mb-4">春の活動写真</h4>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
             <!-- 画像1 -->
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/spring/spring1.jpg" alt="春の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring1.jpg">
@@ -175,7 +172,6 @@
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/spring/spring6.jpg" alt="春の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring6.jpg">
             </div>
-          </div>
         </div>
         
         <!-- 春の火あそびキャンプ -->
@@ -275,9 +271,7 @@
         <h3 class="text-2xl font-bold text-yellow-700 border-b-2 border-yellow-200 pb-2 mb-6">夏のプログラム</h3>
         
         <!-- 夏の季節写真ギャラリー -->
-        <div class="bg-white rounded-lg shadow overflow-hidden mb-8 p-6">
-          <h4 class="font-bold text-xl mb-4">夏の活動写真</h4>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
             <!-- 画像1 -->
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/summer/summer1.jpg" alt="夏の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer1.jpg">
@@ -318,7 +312,6 @@
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/summer/summer10.jpg" alt="夏の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer10.jpg">
             </div>
-          </div>
         </div>
         
         <!-- まっ黒わんぱく夏休み -->
@@ -476,9 +469,7 @@
         <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
         
         <!-- 秋の季節写真ギャラリー -->
-        <div class="bg-white rounded-lg shadow overflow-hidden mb-8 p-6">
-          <h4 class="font-bold text-xl mb-4">秋の活動写真</h4>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
             <!-- 画像1 -->
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/fall/fall1.jpg" alt="秋の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall1.jpg">
@@ -507,7 +498,6 @@
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/fall/fall7.jpg" alt="秋の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall7.jpg">
             </div>
-          </div>
         </div>
         
         <!-- キャンプ場 火あそびキャンプ -->
@@ -610,9 +600,8 @@
         <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">冬のプログラム</h3>
         
         <!-- 冬の季節写真ギャラリー -->
-        <div class="bg-white rounded-lg shadow overflow-hidden mb-8 p-6">
-          <h4 class="font-bold text-xl mb-4">冬の活動写真</h4>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
             <!-- 画像1 -->
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/winter/winter1.jpg" alt="冬の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter1.jpg">
@@ -653,7 +642,6 @@
             <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
               <img src="/images/winter/winter10.jpg" alt="冬の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter10.jpg">
             </div>
-          </div>
         </div>
         
         <!-- 天空雪あそびキャンプ【年末】 -->
@@ -864,6 +852,9 @@
           // モバイル表示時のみメニューを閉じる
           if (window.innerWidth < 768) { // md breakpointは768px
             mobileMenu.classList.add('hidden');
+            
+            // モバイルメニューからのナビゲーション時にバナーを非表示にするためのフラグを設定
+            localStorage.setItem('fromMobileMenu', 'true');
           }
         });
       });
@@ -874,11 +865,60 @@
       const header = document.querySelector('header');
       let lastScrollTop = 0;
       const bannerHeight = banner ? banner.offsetHeight : 0;
+      let isMobileMenuOpen = false;
+      
+      // ヘッダーの高さをCSSカスタムプロパティとして設定
+      function updateHeaderHeight() {
+        const headerHeight = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+      }
+      
+      // モバイルメニューからのナビゲーション時のバナー状態を確認
+      function checkMobileMenuNavigation() {
+        if (localStorage.getItem('fromMobileMenu') === 'true' && banner) {
+          // モバイルメニューからのナビゲーション時はバナーを非表示
+          banner.style.transform = 'translateY(-100%)';
+          
+          // フラグをクリア（少し遅延させる）
+          setTimeout(() => {
+            localStorage.removeItem('fromMobileMenu');
+          }, 1000);
+        }
+      }
+      
+      // 初期設定とリサイズ時に更新
+      updateHeaderHeight();
+      checkMobileMenuNavigation();
+      window.addEventListener('resize', updateHeaderHeight);
+      
+      // モバイルメニュー開閉時の処理
+      mobileMenuButton.addEventListener('click', function() {
+        // メニュー開閉状態を更新
+        isMobileMenuOpen = !mobileMenu.classList.contains('hidden');
+        
+        // メニュー開閉後に少し遅延させて高さを更新
+        setTimeout(updateHeaderHeight, 50);
+        
+        // モバイルメニューが開いているときはバナーを隠す
+        if (banner) {
+          if (isMobileMenuOpen) {
+            // 完全に非表示にする
+            banner.style.display = 'none';
+          } else {
+            // メニューが閉じられたときはバナーを再表示し、スクロール位置に応じて表示/非表示
+            banner.style.display = '';
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop <= header.offsetHeight) {
+              banner.style.transform = 'translateY(0)';
+            }
+          }
+        }
+      });
       
       window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (banner) {
+        if (banner && !isMobileMenuOpen) {
           // ヘッダーの高さ以上スクロールしたらバナーを隠す
           if (scrollTop > header.offsetHeight) {
             // 下にスクロールしたときはバナーを隠す
