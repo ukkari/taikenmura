@@ -47,6 +47,37 @@
         });
       });
       
+      // バナーのスクロール制御
+      {% if site.data.banner.enabled %}
+      const banner = document.getElementById('banner');
+      const header = document.querySelector('header');
+      let lastScrollTop = 0;
+      const bannerHeight = banner ? banner.offsetHeight : 0;
+      
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (banner) {
+          // ヘッダーの高さ以上スクロールしたらバナーを隠す
+          if (scrollTop > header.offsetHeight) {
+            // 下にスクロールしたときはバナーを隠す
+            if (scrollTop > lastScrollTop) {
+              banner.style.transform = 'translateY(-100%)';
+            } 
+            // 上にスクロールしたときはバナーを表示
+            else {
+              banner.style.transform = 'translateY(0)';
+            }
+          } else {
+            // ヘッダー内にいるときは常に表示
+            banner.style.transform = 'translateY(0)';
+          }
+        }
+        
+        lastScrollTop = scrollTop;
+      });
+      {% endif %}
+      
       {% if page.url == "/" %}
       // スライドショー制御
       let slideIndex = 0;
