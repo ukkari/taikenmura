@@ -13,6 +13,19 @@
     {{ page.custom_css }}
   </style>
   {% endif %}
+  {% if site.data.banner.enabled %}
+  <style>
+    /* バナーが有効な場合のセクションタイトル用マージン */
+    main section h2 {
+      padding-top: 2.5rem; /* バナーの高さ分の余白を追加 */
+    }
+    @media (max-width: 768px) {
+      main section h2 {
+        padding-top: 3rem; /* モバイル表示ではさらに余白を追加 */
+      }
+    }
+  </style>
+  {% endif %}
 </head>
 <body class="bg-gray-50 text-gray-800">
   {% include header.html %}
@@ -53,11 +66,44 @@
       const header = document.querySelector('header');
       let lastScrollTop = 0;
       const bannerHeight = banner ? banner.offsetHeight : 0;
+      let isMobileMenuOpen = false;
+      
+      // ヘッダーの高さをCSSカスタムプロパティとして設定
+      function updateHeaderHeight() {
+        const headerHeight = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+      }
+      
+      // 初期設定とリサイズ時に更新
+      updateHeaderHeight();
+      window.addEventListener('resize', updateHeaderHeight);
+      
+      // モバイルメニュー開閉時の処理
+      mobileMenuButton.addEventListener('click', function() {
+        // メニュー開閉状態を更新
+        isMobileMenuOpen = !mobileMenu.classList.contains('hidden');
+        
+        // メニュー開閉後に少し遅延させて高さを更新
+        setTimeout(updateHeaderHeight, 50);
+        
+        // モバイルメニューが開いているときはバナーを隠す
+        if (banner) {
+          if (isMobileMenuOpen) {
+            banner.style.transform = 'translateY(-100%)';
+          } else {
+            // メニューが閉じられたときは、スクロール位置に応じてバナーを表示/非表示
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop <= header.offsetHeight) {
+              banner.style.transform = 'translateY(0)';
+            }
+          }
+        }
+      });
       
       window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (banner) {
+        if (banner && !isMobileMenuOpen) {
           // ヘッダーの高さ以上スクロールしたらバナーを隠す
           if (scrollTop > header.offsetHeight) {
             // 下にスクロールしたときはバナーを隠す
