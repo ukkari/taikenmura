@@ -3,7 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if page.title %}{{ page.title }} - {% endif %}一般社団法人自然体験村</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %} 一般社団法人自然体験村 -　新潟県南魚沼市の子ども向け自然体験キャンプ</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="keywords" content="自然体験,キャンプ,新潟県,南魚沼市,子ども,アウトドア,体験学習" />
+  <meta name="author" content="一般社団法人自然体験村" />
+  
+  <!-- OGP -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}一般社団法人自然体験村" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/ogp.jpg" />
+  <meta property="og:site_name" content="一般社団法人自然体験村 新潟県南魚沼市の子ども向け自然体験キャンプ" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}一般社団法人自然体験村" />
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/ogp.jpg" />
+  
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   {% if page.url == "/" %}
   <script src="{{ site.baseurl }}/news.js" defer></script>
