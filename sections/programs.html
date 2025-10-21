@@ -493,8 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.getElementById('autumn-slider');
-  const dots = document.querySelectorAll('#autumn-dots button');
+  const slider = document.getElementById('fall-slider');
+  const dots = document.querySelectorAll('#fall-dots button');
   const totalSlides = dots.length;
   let slidesPerView = getSlidesPerView();
   let currentIndex = 0;
@@ -650,58 +650,80 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <!-- 冬の季節写真ギャラリー -->
 
-   
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-    
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter1.jpg" alt="冬の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter1.jpg">
-            </div>
-          
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter2.jpg" alt="冬の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter2.jpg">
-            </div>
-            <!-- 画像3 -->
-    
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter3.jpg" alt="冬の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter3.jpg">
-            </div>
-            <!-- 画像4 -->
-   
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter4.jpg" alt="冬の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter4.jpg">
-            </div>
-            <!-- 画像5 -->
-    
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter5.jpg" alt="冬の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter5.jpg">
-            </div>
-            <!-- 画像6 -->
-  
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter6.jpg" alt="冬の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter6.jpg">
-            </div>
-            <!-- 画像7 -->
-   
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter7.jpg" alt="冬の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter7.jpg">
-            </div>
-            <!-- 画像8 -->
+   <!-- スライドショー全体 -->
+<div class="relative w-full overflow-hidden rounded-lg">
+  <!-- スライドをまとめたラッパー -->
+  <div id="winter-slider" class="flex transition-transform duration-700 ease-in-out">
+    {% for i in (1..10) %}
+      <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="{{ site.baseurl }}/images/winter/winter{{ i }}.jpg"
+             alt="冬の活動{{ i }}"
+             class="w-full h-64 object-cover rounded-lg">
+      </div>
+    {% endfor %}
+  </div>
 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter8.jpg" alt="冬の活動8" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter8.jpg">
-            </div>
-            <!-- 画像9 -->
+  <!-- 下のマルぽち（ナビゲーション） -->
+  <div id="winter-dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    {% for i in (1..10) %}
+      <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" data-index="{{ forloop.index0 }}"></button>
+    {% endfor %}
+  </div>
+</div>
 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter9.jpg" alt="冬の活動9" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter9.jpg">
-            </div>
-            <!-- 画像10 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('winter-slider');
+  const dots = document.querySelectorAll('#winter-dots button');
+  const totalSlides = dots.length;
+  let slidesPerView = getSlidesPerView();
+  let currentIndex = 0;
+  let interval;
 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter10.jpg" alt="冬の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter10.jpg">
-            </div>
-        </div>
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3; // PC
+    if (window.innerWidth >= 640) return 2;  // タブレット
+    return 1;                                // スマホ
+  }
+
+  function updateSlide(index) {
+    const maxIndex = totalSlides - slidesPerView; // ← ここを追加して調整
+    if (index > maxIndex) index = maxIndex;
+    const offset = -(index * (100 / slidesPerView));
+    slider.style.transform = `translateX(${offset}%)`;
+    dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+    dots[index].classList.add('bg-blue-500');
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentIndex++;
+      const maxIndex = totalSlides - slidesPerView;
+      if (currentIndex > maxIndex) currentIndex = 0; // 最後まで行ったら最初に戻る
+      updateSlide(currentIndex);
+    }, 3000);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      currentIndex = i;
+      updateSlide(currentIndex);
+      startAutoSlide();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    updateSlide(currentIndex);
+  });
+
+  // 初期表示
+  updateSlide(currentIndex);
+  startAutoSlide();
+});
+</script>
+
         
         <!-- 天空雪あそびキャンプ【年末】 -->
 
