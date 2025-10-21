@@ -266,13 +266,12 @@ title: プログラム紹介
         <!-- 夏の季節写真ギャラリー -->
  
         
-        
-          <!-- スライドショー全体 -->
+<!-- スライドショー全体 -->
 <div class="relative w-full overflow-hidden rounded-lg">
   <!-- スライドをまとめたラッパー -->
   <div id="slider" class="flex transition-transform duration-700 ease-in-out">
     {% for i in (1..10) %}
-      <div class="flex-none w-1/3 px-1">
+      <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
         <img src="{{ site.baseurl }}/images/summer/summer{{ i }}.jpg" 
              alt="夏の活動{{ i }}" 
              class="w-full h-64 object-cover rounded-lg">
@@ -294,11 +293,16 @@ title: プログラム紹介
     const slider = document.getElementById('slider');
     const dots = document.querySelectorAll('#dots button');
     const totalSlides = dots.length;
-    const slidesPerView = 3;
+    let slidesPerView = getSlidesPerView();
     let currentIndex = 0;
     let interval;
 
-    // スライドを更新する関数
+    function getSlidesPerView() {
+      if (window.innerWidth >= 1024) return 3; // PC
+      if (window.innerWidth >= 640) return 2;  // タブレット
+      return 1;                                // スマホ
+    }
+
     function updateSlide(index) {
       const offset = -(index * (100 / slidesPerView));
       slider.style.transform = `translateX(${offset}%)`;
@@ -306,15 +310,13 @@ title: プログラム紹介
       dots[index].classList.add('bg-blue-500');
     }
 
-    // 自動再生
     function startAutoSlide() {
       interval = setInterval(() => {
         currentIndex = (currentIndex + 1) % (totalSlides - slidesPerView + 1);
         updateSlide(currentIndex);
-      }, 3000); // 3秒ごと
+      }, 3000);
     }
 
-    // ドットクリックでスライド切り替え
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         clearInterval(interval);
@@ -324,7 +326,12 @@ title: プログラム紹介
       });
     });
 
-    // 初期表示＆開始
+    // ウィンドウサイズ変更時に枚数を再計算
+    window.addEventListener('resize', () => {
+      slidesPerView = getSlidesPerView();
+      updateSlide(currentIndex);
+    });
+
     updateSlide(currentIndex);
     startAutoSlide();
   });
