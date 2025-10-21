@@ -467,48 +467,23 @@ title: プログラム紹介
       <!-- 秋のプログラム -->
   
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
-        
-        <!-- 秋の季節写真ギャラリー -->
+  <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
 
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
+  <!-- 秋スライドショー -->
+  <div class="swiper fallSwiper">
+    <div class="swiper-wrapper">
+      {% for i in (1..7) %}
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/fall/fall{{ i }}.jpg" alt="秋の活動{{ i }}" class="w-full h-64 object-cover rounded-lg">
+      </div>
+      {% endfor %}
+    </div>
 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall1.jpg" alt="秋の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall1.jpg">
-            </div>
-            <!-- 画像2 -->
-
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall2.jpg" alt="秋の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall2.jpg">
-            </div>
-            <!-- 画像3 -->
-
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall3.jpg" alt="秋の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall3.jpg">
-            </div>
-            <!-- 画像4 -->
-
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall4.jpg" alt="秋の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall4.jpg">
-            </div>
-            <!-- 画像5 -->
-
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall5.jpg" alt="秋の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall5.jpg">
-            </div>
-            <!-- 画像6 -->
-
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall6.jpg" alt="秋の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall6.jpg">
-            </div>
-            <!-- 画像7 -->
-
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall7.jpg" alt="秋の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall7.jpg">
-            </div>
-        </div>
-        
+    <!-- ページネーション（マルぽち） -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+  
 
         <div id="autumn-fire" class="bg-white rounded-lg shadow overflow-hidden mb-8">
           <div class="p-6">
