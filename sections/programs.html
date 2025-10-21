@@ -223,48 +223,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
               </div>
               
-              <!--
-              
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">スケジュール</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>09:13 新潟発新幹線 越後湯沢駅着</li>
-                  <li>09:33 東京発新幹線 越後湯沢駅着</li>
-                  <li>10:00 バス出発 </li>
-                  <li>10:20 バス到着、参加者集合</li>
-                  <li>10:30 開村式</li>
-                  <li>11:30 昼食（持参お弁当）</li>
-                  <li>12:30 田植え方法説明、移動</li>
-                  <li>13:00 地域の方から伝授！田植え体験</li>
-                  <li>15:00 田植え終了</li>
-                  <li>15:20 足洗い、お米のお話</li>
-                  <li>16:00 入浴</li>
-                  <li>　　　～フリータイム～</li>
-                  <li>17:00 ぬか釜でごはんを炊こう（火入れを見よう）</li>
-                  <li>18:00 夕食</li>
-                  <li>19:00 ごちそうさま、体調チェック</li>
-                  <li>19:30 夜プログラム（夜のお散歩等）</li>
-                  <li>20:45 終了、明日のインフォメーション</li>
-                  <li>21:10 就寝準備</li>
-                  <li>21:45 就寝　</li>
-
-                  <li>2日目</li>
-                  <li>06:00 起床・朝の準備（着替え・床上げ）</li>
-                  <li>06:30 朝の散歩</li>
-                  <li>07:30 朝食</li>
-                  <li>09:00 何がいるかな？春の里山に遊びに行こう！</li>
-                  <li>11:30 終了</li>
-                  <li>12:30 昼食</li>
-                  <li>13:30 閉村式</li>
-                  <li>13:50 バス出発</li>
-                  <li>14:00 おみやげタイム（魚野の里）</li>
-                  <li>15:00 越後湯沢駅到着</li>
-                  <li>15:57 新潟方面新幹線出発</li>
-                  <li>16:00 東京方面新幹線出発</li>
-                </ul>
-              </div>
-            </div> -->
-            
               <div class="bg-green-50 p-4 rounded">
                 <h5 class="font-bold mb-2">対象・期間</h5>
                 <ul class="list-none pl-0 space-y-1">
@@ -334,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
       interval = setInterval(() => {
         currentIndex = (currentIndex + 1) % (totalSlides - slidesPerView + 1);
         updateSlide(currentIndex);
-      }, 3000);
+      }, 4000);
     }
 
     dots.forEach((dot, i) => {
@@ -521,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const maxIndex = totalSlides - slidesPerView;
       if (currentIndex > maxIndex) currentIndex = 0; // 最後まで行ったら最初に戻る
       updateSlide(currentIndex);
-    }, 3000);
+    }, 4000);
   }
 
   dots.forEach((dot, i) => {
