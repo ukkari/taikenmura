@@ -136,6 +136,8 @@ function getSlidesPerView() {
 }
 
 function updateSlide(index) {
+  const maxIndex = totalSlides - slidesPerView;
+  if (index > maxIndex) index = maxIndex;
   const offset = -(index * (100 / slidesPerView));
   slider.style.transform = `translateX(${offset}%)`;
   dots.forEach(dot => dot.classList.remove('bg-blue-500'));
