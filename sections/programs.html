@@ -93,43 +93,44 @@ title: プログラム紹介
       
       <!-- 春のプログラム -->
   
+      
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
-        
-        <!-- 春の季節写真ギャラリー -->
-  
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
- 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring1.jpg" alt="春の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring1.jpg">
-            </div>
-            <!-- 画像2 -->
+  <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring2.jpg" alt="春の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring2.jpg">
-            </div>
-            <!-- 画像3 -->
- 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring3.jpg" alt="春の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring3.jpg">
-            </div>
-            <!-- 画像4 -->
-  
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring4.jpg" alt="春の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring4.jpg">
-            </div>
-            <!-- 画像5 -->
-   
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring5.jpg" alt="春の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring5.jpg">
-            </div>
-            <!-- 画像6 -->
- 
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring6.jpg" alt="春の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring6.jpg">
-            </div>
-        </div>
+  <!-- Swiperコンテナ -->
+  <div class="swiper springSwiper">
+    <div class="swiper-wrapper">
+      <!-- 画像1 -->
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/spring/spring1.jpg" alt="春の活動1" class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <!-- 画像2 -->
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/spring/spring2.jpg" alt="春の活動2" class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <!-- 画像3 -->
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/spring/spring3.jpg" alt="春の活動3" class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <!-- 画像4 -->
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/spring/spring4.jpg" alt="春の活動4" class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <!-- 画像5 -->
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/spring/spring5.jpg" alt="春の活動5" class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <!-- 画像6 -->
+      <div class="swiper-slide">
+        <img src="{{ site.baseurl }}/images/spring/spring6.jpg" alt="春の活動6" class="w-full h-64 object-cover rounded-lg">
+      </div>
+    </div>
+
+    <!-- ページネーション（マルぽち） -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
         
         <!-- キャンプ場 春の火あそびキャンプ -->
 
