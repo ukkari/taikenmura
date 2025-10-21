@@ -48,81 +48,49 @@ custom_css: |
   </div>
 </section>
 
-<!-- スライドショー全体 -->
-<div id="hero-slideshow">
-  <div class="slide active">
-    <img src="images/slide1.jpg" alt="">
-  </div>
-  <div class="slide">
-    <img src="images/slide2.jpg" alt="">
-  </div>
-  <div class="slide">
-    <img src="images/slide3.jpg" alt="">
-  </div>
-</div>
+<!-- スクリプト -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('#hero-slideshow .slide');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000); // 5秒ごとに切り替え
+});
+</script>
 
 <!-- スタイル -->
 <style>
-/* スライドショー全体の枠 */
-#hero-slideshow {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* 好みで変更可 */
-  overflow: hidden;
-  background: #000; /* フェード時の背景 */
-}
-
 /* スライドの共通スタイル */
 #hero-slideshow .slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
   opacity: 0;
+  transform: scale(1);
   transition: opacity 1.5s ease-in-out;
 }
 
 /* 表示中のスライド */
 #hero-slideshow .slide.active {
   opacity: 1;
-  z-index: 1;
+  animation: zoomIn 10s ease-in-out forwards;
 }
 
-/* ズームアニメーションは常に適用 */
-#hero-slideshow .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: zoom 20s ease-in-out infinite;
-}
-
-/* ズームアニメーションの定義 */
-@keyframes zoom {
-  0% { transform: scale(1.05); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1.05); }
+/* ズームアニメーション */
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 </style>
-
-<!-- スクリプト -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('#hero-slideshow .slide');
-
-  function showSlides() {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].classList.add('active');
-    setTimeout(showSlides, 5000);
-  }
-
-  setTimeout(showSlides, 5000);
-});
-</script>
-
 
 
 <main class="container mx-auto px-4 py-8 space-y-12">
