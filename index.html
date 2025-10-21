@@ -65,31 +65,36 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- スタイル -->
 <style>
 /* スライドの共通スタイル */
-#hero-slideshow .slide {
+#hero-slideshow /* スライド全体の設定 */
+.slide {
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transform: scale(1);
   transition: opacity 1.5s ease-in-out;
 }
 
 /* 表示中のスライド */
-#hero-slideshow .slide.active {
+.slide.active {
   opacity: 1;
-  animation: zoomIn 10s ease-in-out forwards;
+  z-index: 1;
 }
 
-/* ズームアニメーション */
-@keyframes zoomIn {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
+/* ズームアニメーションは常に適用 */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoom 20s ease-in-out infinite;
 }
+
+/* ズームアニメーションの定義 */
+@keyframes zoom {
+  0% { transform: scale(1.05); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1.05); }
+}
+
 </style>
 
 
