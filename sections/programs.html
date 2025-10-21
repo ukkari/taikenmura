@@ -94,43 +94,80 @@ title: プログラム紹介
       <!-- 春のプログラム -->
   
       
-      <div class="mb-10">
-  <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
-
-  <!-- Swiperコンテナ -->
-  <div class="swiper springSwiper">
-    <div class="swiper-wrapper">
-      <!-- 画像1 -->
-      <div class="swiper-slide">
-        <img src="{{ site.baseurl }}/images/spring/spring1.jpg" alt="春の活動1" class="w-full h-64 object-cover rounded-lg">
-      </div>
-      <!-- 画像2 -->
-      <div class="swiper-slide">
-        <img src="{{ site.baseurl }}/images/spring/spring2.jpg" alt="春の活動2" class="w-full h-64 object-cover rounded-lg">
-      </div>
-      <!-- 画像3 -->
-      <div class="swiper-slide">
-        <img src="{{ site.baseurl }}/images/spring/spring3.jpg" alt="春の活動3" class="w-full h-64 object-cover rounded-lg">
-      </div>
-      <!-- 画像4 -->
-      <div class="swiper-slide">
-        <img src="{{ site.baseurl }}/images/spring/spring4.jpg" alt="春の活動4" class="w-full h-64 object-cover rounded-lg">
-      </div>
-      <!-- 画像5 -->
-      <div class="swiper-slide">
-        <img src="{{ site.baseurl }}/images/spring/spring5.jpg" alt="春の活動5" class="w-full h-64 object-cover rounded-lg">
-      </div>
-      <!-- 画像6 -->
-      <div class="swiper-slide">
-        <img src="{{ site.baseurl }}/images/spring/spring6.jpg" alt="春の活動6" class="w-full h-64 object-cover rounded-lg">
-      </div>
-    </div>
-
-    <!-- ページネーション（マルぽち） -->
-    <div class="swiper-pagination"></div>
-  </div>
+<!-- スライドショー全体 -->
+<div class="relative w-full overflow-hidden rounded-lg">
+<!-- スライドをまとめたラッパー -->
+<div id="slider" class="flex transition-transform duration-700 ease-in-out">
+{% for i in (1..6) %}
+<div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+<img src="{{ site.baseurl }}/images/spring/spring{{ i }}.jpg"
+alt="春の活動{{ i }}"
+class="w-full h-64 object-cover rounded-lg">
+</div>
+{% endfor %}
 </div>
 
+<!-- 下のマルぽち（ナビゲーション） -->
+<div id="dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+{% for i in (1..10) %}
+<button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" data-index="{{ forloop.index0 }}"></button>
+{% endfor %}
+</div>
+</div>
+
+<!-- スライドショー制御スクリプト -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const slider = document.getElementById('slider');
+const dots = document.querySelectorAll('#dots button');
+const totalSlides = dots.length;
+let slidesPerView = getSlidesPerView();
+let currentIndex = 0;
+let interval;
+
+```
+function getSlidesPerView() {
+  if (window.innerWidth >= 1024) return 3; // PC
+  if (window.innerWidth >= 640) return 2;  // タブレット
+  return 1;                                // スマホ
+}
+
+function updateSlide(index) {
+  const offset = -(index * (100 / slidesPerView));
+  slider.style.transform = `translateX(${offset}%)`;
+  dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+  dots[index].classList.add('bg-blue-500');
+}
+
+function startAutoSlide() {
+  interval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % (totalSlides - slidesPerView + 1);
+    updateSlide(currentIndex);
+  }, 3000);
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    clearInterval(interval);
+    currentIndex = i;
+    updateSlide(currentIndex);
+    startAutoSlide();
+  });
+});
+
+// ウィンドウサイズ変更時に枚数を再計算
+window.addEventListener('resize', () => {
+  slidesPerView = getSlidesPerView();
+  updateSlide(currentIndex);
+});
+
+updateSlide(currentIndex);
+startAutoSlide();
+
+```
+
+});
+</script>
         
         <!-- キャンプ場 春の火あそびキャンプ -->
 
