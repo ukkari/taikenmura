@@ -31,19 +31,77 @@ custom_css: |
     to {opacity: 1}
   }
 ---
+<h2 class="text-2xl font-bold text-center  mt-4 mb-4 ">一般社団法人 自然体験村</h2>
 
 <!-- ヒーロースライドショーセクション -->
-<section class="relative h-96 bg-cover bg-center" id="hero-slideshow">
+<section class="relative h-96 bg-cover bg-center overflow-hidden" id="hero-slideshow">
   <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
   <div class="container mx-auto h-full flex items-center justify-center relative z-20">
-    <h2 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">新潟県南魚沼市の子ども向け自然体験キャンプ</h2>
+    <h2 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">
+      新潟県南魚沼市の子ども向け自然体験キャンプ
+    </h2>
   </div>
+
+  <!-- スライド画像 -->
   <div class="slideshow-container absolute inset-0">
-    <div class="slide fade active" style="background-image: url('{{ site.baseurl }}/images/hero.jpg');"></div>
-    <div class="slide fade" style="background-image: url('{{ site.baseurl }}/images/hero2.jpg');"></div>
-    <div class="slide fade" style="background-image: url('{{ site.baseurl }}/images/hero3.jpg');"></div>
+  <div class="slide active">
+    <img src="{{ site.baseurl }}/images/hero.jpg" alt="" class="zoom-img">
   </div>
+  <div class="slide">
+    <img src="{{ site.baseurl }}/images/hero2.jpg" alt="" class="zoom-img">
+  </div>
+  <div class="slide">
+    <img src="{{ site.baseurl }}/images/hero3.jpg" alt="" class="zoom-img">
+  </div>
+</div>
+
 </section>
+
+<!-- スクリプト -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('#hero-slideshow .slide');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000); // 5秒ごとに切り替え
+});
+</script>
+
+<!-- スタイル -->
+<style>
+/* スライド全体の設定 */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.zoom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoom 20s ease-in-out infinite;
+}
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1.2); }
+}
+
+</style>
+
 
 <main class="container mx-auto px-4 py-8 space-y-12">
   
@@ -78,13 +136,9 @@ custom_css: |
             <img src="{{ site.baseurl }}/images/top/spring.jpg" alt="春のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
           <h3 class="font-bold text-lg text-green-700 mb-2">春のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <!--ｺﾒﾝﾄｱｳﾄ
-            <li>新緑ハイキング</li>
-            <li>山菜採り</li>
-ｺﾒﾝﾄｱｳﾄ-->
-            <li>GW春の火あそびキャンプ(2泊3日)</li>
-            <li>春の田植え 親子キャンプ(2泊3日)</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+            <li> <font class="font-bold">GW春の火あそびキャンプ</font>(2泊3日)</li>
+            <li> <font class="font-bold">春の田植え 親子キャンプ</font>(2泊3日)</li>
           </ul>
         
           <div class="mt-3">
@@ -98,15 +152,15 @@ custom_css: |
             <img src="{{ site.baseurl }}/images/top/summer.jpg" alt="夏のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
           <h3 class="font-bold text-lg text-yellow-700 mb-2">夏のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>まっ黒わんぱく夏休み（3-12泊）</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+            <li> <font class="font-bold">まっ黒わんぱく夏休み</font>（3-12泊）</li>
             <li class="list-none" >・わくわく12泊</li>
             <li class="list-none" >・スタート3泊</li>
             <li class="list-none" >・チャレンジ6泊</li>
             <li class="list-none" >・ゆったり8泊</li>
-            <li>思いっきり夏キャンプ（6泊7日）</li>
+            <li> <font class="font-bold">思いっきり夏キャンプ</font>（6泊7日）</li>
             <li class="list-none" >・どきどき6泊</li>
-            <li>あそびばキャンプ（2泊3日）</li>
+            <li> <font class="font-bold">あそびばキャンプ</font>（2泊3日）</li>
           </ul>
           
           <div class="mt-3">
@@ -120,9 +174,10 @@ custom_css: |
             <img src="{{ site.baseurl }}/images/top/fall.jpg" alt="秋のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
           <h3 class="font-bold text-lg text-orange-700 mb-2">秋のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>秋の稲刈り 親子キャンプ(2泊3日)</li>
-            <li>火あそびキャンプ(1泊2日)</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+           <li> <font class="font-bold">秋のキャンプ場　火あそびキャンプ</font> (1泊2日)</li>
+           <li> <font class="font-bold">秋の稲刈り 親子キャンプ</font> (2泊3日)</li>
+           <li> <font class="font-bold">キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ</font>（2泊3日）<li>
             <!--ｺﾒﾝﾄｱｳﾄ
             <li>紅葉ハイキング</li>
             <li>収穫祭</li>
@@ -143,11 +198,11 @@ custom_css: |
             <img src="{{ site.baseurl }}/images/top/winter.jpg" alt="冬のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
           <h3 class="font-bold text-lg text-blue-700 mb-2">冬のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>天空雪あそびキャンプ[年末]（2泊3日）</li>
-            <li>天空雪あそびキャンプ(年始)（2泊3日）</li>
-            <li>ガンガン滑ろうキャンプ(1泊2日)</li>
-            <li>思いっきり雪まみれキャンプ(1泊2日)</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+            <li> <font class="font-bold">天空雪あそびキャンプ[年末]</font>（2泊3日）</li>
+            <li> <font class="font-bold">天空雪あそびキャンプ(年始)</font>（2泊3日）</li>
+            <li> <font class="font-bold">ガンガン滑ろうキャンプ</font>(1泊2日)</li>
+            <li> <font class="font-bold">思いっきり雪まみれキャンプ</font>(1泊2日)</li>
             <!--ｺﾒﾝﾄｱｳﾄ
             <li>雪国文化体験</li>
             <li>かまくら作り体験</li>
@@ -211,17 +266,17 @@ custom_css: |
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-blue-50 p-4 rounded-lg">
-          <img src="{{ site.baseurl }}/images/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
+          <img src="{{ site.baseurl }}/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
           <p class="italic">「初めてのキャンプで不安でしたが、すぐに友達ができて毎日が楽しかったです。来年も絶対に参加したいです！」</p>
           <p class="text-right mt-2 font-bold">小学5年生 男子</p>
         </div>
         <div class="bg-blue-50 p-4 rounded-lg">
-          <img src="{{ site.baseurl }}/images/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
+          <img src="{{ site.baseurl }}/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
           <p class="italic">「自分で考えて行動する力が身についたと感じます。帰宅後も進んで家の手伝いをするようになりました。」</p>
           <p class="text-right mt-2 font-bold">保護者 40代女性</p>
         </div>
         <div class="bg-blue-50 p-4 rounded-lg">
-          <img src="{{ site.baseurl }}/images/profile_temp.jpg" alt="引用符" class="w-8 h-8 mb-2">
+          <img src="{{ site.baseurl }}/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
           <p class="italic">「自然の中での体験は、学校では学べない貴重なものでした。スタッフの方々の温かいサポートに感謝しています。」</p>
           <p class="text-right mt-2 font-bold">小学6年生 女子</p>
         </div>
