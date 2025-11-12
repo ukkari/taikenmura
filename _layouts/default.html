@@ -76,5 +76,17 @@
 </div>
 
   </script>
+  
+  <script>
+  // メニューボタンとメニュー本体を取得
+  const menuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  // ボタンクリックで開閉切り替え
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+  
 </body>
 </html>
