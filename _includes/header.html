@@ -1,33 +1,41 @@
 <!-- ヘッダー -->
 <header class="bg-blue-600/0 text-blue-600 sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-2 md:py-4 flex flex-col md:flex-row items-center justify-between">
-    <div class="flex items-center justify-between w-full md:w-auto">
+  <div class="container mx-auto px-4 py-2 md:py-4">
+
+    <!-- ロゴとメニューボタンを同じ flex の中に -->
+    <div class="flex items-center justify-between w-full">
       <a href="{{ site.baseurl }}/">
-        <img src="{{ site.baseurl }}/images/logo.png" alt="自然体験村 ロゴ"
+        <img src="{{ site.baseurl }}/images/logo.png" 
+             alt="自然体験村 ロゴ"
              class="h-10 md:h-16 mr-2 rounded">
       </a>
 
-      <!-- メニューボタン（スマホ用） -->
-      <button id="mobile-menu-button" class="md:hidden text-black">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <!-- メニューボタン（右寄せ） -->
+      <button id="mobile-menu-button" class="text-black">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
-    
-    <!-- ナビゲーション -->
-    <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-3" id="mobile-menu">
-      <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-1 text-sm md:text-base text-right">
-        <li><a href="{{ site.baseurl }}/sections/about" class=" font-bold  hover:text-blue-200 block py-1 md:py-0">体験村について</a></li>
-        <li><a href="{{ site.baseurl }}/sections/programs" class=" font-bold hover:text-blue-200 block py-1 md:py-0">キャンプ一覧</a></li>
-        <li><a href="{{ site.baseurl }}/sections/staff" class=" font-bold hover:text-blue-200 block py-1 md:py-0">スタッフ</a></li>
-        <li><a href="{{ site.baseurl }}/sections/testimonials" class=" font-bold hover:text-blue-200 block py-1 md:py-0">参加者の声</a></li>
-        <li><a href="{{ site.baseurl }}/sections/faq" class=" font-bold hover:text-blue-200 block py-1 md:py-0">FAQ</a></li>
-        <li><a href="{{ site.baseurl }}/#contact" class=" font-bold hover:text-blue-200 block py-1 md:py-0">お問合わせ</a></li>
+
+    <!-- ナビゲーション（開いたとき下に表示） -->
+    <nav class="hidden mt-3 text-right" id="mobile-menu">
+      <ul class="flex flex-col space-y-2 text-base">
+        <li><a href="{{ site.baseurl }}/sections/about" class="font-bold hover:text-blue-200 block py-1">体験村について</a></li>
+        <li><a href="{{ site.baseurl }}/sections/programs" class="font-bold hover:text-blue-200 block py-1">キャンプ一覧</a></li>
+        <li><a href="{{ site.baseurl }}/sections/staff" class="font-bold hover:text-blue-200 block py-1">スタッフ</a></li>
+        <li><a href="{{ site.baseurl }}/sections/testimonials" class="font-bold hover:text-blue-200 block py-1">参加者の声</a></li>
+        <li><a href="{{ site.baseurl }}/sections/faq" class="font-bold hover:text-blue-200 block py-1">FAQ</a></li>
+        <li><a href="{{ site.baseurl }}/#contact" class="font-bold hover:text-blue-200 block py-1">お問合わせ</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
-    <div id="overlay" class="fixed inset-0 bg-white bg-opacity-100 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
-    </div>
 
+<!-- オーバーレイ -->
+<div id="overlay"
+     class="fixed inset-0 bg-white bg-opacity-100 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+</div>
