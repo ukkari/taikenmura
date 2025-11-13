@@ -88,36 +88,7 @@
 
   </script>
   
-<script>
-  const menuButton = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('overlay');
 
-  function openMenu() {
-    menu.classList.remove('hidden');
-    overlay.classList.remove('opacity-0', 'pointer-events-none');
-    overlay.classList.add('opacity-100');
-  }
-
-  function closeMenu() {
-    overlay.classList.add('opacity-0');
-    overlay.classList.remove('opacity-100');
-    // アニメーションが終わってから非表示
-    setTimeout(() => {
-      overlay.classList.add('pointer-events-none');
-      menu.classList.add('hidden');
-    }, 300);
-  }
-
-  menuButton.addEventListener('click', () => {
-    const isOpen = !menu.classList.contains('hidden');
-    isOpen ? closeMenu() : openMenu();
-  });
-
-  overlay.addEventListener('click', closeMenu);
-</script>
-
-  
   
        <script>
 document.addEventListener("DOMContentLoaded", function () {
