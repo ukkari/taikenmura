@@ -109,6 +109,15 @@ const hideMenu = () => {
   mobileMenu.classList.add("hidden"); // ← ここも即時
 };
 
+      // ← ★ バツを元に戻す
+    hamburger.classList.remove("open");
+
+    setTimeout(() => {
+      overlay.classList.add("pointer-events-none");
+      mobileMenu.classList.add("hidden");
+    }, 300); // overlay の duration-300 に合わせる
+  };
+
 
   menuButton.addEventListener("click", () => {
     if (mobileMenu.classList.contains("hidden")) {
