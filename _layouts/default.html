@@ -91,47 +91,34 @@
   
 
   
-       <script>
+   <script>
 document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const overlay = document.getElementById("overlay");
-
-  const showMenu = () => {
-    mobileMenu.classList.remove("hidden");
-    overlay.classList.remove("opacity-0", "pointer-events-none");
-    overlay.classList.add("opacity-100");
-  };
-
-const hideMenu = () => {
-  overlay.classList.remove("opacity-100");
-  overlay.classList.add("opacity-0", "pointer-events-none");
-  mobileMenu.classList.add("hidden"); // ← ここも即時
-};
-  
-  //ハンバーガーの定義
+    //ハンバーガーの定義
   const hamburger = document.getElementById("hamburger-line-wrapper");
 
+const toggleMenu = () => {
+    const isHidden = mobileMenu.classList.contains("hidden");
 
-      // ← ★ バツを元に戻す
-    hamburger.classList.remove("open");
-
-    setTimeout(() => {
-      overlay.classList.add("pointer-events-none");
+    if (isHidden) {
+      // 開く
+      mobileMenu.classList.remove("hidden");
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100");
+      hamburger.classList.add("open");
+    } else {
+      // 閉じる
+      overlay.classList.remove("opacity-100");
+      overlay.classList.add("opacity-0", "pointer-events-none");
       mobileMenu.classList.add("hidden");
-    }, 300); // overlay の duration-300 に合わせる
+      hamburger.classList.remove("open");
+    }
   };
 
-
-  menuButton.addEventListener("click", () => {
-    if (mobileMenu.classList.contains("hidden")) {
-      showMenu();
-    } else {
-      hideMenu();
-    }
-  });
-
-  overlay.addEventListener("click", hideMenu);
+  menuButton.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
 });
 </script>
 
