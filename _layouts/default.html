@@ -103,14 +103,12 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.classList.add("opacity-100");
   };
 
-  const hideMenu = () => {
-    overlay.classList.remove("opacity-100");
-    overlay.classList.add("opacity-0");
-    setTimeout(() => {
-      overlay.classList.add("pointer-events-none");
-      mobileMenu.classList.add("hidden");
-    }, 500); // duration-500 と同期
-  };
+const hideMenu = () => {
+  overlay.classList.remove("opacity-100");
+  overlay.classList.add("opacity-0", "pointer-events-none");
+  mobileMenu.classList.add("hidden"); // ← ここも即時
+};
+
 
   menuButton.addEventListener("click", () => {
     if (mobileMenu.classList.contains("hidden")) {
