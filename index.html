@@ -6,7 +6,7 @@ custom_css: |
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 0;
+    z-index: 1;
   }
   .slide {
     width: 100%;
@@ -31,20 +31,19 @@ custom_css: |
     to {opacity: 1}
   }
 ---
-<main class="relative :mt-0 mb-2 bg-mainwhite">
-  <!-- ページ内容 -->
-  <style>
-  body, main, section, header, #banner, .banner {
+<!--<style>
+  body, main, header, #banner, .banner {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
-</style>
-
-
-<h2 class="text-2xl md:text-4xl font-bold text-center md:-mt-10 mb-5 ">一般社団法人 自然体験村</h2>
+</style>-->
+<main class="relative pt-0 mt-0 mb-0 bg-mainwhite">
+  <!-- ページ内容 -->
+  
+<h2 class="text-xl md:text-4xl font-bold text-center pt-4 md:pt-6 mb-4 ">一般社団法人 自然体験村</h2>
 
 <!-- ヒーロースライドショーセクション -->
-<section class="relative h-96 bg-cover bg-center overflow-hidden" id="hero-slideshow">
+<section class="relative h-[700px] bg-cover bg-center overflow-hidden" id="hero-slideshow">
   <div class="absolute inset-0 bg-black opacity-50 z-10">
   </div>
   <div class="container mx-auto h-full flex items-center justify-center relative z-20">
@@ -60,13 +59,13 @@ custom_css: |
   <!-- スライド画像 -->
   <div class="slideshow-container absolute inset-0">
   <div class="slide active">
-    <img src="{{ site.baseurl }}/images/uploads/img_2480.jpg" alt="" class="zoom-img">
+    <img src="{{ site.baseurl }}/images/uploads/img_2480.jpeg" alt="" class="zoom-img">
   </div>
   <div class="slide">
-    <img src="{{ site.baseurl }}/images/hero2.jpg" alt="" class="zoom-img">
+    <img src="{{ site.baseurl }}/images/uploads/img_3680.jpeg" alt="" class="zoom-img">
   </div>
   <div class="slide">
-    <img src="{{ site.baseurl }}/images/hero3.jpg" alt="" class="zoom-img">
+    <img src="{{ site.baseurl }}/images/uploads/img_9341.jpeg" alt="" class="zoom-img">
   </div>
 </div>
 
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <!-- 最新情報セクション -->
   <section id="news">
-    <h2 class="text-2xl font-bold border-b-4 border-maingreen pb-2 mb-4">最新情報</h2>
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pb-2 mt-2 mb-4">最新情報</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <p class="mb-4">
         体験村のブログから最新情報をお届けします。
