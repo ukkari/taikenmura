@@ -68,7 +68,7 @@
 
   {% include footer.html %}
   
-  <script>
+  
     <div id="hero-slideshow" class="relative h-96">
   <div class="slide active">
     <div class="zoom-layer">
@@ -87,8 +87,7 @@
   </div>
 </div>
 
-  </script>
-  
+    
 
   
    <script>
@@ -194,6 +193,37 @@ const toggleMenu = () => {
     border-color: var(--mainwhite);
   }
 </style>
+  
+  <style>
+/* メイン画像の比率調整 */
+.gallery-main-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* サムネイル */
+.gallery-thumb {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* 選択中のサムネイル */
+.active-thumb {
+  border-color: var(--maingreen);
+  transform: scale(1.05);
+}
+</style>
+
+  
 
   
 </body>
