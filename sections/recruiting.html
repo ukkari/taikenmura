@@ -16,23 +16,45 @@ title: 参加者募集
     <h3 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2 mb-6">天空雪あそびキャンプ【年末】・【年始】</h3>
   <div class="bg-white p-6 rounded-lg shadow">
 
-   <!-- スライドショー全体 -->
-<div class="relative w-full h-64 overflow-hidden rounded-lg">
-  <div class="absolute inset-0 flex transition-transform duration-700 ease-in-out slideshow">
-    <!-- スライド0 -->
+<!-- 画像ギャラリー全体 -->
+<div class="w-full">
+
+  <!-- 大きな画像エリア -->
+  <div class="relative w-full overflow-hidden rounded-lg">
+    <img id="mainImage"
+         src="{{ site.baseurl }}/images/uploads/IMG_0161.jpeg"
+         class="w-full object-cover gallery-main-img"
+         alt="メイン表示画像">
+  </div>
+
+  <!-- サムネイル列 -->
+  <div class="flex gap-2 mt-3 overflow-x-auto pb-1">
+    <!-- サムネ0 -->
     <img src="{{ site.baseurl }}/images/uploads/IMG_0161.jpeg"
-         class="w-full h-64 object-cover flex-shrink-0" alt="天空雪あそび0 どういうこと">
-        <!-- スライド1 -->
+         class="gallery-thumb active-thumb"
+         alt="天空雪あそび0"
+         onclick="changeImage(this)">
+
+    <!-- サムネ1 -->
     <img src="{{ site.baseurl }}/images/uploads/IMG_8383.jpeg"
-         class="w-full h-64 object-cover flex-shrink-0" alt="天空雪あそび1これでだめならわからんンw">
-    <!-- スライド2 -->
+         class="gallery-thumb"
+         alt="天空雪あそび1"
+         onclick="changeImage(this)">
+
+    <!-- サムネ2 -->
     <img src="{{ site.baseurl }}/images/uploads/IMG_8382.jpeg"
-         class="w-full h-64 object-cover flex-shrink-0" alt="天空雪あそび2">
-    <!-- スライド3 -->
+         class="gallery-thumb"
+         alt="天空雪あそび2"
+         onclick="changeImage(this)">
+
+    <!-- サムネ3 -->
     <img src="{{ site.baseurl }}/images/uploads/IMG_8379.jpeg"
-         class="w-full h-64 object-cover flex-shrink-0" alt="天空雪あそび3">
+         class="gallery-thumb"
+         alt="天空雪あそび3"
+         onclick="changeImage(this)">
   </div>
 </div>
+
 
 <script>
   let index = 0;
