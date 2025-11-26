@@ -57,16 +57,24 @@ title: 参加者募集
 
 
 <script>
-  let index = 0;
-  const slideshow = document.querySelector('.slideshow');
-  const slides = slideshow.children;
-  const totalSlides = slides.length;
+function changeImage(thumbnail) {
+  const mainImage = document.getElementById("mainImage");
 
-  setInterval(() => {
-    index = (index + 1) % totalSlides;
-    slideshow.style.transform = `translateX(${-index * 100}%)`;
-  }, 3000);
+  mainImage.src = thumbnail.src;
+  mainImage.alt = thumbnail.alt;
+
+  // すべてのサムネイルの active を解除
+  document.querySelectorAll(".gallery-thumb").forEach(img => {
+    img.classList.remove("active-thumb");
+  });
+
+  // クリックしたサムネイルを active に
+  thumbnail.classList.add("active-thumb");
+}
 </script>
+    
+    
+
     
 
   <!-- 募集内容 -->
