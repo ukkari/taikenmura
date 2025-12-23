@@ -2,28 +2,34 @@
 layout: default
 title: プログラム紹介
 ---
+<main class="container mx-auto px-4 py-0 space-y-12 bg-mainwhite">
+  <!-- 体験村について詳細 --
+  <main class="relative pt-0 mt-0 mb-0 bg-mainwhite">
+-->
+  <!-- ページ内容 -->
+  
+<h2 class="text-xl md:text-4xl font-bold text-center pt-4 md:pt-6 mb-4 ">一般社団法人 自然体験村</h2>
 
-<main class="container mx-auto px-4 py-8 space-y-12">
   <!-- 年間プログラムスケジュール詳細 -->
   <section id="annual-schedule">
-    <!--ｺﾒﾝﾄｱｳﾄ
-    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">年間プログラムスケジュール</h2>
+ 
+    <h2 class="text-3xl font-bold border-b-4 border-maingreen pb-2 mb-6">年間プログラムスケジュール</h2>
     
     <div class="bg-white p-6 rounded-lg shadow mb-12">
       <!-- メインイメージ -->
 
-    <!--ｺﾒﾝﾄｱｳﾄ
+ 
       <p class="mb-6">
-        体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールの詳細をご確認ください。
+        自然体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールの詳細をご確認ください。
       </p>
       
       <!-- プログラム一覧（画像付き） -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+
       <div class="mb-10">
         <h3 class="text-xl font-bold mb-4 text-center">2025年度 プログラム一覧</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <!-- 春のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+
           <div class="bg-white rounded-lg shadow overflow-hidden">
             <div class="h-40 overflow-hidden">
               <img src="{{ site.baseurl }}/images/top/spring.jpg" alt="春のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
@@ -31,34 +37,34 @@ title: プログラム紹介
             <div class="p-3 bg-green-50 h-full flex flex-col">
               <h4 class="font-bold text-green-700 mb-1"><a href="#spring-fire" class="text-green-700 underline">春のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
-                <li>・春のキャンプ場 火あそびキャンプ (5/3-5/5)</li>
-                <li>・春の田植え 親子キャンプ (5/31-6/1)</li>
+                <li> <font class="font-bold">春のキャンプ場 火あそびキャンプ</font> (5/3-5/5)</li>
+                <li> <font class="font-bold">春の田植え 親子キャンプ</font> (5/31-6/1)</li>
               </ul>
             </div>
           </div>
           
           <!-- 夏のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+
           <div class="bg-white rounded-lg shadow overflow-hidden">
             <div class="h-40 overflow-hidden">
               <img src="{{ site.baseurl }}/images/top/summer.jpg" alt="夏のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
             </div>
             <div class="p-3 bg-yellow-50 h-full flex flex-col">
               <h4 class="font-bold text-yellow-700 mb-1"><a href="#summer" class="text-yellow-700 underline">夏のプログラム</a></h4>
-              <ul class="text-xs space-y-1 flex-grow">
-                <li>まっ黒わんぱく夏休み (7/27-8/8)</li>
+              <ul class="text-xs space-y-1 flex-grow list-none">
+                <li> <font class="font-bold">まっ黒わんぱく夏休み</font> (7/27-8/8)</li>
                 <li>・わくわく12泊 (7/27-8/8)</li>
                 <li>・スタート3泊 (7/27-7/30)</li>
                 <li>・チャレンジ6泊 (7/31-8/6)</li>
                 <li>・ゆったり8泊 (7/31-8/8)</li>
-                <li>思いっきり夏キャンプ　どきどき6泊 (8/11-17)</li>
-                <li>あそびばキャンプ (8/20-8/22)</li>
+                <li> <font class="font-bold">思いっきり夏キャンプ　どきどき6泊</font> (8/11-8/17)</li>
+                <li> <font class="font-bold">あそびばキャンプ</font> (8/20-8/22)</li>
               </ul>
             </div>
           </div>
           
           <!-- 秋のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+  
           <div class="bg-white rounded-lg shadow overflow-hidden">
             <div class="h-40 overflow-hidden">
               <img src="{{ site.baseurl }}/images/top/fall.jpg" alt="秋のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
@@ -66,14 +72,15 @@ title: プログラム紹介
             <div class="p-3 bg-orange-50 h-full flex flex-col">
               <h4 class="font-bold text-orange-700 mb-1"><a href="#autumn-fire" class="text-orange-700 underline">秋のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
-                <li>・秋のキャンプ場 火あそびキャンプ (9/13-9/15)</li>
-                <li>・秋の稲刈り 親子キャンプ (9/27-9/28)</li>
+                <li> <font class="font-bold">秋のキャンプ場 火あそびキャンプ</font> (9/13-9/15)</li>
+                <li> <font class="font-bold">秋の稲刈り 親子キャンプ</font> (9/27-9/28)</li>
+                <li> <font class="font-bold">キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ</font>（10/11-10/13）</li>
               </ul>
             </div>
           </div>
           
           <!-- 冬のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+
           <div class="bg-white rounded-lg shadow overflow-hidden">
             <div class="h-40 overflow-hidden">
               <img src="{{ site.baseurl }}/images/top/winter.jpg" alt="冬のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
@@ -81,109 +88,140 @@ title: プログラム紹介
             <div class="p-3 bg-blue-50 h-full flex flex-col">
               <h4 class="font-bold text-blue-700 mb-1"><a href="#winter-snow" class="text-blue-700 underline">冬のプログラム</a></h4>
               <ul class="text-xs space-y-1 flex-grow">
-                <li>・天空雪あそびキャンプ【年末】 (12/27-12/29)</li>
-                <li>・天空雪あそびキャンプ（年始） (1/10-1/12)</li>
-                <li>・ガンガン滑ろうキャンプ (1/24-1/25)</li>
-                <li>思いっきり雪まみれキャンプ (2/14-2/15)</li>
+                <li> <font class="font-bold">天空雪あそびキャンプ【年末】</font> (12/27-12/29)</li>
+                <li> <font class="font-bold">天空雪あそびキャンプ【年始】</font> (1/10-1/12)</li>
+                <li> <font class="font-bold">ガンガン滑ろうキャンプ</font> (1/24-1/25)</li>
+                <li> <font class="font-bold">思いっきり雪まみれキャンプ</font> (2/14-2/15)</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+    
       
       <!-- 春のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
-        
-        <!-- 春の季節写真ギャラリー -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring1.jpg" alt="春の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring1.jpg">
-            </div>
-            <!-- 画像2 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring2.jpg" alt="春の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring2.jpg">
-            </div>
-            <!-- 画像3 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring3.jpg" alt="春の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring3.jpg">
-            </div>
-            <!-- 画像4 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring4.jpg" alt="春の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring4.jpg">
-            </div>
-            <!-- 画像5 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring5.jpg" alt="春の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring5.jpg">
-            </div>
-            <!-- 画像6 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/spring/spring6.jpg" alt="春の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/spring/spring6.jpg">
-            </div>
-        </div>
+
+       <div class="mb-10">
+    <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
+    
+         
+<!-- スライドショー全体 -->
+<div class="relative w-full overflow-hidden rounded-lg">
+  <!-- スライドをまとめたラッパー -->
+  <div id="spring-slider" class="flex transition-transform duration-700 ease-in-out">
+    {% for i in (1..6) %}
+      <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="{{ site.baseurl }}/images/spring/spring{{ i }}.jpg"
+             alt="春の活動{{ i }}"
+             class="w-full h-64 object-cover rounded-lg">
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- 下のマルぽち（ナビゲーション） -->
+  <div id="spring-dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    {% for i in (1..6) %}
+      <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" data-index="{{ forloop.index0 }}"></button>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('spring-slider');
+  const dots = document.querySelectorAll('#spring-dots button');
+  const totalSlides = dots.length;
+  let slidesPerView = getSlidesPerView();
+  let currentIndex = 0;
+  let interval;
+
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3; // PC
+    if (window.innerWidth >= 640) return 2;  // タブレット
+    return 1;                                // スマホ
+  }
+
+  function updateSlide(index) {
+    const maxIndex = totalSlides - slidesPerView; // ← ここを追加して調整
+    if (index > maxIndex) index = maxIndex;
+    const offset = -(index * (100 / slidesPerView));
+    slider.style.transform = `translateX(${offset}%)`;
+    dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+    dots[index].classList.add('bg-blue-500');
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentIndex++;
+      const maxIndex = totalSlides - slidesPerView;
+      if (currentIndex > maxIndex) currentIndex = 0; // 最後まで行ったら最初に戻る
+      updateSlide(currentIndex);
+    }, 4000);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      currentIndex = i;
+      updateSlide(currentIndex);
+      startAutoSlide();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    updateSlide(currentIndex);
+  });
+
+  // 初期表示
+  updateSlide(currentIndex);
+  startAutoSlide();
+});
+</script>
         
         <!-- キャンプ場 春の火あそびキャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-        <div id="spring-fire" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+
+        <div id="spring-fire" class="bg-white rounded-lg shadow overflow-hidden mt-8 mb-8">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">キャンプ場コテージ泊！春の火あそびキャンプ</h4>
             <p class="text-sm font-semibold mb-2">5/3(土)～5/5(月)</p>
-            <p class="mb-4">春の自然の中で火を使った野外活動を体験します。火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます。</p>
+            <p class="mb-4">春の雪解けとともに目覚める自然の中で遊び、自分たちで火おこしをして料理を作ります。火の扱い方を通して、自然の中での生活を楽しみながら学びます。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
                   <li>火起こし体験</li>
-                  <li>野外料理（）</li>
-                  <li>キャンプファイヤー</li>
+                  <li>野外料理</li>
+           <!--ｺﾒﾝﾄｱｳﾄ       
+                  <li>キャンプファイヤー</li>　
+                  <li>クラフト活動</li>-->
                   <li>春の自然観察</li>
-                  <li>クラフト活動</li>
+                  <li>たき火を囲んであたたまろう</li>
+                  <li>ホットサンドづくりに挑戦</li>
+                  
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 午前の活動（火起こし体験）</li>
-                  <li>12:00 昼食（自分たちで作る野外料理）</li>
-                  <li>13:30 午後の活動（クラフト、自然観察）</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 キャンプファイヤー</li>
-                  <li>21:00 就寝準備</li>
+                     
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：20名</li>
                 </ul>
               </div>
-            </div>
-            
-            <div class="bg-green-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：20名</li>
-              </ul>
             </div>
           </div>
         </div>
         
         <!-- 春の田植え 親子キャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+ 
         <div id="spring-rice" class="bg-white rounded-lg shadow overflow-hidden">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">春の田植え 親子キャンプ</h4>
             <p class="text-sm font-semibold mb-2">5/31(土)～6/1(日)</p>
-            <p class="mb-4">親子で田植え体験を通じて食の大切さを学びます。秋には収穫体験も行い、食の循環を体験できるプログラムです。</p>
+            <p class="mb-4">米どころ南魚沼でも特に最高峰と評される地区の塩沢で、親子で田植え体験を通じて食の大切さを学びます。秋におこなわれる稲刈りキャンプでは、植えた稲の収穫もできます。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
@@ -192,132 +230,115 @@ title: プログラム紹介
                   <li>田植え体験</li>
                   <li>農業についての学習</li>
                   <li>ぬか釜を使ったお米炊き見学</li>
-                  <li>地元食材を使った料理体験</li>
+                  <li>地元食材を使った料理をいただきます</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">スケジュール</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>09:13 新潟発新幹線 越後湯沢駅着</li>
-                  <li>09:33 東京発新幹線 越後湯沢駅着</li>
-                  <li>10:00 バス出発 </li>
-                  <li>10:20 バス到着、参加者集合/li>
-                  <li>10:30 開村式</li>
-                  <li>11:30 昼食（持参お弁当）</li>
-                  <li>12:30 田植え方法説明、移動</li>
-                  <li>13:00 地域の方から伝授！田植え体験</li>
-                  <li>15:00 田植え終了</li>
-                  <li>15:20 足洗い、お米のお話</li>
-                  <li>16:00 入浴</li>
-                  <li>　　　～フリータイム～</li>
-                  <li>17:00 ぬか釜でごはんを炊こう（火入れを見よう）</li>
-                  <li>18:00 夕食</li>
-                  <li>19:00 ごちそうさま、体調チェック</li>
-                  <li>19:30 夜プログラム（夜のお散歩等）</li>
-                  <li>20:45 終了、明日のインフォメーション</li>
-                  <li>21:10 就寝準備</li>
-                  <li>21:45 就寝　</li>
-
-                  <li>2日目</li>
-                  <li>06:00 起床・朝の準備（着替え・床上げ）</li>
-                  <li>06:30 朝の散歩</li>
-                  <li>07:30 朝食</li>
-                  <li>09:00 何がいるかな？春の里山に遊びに行こう！</li>
-                  <li>11:30 終了</li>
-                  <li>12:30 昼食</li>
-                  <li>13:30 閉村式</li>
-                  <li>13:50 バス出発</li>
-                  <li>14:00 おみやげタイム（魚野の里）</li>
-                  <li>15:00 越後湯沢駅到着</li>
-                  <li>15:57 新潟方面新幹線出発</li>
-                  <li>16:00 東京方面新幹線出発</li>
+              
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学2年生から高校3年生（子どものみの参加者）、その家族または引率者</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：30名（最小催行人数12名）</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-green-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学2年生から高校3年生（子どものみの参加者）、その家族または引率者</li>
-                <li>期間：2日間（1泊2日）</li>
-                <li>定員：30名（最小催行人数12名）</li>
-              </ul>
-            </div>
-            
-
           </div>
         </div>
       </div>
-      
+       
       <!-- 夏のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+ 
       <div class="mb-10" id="summer">
         <h3 class="text-2xl font-bold text-yellow-700 border-b-2 border-yellow-200 pb-2 mb-6">夏のプログラム</h3>
         
         <!-- 夏の季節写真ギャラリー -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer1.jpg" alt="夏の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer1.jpg">
-            </div>
-            <!-- 画像2 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer2.jpg" alt="夏の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer2.jpg">
-            </div>
-            <!-- 画像3 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer3.jpg" alt="夏の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer3.jpg">
-            </div>
-            <!-- 画像4 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer4.jpg" alt="夏の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer4.jpg">
-            </div>
-            <!-- 画像5 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer5.jpg" alt="夏の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer5.jpg">
-            </div>
-            <!-- 画像6 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer6.jpg" alt="夏の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer6.jpg">
-            </div>
-            <!-- 画像7 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer7.jpg" alt="夏の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer7.jpg">
-            </div>
-            <!-- 画像8 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer8.jpg" alt="夏の活動8" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer8.jpg">
-            </div>
-            <!-- 画像9 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer9.jpg" alt="夏の活動9" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer9.jpg">
-            </div>
-            <!-- 画像10 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/summer/summer10.jpg" alt="夏の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/summer/summer10.jpg">
-            </div>
-        </div>
+ 
+        
+<!-- スライドショー全体 -->
+<div class="relative w-full overflow-hidden rounded-lg">
+  <!-- スライドをまとめたラッパー -->
+  <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+    {% for i in (1..10) %}
+      <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="{{ site.baseurl }}/images/summer/summer{{ i }}.jpg" 
+             alt="夏の活動{{ i }}" 
+             class="w-full h-64 object-cover rounded-lg">
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- 下のマルぽち（ナビゲーション） -->
+  <div id="dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    {% for i in (1..10) %}
+      <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" data-index="{{ forloop.index0 }}"></button>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- スライドショー制御スクリプト -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('slider');
+    const dots = document.querySelectorAll('#dots button');
+    const totalSlides = dots.length;
+    let slidesPerView = getSlidesPerView();
+    let currentIndex = 0;
+    let interval;
+
+    function getSlidesPerView() {
+      if (window.innerWidth >= 1024) return 3; // PC
+      if (window.innerWidth >= 640) return 2;  // タブレット
+      return 1;                                // スマホ
+    }
+
+    function updateSlide(index) {
+      const offset = -(index * (100 / slidesPerView));
+      slider.style.transform = `translateX(${offset}%)`;
+      dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+      dots[index].classList.add('bg-blue-500');
+    }
+
+    function startAutoSlide() {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % (totalSlides - slidesPerView + 1);
+        updateSlide(currentIndex);
+      }, 4000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(interval);
+        currentIndex = i;
+        updateSlide(currentIndex);
+        startAutoSlide();
+      });
+    });
+
+    // ウィンドウサイズ変更時に枚数を再計算
+    window.addEventListener('resize', () => {
+      slidesPerView = getSlidesPerView();
+      updateSlide(currentIndex);
+    });
+
+    updateSlide(currentIndex);
+    startAutoSlide();
+  });
+</script>
+
+        
+
         
         <!-- まっ黒わんぱく夏休み -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-        <div id="summer-long" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+  
+        <div id="summer-long" class="bg-white rounded-lg shadow overflow-hidden mt-8 mb-8">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">まっ黒わんぱく夏休み</h4>
             <p class="text-sm font-semibold mb-2">7/27(日)～8/8(金)</p>
             <p class="mb-4">
               体験村の夏の看板プログラム。12泊13日の長期キャンプで、子どもたちの自主性と協調性を育みます。<br>
               自然の中での長期生活を通じて、生きる力と仲間との絆を深めます。<br>
+              12泊、8泊、6泊、3泊と日数が異なる4つのコースからお選びいただけます。<br>
               毎年多くのリピーターがいる人気プログラムです。
             </p>
             
@@ -329,42 +350,27 @@ title: プログラム紹介
                   <li>川遊び・水遊び</li>
                   <li>ウェルカムキャンプファイヤー</li>
                   <li>早朝座禅体験</li>
-                  <li>フリープログラム（何をするか、どこに行くか、子どもたち自身で作るプログラム）</li>
+                  <li>フリープログラム（何をするか、どこに行くか、子どもたち自身で作るプログラム　<font color=red>※12泊・8泊のみ</font>）</li>
                   <li>スパイスカレーを作ろう！</li>
                   <li>満天の星空観察</li>
+                  <li>料理コンテスト</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>06:30 起床、朝の準備</li>
-                  <li>07:30 朝食</li>
-                  <li>09:00 午前の活動</li>
-                  <li>12:00 昼食</li>
-                  <li>13:30 午後の活動</li>
-                  <li>16:00 わんぱくタイム（自由時間）</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
+            
+              <div class="bg-yellow-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学4年生～中学3年生</li>
+                  <li>期間：13日間（12泊13日）</li>
+                  <li>定員：12泊…20名　8泊…14名　6泊…14名　3泊…14名</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-yellow-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学4年生～中学3年生</li>
-                <li>期間：13日間（12泊13日）</li>
-                <li>定員：30名？？</li>
-              </ul>
-            </div>
-            
-
           </div>
         </div>
         
         <!-- 思いっきり夏キャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+ 
         <div id="summer-dokidoki" class="bg-white rounded-lg shadow overflow-hidden mb-8">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">思いっきり夏キャンプ</h4>
@@ -375,85 +381,54 @@ title: プログラム紹介
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>わんぱくタイム（自由遊び）</li>
-                  <li>川遊び</li>
-                  <li></li>
+                  <li>わんぱくタイム（自分たちで何をするか決められる時間）</li>
+                  <li>キャンプ場で川遊び</li>
                   <li>野外炊事（本格スパイスカレー）</li>
                   <li>キャンプファイヤー</li>
                   <li>草花むかし遊び</li>
-                  <li></li>
-                </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 午前の活動</li>
-                  <li>12:00 昼食</li>
-                  <li>13:30 午後の活動</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
                 </ul>
               </div>
             </div>
             
-            <div class="bg-yellow-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：7日間（6泊7日）</li>
-                <li>定員：20名</li>
-              </ul>
+              <div class="bg-yellow-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：7日間（6泊7日）</li>
+                  <li>定員：40名</li>
+                </ul>
+              </div>
             </div>
-            
-
           </div>
         </div>
         
         <!-- あそびばキャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+   
         <div id="summer-asobiba" class="bg-white rounded-lg shadow overflow-hidden mb-8">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">あそびばキャンプ</h4>
             <p class="text-sm font-semibold mb-2"><font color="red">8/20(水)～8/22(金)</font></p>
-            <p class="mb-4">短期間で自然体験を楽しみたい子どもたちのための特別プログラム。初めてのキャンプに挑戦する子どもにもぴったりの2泊3日の短期キャンプです。</p>
+            <p class="mb-4">短期間で自然体験を楽しみたい子どもたちのための特別プログラム。初めてのキャンプに挑戦するお子さまにもぴったりの2泊3日の短期キャンプです。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>野外料理体験</li>
-                  <li>ネイチャーゲーム</li>
-                  <li>水遊び</li>
-                  <li>キャンプファイヤー</li>
-                  <li>クラフト活動</li>
+                    <!--ｺﾒﾝﾄｱｳﾄ<li>野外料理体験</li>
+                  <li>ネイチャーゲーム</li>-->
+                  <li>八海山から流れる川で川遊び</li>
+                  <li>野外調理</li>
+                  <li>ウェルカムキャンプファイヤー</li>
+                  <li>星空観察</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:30 起床、朝の準備</li>
-                  <li>08:30 朝食</li>
-                  <li>09:30 午前の活動</li>
-                  <li>12:00 昼食</li>
-                  <li>13:30 午後の活動</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
-                </ul>
-              </div>
-            </div>
             
             <div class="bg-yellow-50 p-4 rounded">
               <h5 class="font-bold mb-2">対象・期間</h5>
               <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学1年生～小学6年生</li>
+                <li>対象：小学2年生～中学3年生</li>
                 <li>期間：3日間（2泊3日）</li>
-                <li>定員：15名</li>
+                <li>定員：約50名</li>
               </ul>
             </div>
             
@@ -463,53 +438,86 @@ title: プログラム紹介
       </div>
       
       <!-- 秋のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+  
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
-        
-        <!-- 秋の季節写真ギャラリー -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall1.jpg" alt="秋の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall1.jpg">
-            </div>
-            <!-- 画像2 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall2.jpg" alt="秋の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall2.jpg">
-            </div>
-            <!-- 画像3 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall3.jpg" alt="秋の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall3.jpg">
-            </div>
-            <!-- 画像4 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall4.jpg" alt="秋の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall4.jpg">
-            </div>
-            <!-- 画像5 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall5.jpg" alt="秋の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall5.jpg">
-            </div>
-            <!-- 画像6 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall6.jpg" alt="秋の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall6.jpg">
-            </div>
-            <!-- 画像7 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/fall/fall7.jpg" alt="秋の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/fall/fall7.jpg">
-            </div>
-        </div>
-        
-        <!-- キャンプ場 火あそびキャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-        <div id="autumn-fire" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+  <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
+         
+<!-- スライドショー全体 -->
+<div class="relative w-full overflow-hidden rounded-lg">
+  <!-- スライドをまとめたラッパー -->
+  <div id="fall-slider" class="flex transition-transform duration-700 ease-in-out">
+    {% for i in (1..6) %}
+      <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="{{ site.baseurl }}/images/fall/fall{{ i }}.jpg"
+             alt="秋の活動{{ i }}"
+             class="w-full h-64 object-cover rounded-lg">
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- 下のマルぽち（ナビゲーション） -->
+  <div id="fall-dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    {% for i in (1..6) %}
+      <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" data-index="{{ forloop.index0 }}"></button>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('fall-slider');
+  const dots = document.querySelectorAll('#fall-dots button');
+  const totalSlides = dots.length;
+  let slidesPerView = getSlidesPerView();
+  let currentIndex = 0;
+  let interval;
+
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3; // PC
+    if (window.innerWidth >= 640) return 2;  // タブレット
+    return 1;                                // スマホ
+  }
+
+  function updateSlide(index) {
+    const maxIndex = totalSlides - slidesPerView; // ← ここを追加して調整
+    if (index > maxIndex) index = maxIndex;
+    const offset = -(index * (100 / slidesPerView));
+    slider.style.transform = `translateX(${offset}%)`;
+    dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+    dots[index].classList.add('bg-blue-500');
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentIndex++;
+      const maxIndex = totalSlides - slidesPerView;
+      if (currentIndex > maxIndex) currentIndex = 0; // 最後まで行ったら最初に戻る
+      updateSlide(currentIndex);
+    }, 4000);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      currentIndex = i;
+      updateSlide(currentIndex);
+      startAutoSlide();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    updateSlide(currentIndex);
+  });
+
+  // 初期表示
+  updateSlide(currentIndex);
+  startAutoSlide();
+});
+</script>
+  
+
+        <div id="autumn-fire" class="bg-white rounded-lg shadow overflow-hidden mt-8 mb-8">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">キャンプ場 火あそびキャンプ</h4>
             <p class="text-sm font-semibold mb-2">9/13(土)～9/15(月)</p>
@@ -520,36 +528,22 @@ title: プログラム紹介
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
                   <li>火起こし体験</li>
-                  <li>野外料理（）</li>
+                  <li>野外調理</li>
                   <li>キャンプファイヤー</li>
                   <li>秋の自然観察</li>
                   <li>クラフト活動</li>
                   <li>焚き火を囲んでの交流会</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 午前の活動（火起こし体験）</li>
-                  <li>12:00 昼食（自分たちで作る野外料理）</li>
-                  <li>13:30 午後の活動（クラフト、自然観察）</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 焚き火を囲んでの交流会</li>
-                  <li>21:00 就寝準備</li>
+            
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：30名（最少催行人数20名）</li>
                 </ul>
               </div>
-            </div>
-            
-            <div class="bg-orange-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：30名（最少催行人数20名）</li>
-              </ul>
             </div>
             
 
@@ -557,121 +551,159 @@ title: プログラム紹介
         </div>
         
         <!-- 秋の稲刈り 親子キャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-        <div id="autumn-rice" class="bg-white rounded-lg shadow overflow-hidden">
+   
+        <div id="autumn-rice" class="bg-white rounded-lg shadow overflow-hidden mb-8">
           <div class="p-6">
             <h4 class="font-bold text-xl mb-3">秋の稲刈り 親子キャンプ</h4>
             <p class="text-sm font-semibold mb-2">9/27(土)～9/28(日)</p>
-            <p class="mb-4">春に植えた稲を収穫し、<font color=yellow>食の循環を体験します。</font>親子で協力して稲刈りを行い、収穫の喜びを分かち合います。</p>
+            <p class="mb-4">地元の方からレクチャーを受けながら、春の田植えキャンプで植えた稲を収穫します。親子で協力して稲刈りを行い、収穫の喜びを分かち合います。塩沢産コシヒカリの<font color=pink>新米</font>を楽しみます。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>稲刈り体験</li>
-                  <li>脱穀・籾摺り体験</li>
-                  <li>収穫祭</li>
-                  <li>新米を使った料理体験</li>
-                  <li>食育ワークショップ</li>
-                  <li>秋の自然観察</li>
+                  <li>稲刈り・はざかけ体験</li>
+                  <li><font color=pink>新米</font>を使った料理</li>
+                  <li>お餅つき</li>
+                  <li>秋の生き物・自然観察</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>08:00 集合・オリエンテーション</li>
-                  <li>09:00 稲刈り体験</li>
-                  <li>12:00 昼食（新米を使った料理）</li>
-                  <li>13:30 脱穀・籾摺り体験</li>
-                  <li>15:30 食育ワークショップ</li>
-                  <li>17:00 収穫祭の準備</li>
-                  <li>18:00 収穫祭（夕食）</li>
-                  <li>20:00 交流会</li>
-                  <li>21:00 就寝準備</li>
-                </ul>
-              </div>
-            </div>
             
-            <div class="bg-orange-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学2年生～高校3年生（子どものみの参加者）、その家族または引率者</li>
-                <li>期間：2日間（1泊2日）</li>
-                <li>定員：30名（最少催行人数15名）</li>
-              </ul>
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学2年生～高校3年生（子どものみの参加者）、その家族または引率者</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：30名（最少催行人数15名）</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+        
+              <!-- キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ -->
+   
+        <div id="autumn-color" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+          <div class="p-6">
+            <h4 class="font-bold text-xl mb-3">キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">10/11(土)～10/13(月)</p>
+            <p class="mb-4">色づく葉っぱやキノコなどの自然物の秋色を通して10月のキャンプ場を楽しむキャンプです。コテージに宿泊するため、野外泊が不安なお子様でも安心です。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-gray-50 p-4 rounded">
+                <h5 class="font-bold mb-2">主な活動内容</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>秋色ガーラントづくり</li>
+                  <li>秋探しフィールドビンゴ</li>
+                  <li>CAMP×PARTY</li>
+                  <li>ダルマストーブで野外調理</li>
+                  <li>秋の自然観察</li>
+                </ul>
+              </div>
+            
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～高校生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：15名（最少催行人数<font color=pink>10名</font>）</li>
+                </ul> 
+              </div>
+            </div>
+          </div>
+        </div>  
+        
       </div>
-      
+          
       <!-- 冬のプログラム -->
-    <!--ｺﾒﾝﾄｱｳﾄ
+    
       <div class="mb-10">
         <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">冬のプログラム</h3>
         
         <!-- 冬の季節写真ギャラリー -->
 
-    <!--ｺﾒﾝﾄｱｳﾄ
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter1.jpg" alt="冬の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter1.jpg">
-            </div>
-            <!-- 画像2 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter2.jpg" alt="冬の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter2.jpg">
-            </div>
-            <!-- 画像3 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter3.jpg" alt="冬の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter3.jpg">
-            </div>
-            <!-- 画像4 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter4.jpg" alt="冬の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter4.jpg">
-            </div>
-            <!-- 画像5 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter5.jpg" alt="冬の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter5.jpg">
-            </div>
-            <!-- 画像6 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter6.jpg" alt="冬の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter6.jpg">
-            </div>
-            <!-- 画像7 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter7.jpg" alt="冬の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter7.jpg">
-            </div>
-            <!-- 画像8 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter8.jpg" alt="冬の活動8" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter8.jpg">
-            </div>
-            <!-- 画像9 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter9.jpg" alt="冬の活動9" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter9.jpg">
-            </div>
-            <!-- 画像10 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="{{ site.baseurl }}/images/winter/winter10.jpg" alt="冬の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="{{ site.baseurl }}/images/winter/winter10.jpg">
-            </div>
-        </div>
+   <!-- スライドショー全体 -->
+<div class="relative w-full overflow-hidden rounded-lg">
+  <!-- スライドをまとめたラッパー -->
+  <div id="winter-slider" class="flex transition-transform duration-700 ease-in-out">
+    {% for i in (1..10) %}
+      <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="{{ site.baseurl }}/images/winter/winter{{ i }}.jpg"
+             alt="冬の活動{{ i }}"
+             class="w-full h-64 object-cover rounded-lg">
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- 下のマルぽち（ナビゲーション） -->
+  <div id="winter-dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    {% for i in (1..10) %}
+      <button class="w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" data-index="{{ forloop.index0 }}"></button>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('winter-slider');
+  const dots = document.querySelectorAll('#winter-dots button');
+  const totalSlides = dots.length;
+  let slidesPerView = getSlidesPerView();
+  let currentIndex = 0;
+  let interval;
+
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3; // PC
+    if (window.innerWidth >= 640) return 2;  // タブレット
+    return 1;                                // スマホ
+  }
+
+  function updateSlide(index) {
+    const maxIndex = totalSlides - slidesPerView; // ← ここを追加して調整
+    if (index > maxIndex) index = maxIndex;
+    const offset = -(index * (100 / slidesPerView));
+    slider.style.transform = `translateX(${offset}%)`;
+    dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+    dots[index].classList.add('bg-blue-500');
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentIndex++;
+      const maxIndex = totalSlides - slidesPerView;
+      if (currentIndex > maxIndex) currentIndex = 0; // 最後まで行ったら最初に戻る
+      updateSlide(currentIndex);
+    }, 4000);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      currentIndex = i;
+      updateSlide(currentIndex);
+      startAutoSlide();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    updateSlide(currentIndex);
+  });
+
+  // 初期表示
+  updateSlide(currentIndex);
+  startAutoSlide();
+});
+</script>
+
         
         <!-- 天空雪あそびキャンプ【年末】 -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-        <div id="winter-snow" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+
+        <div id="winter-snow" class="bg-white rounded-lg shadow overflow-hidden mt-8 mb-8">
           <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">天空雪あそびキャンプ【年末】</h4>
-            <p class="text-sm font-semibold mb-2"><font color=red>12/26(金)～12/29(月)</font></p>
-            <p class="mb-4">年末の雪山で思いっきり雪遊びを楽しみます。雪国ならではの体験を通して、冬の自然の魅力を発見します。</p>
+            <h4 class="font-bold text-xl mb-3">天空雪あそびキャンプ【年末】 ・ 【年始】</h4>
+            <p class="text-sm font-semibold mb-2">【年末】12/26(金)～12/29(月)　・　【年始】1/10(土)～1/12(月)</p>
+            <p class="mb-4">年末・年始の雪山で思いっきり雪遊びを楽しみます。雪国ならではの体験を通して、冬の自然の魅力を発見します。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
@@ -679,101 +711,103 @@ title: プログラム紹介
                 <ul class="list-disc pl-5 space-y-1">
                   <li>雪遊び（かまくら作り、雪合戦）</li>
                   <li>そり滑り</li>
-                  <li>スノーシュー体験</li>
+                  <li>スノーシューハイキング</li>
                   <li>雪像づくり</li>
                   <li>星空観察</li>
-                  <li><font color=blue>温かい室内クラフト</font></li>
-                  <li><font color=blue>年越し準備体験</font></li>
+                  <!--ｺﾒﾝﾄｱｳﾄ<li>温かい室内クラフト</li>
+                  <li>年越し準備体験</li>-->
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 雪遊び（午前の部）</li>
-                  <li>12:00 昼食（温かい食事）</li>
-                  <li>13:30 雪遊び（午後の部）</li>
-                  <li>16:00 入浴、温まり</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
+            
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：25名（最少催行人数12名）</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-blue-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：25名（最少催行人数12名）</li>
-              </ul>
-            </div>
-            
 
           </div>
         </div>
         
-        <!-- ガンガン滑ろうキャンプ -->
-    <!--ｺﾒﾝﾄｱｳﾄ
-        <div id="winter-ski" class="bg-white rounded-lg shadow overflow-hidden">
+                <!-- 思いっきり雪まみれキャンプ -->
+
+        <div id="winter-snow-play" class="bg-white rounded-lg shadow overflow-hidden mb-8">
           <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">ガンガン滑ろうキャンプ</h4>
-            <p class="text-sm font-semibold mb-2">1/24(土)～1/25(日)</p>
-            <p class="mb-4">スキー<font color=blue></font>を思いっきり楽しむキャンプです。スキー初めての初心者から経験者まで、それぞれのレベルに合わせた指導を行います。</p>
+            <h4 class="font-bold text-xl mb-3">思いっきり雪まみれキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">2/14(土)～2/15(日)</p>
+            <p class="mb-4">2月の南魚沼で雪まみれになるほど思いっきり遊びます。豪雪地ならではの体験を通して忘れられない冬の思い出を作ります。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>スキー<font color=blue></font>レッスン</li>
+                  <li>雪遊び（かまくら作り、雪合戦）</li>
+                  <li>そり滑り</li>
+                  <li>夜プログラム(星空観察・屋内レクリエーションなど)</li>
+                  <li>スノートレッキング</li>
+                  <!--ｺﾒﾝﾄｱｳﾄ<li>温かい室内クラフト</li>
+                  <li>年越し準備体験</li>-->
+                </ul>
+              </div>
+                          
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：25名（最少催行人数12名）</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+        
+        <!-- ガンガン滑ろうキャンプ -->
+
+        <div id="winter-ski" class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="p-6">
+            <h4 class="font-bold text-xl mb-3">ガンガン滑ろうキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">1/24(土)～1/25(日)</p>
+            <p class="mb-4">雪の恵み豊かな南魚沼でスキーを思いっきり楽しむキャンプです。スキー初めての初心者から経験者まで、それぞれのレベルに合わせた指導を行います。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-gray-50 p-4 rounded">
+                <h5 class="font-bold mb-2">主な活動内容</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>スキーレッスン</li>
                   <li>ゲレンデ滑走</li>
-                  <li>雪遊び</li>
-                  <li><font color=blue>ナイターセッション</font></li>
-                  <li>ウィンタースポーツ講習</li>
+                  <!--<li>ナイターセッション</li>
+                  <li>ウィンタースポーツ講習</li>-->
                   <li>温泉入浴</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>06:30 起床、朝の準備</li>
-                  <li>07:30 朝食</li>
-                  <li>08:30 ゲレンデへ移動</li>
-                  <li>09:30 午前のレッスン</li>
-                  <li>12:00 昼食</li>
-                  <li>13:00 午後の自由滑走</li>
-                  <li>16:00 ゲレンデから帰還</li>
-                  <li>17:00 温泉入浴</li>
-                  <li>18:30 夕食</li>
-                  <li>20:00 就寝準備</li>
+                          
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～高校3年生</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：15名</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-blue-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～高校3年生</li>
-                <li>期間：2日間（1泊2日）</li>
-                <li>定員：15名</li>
-              </ul>
-            </div>
-            
 
           </div>
         </div>
       </div>
       
       <div class="mt-8 text-center">
-        <a href="{{ site.baseurl }}/#annual-programs" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
+        <a href="{{ site.baseurl }}/#annual-programs" class="inline-block bg-maingreen text-white px-6 py-2 rounded hover:bg-maingreen transition">トップページに戻る</a>
       </div>
     </div>
-  </section>
+  
   
   <!-- 画像拡大用モーダル -->
-    <!--ｺﾒﾝﾄｱｳﾄ
   <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden">
     <div class="relative max-w-4xl w-full mx-4">
       <button id="close-modal" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300">&times;</button>
@@ -800,7 +834,7 @@ title: プログラム紹介
       });
       
       // モーダルを閉じる処理
-      closeModal.addEventListener('click', function() {
+      closeModal.addEventListener('click', function() {ssssssss
         imageModal.classList.add('hidden');
         document.body.style.overflow = ''; // スクロール有効化
       });
@@ -822,6 +856,6 @@ title: プログラム紹介
       });
     });
   </script>
-ｺﾒﾝﾄｱｳﾄ-->
+
 </section>
 </main>
