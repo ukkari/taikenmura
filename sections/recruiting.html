@@ -2,81 +2,119 @@
 layout: default
 title: 参加者募集
 ---
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ページタイトル</title>
-</head>
+<main class="bg-mainwhite">
 
-<body class="bg-mainwhite text-gray-800">
+  <!-- ====== ページ導入 ====== -->
+  <section class="py-6">
+    <div class="container mx-auto px-4 space-y-6">
 
-  <!-- ヘッダー -->
-  <header class="w-full bg-white shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-4">
-      <h1 class="text-xl font-bold">サイトタイトル</h1>
+      <h1 class="text-xl md:text-4xl font-bold text-center">
+        一般社団法人 自然体験村
+      </h1>
+
+      <h2 class="text-3xl font-bold border-b-4 border-maingreen pb-2">
+        参加者募集のお知らせ
+      </h2>
+
+      <p>
+        自然体験村では、現在次のプログラムの参加者を募集しています。<br>
+        ぜひみなさんのご参加をお待ちしています！
+      </p>
+
     </div>
-  </header>
+  </section>
 
-  <!-- メイン（ここは1つだけ） -->
-  <main class="w-full">
+  <!-- ====== キャンプ詳細 ====== -->
+  <section class="py-8">
+    <div class="container mx-auto px-4 space-y-10">
 
-    <!-- セクション① -->
-    <section class="py-12 bg-mainwhite">
-      <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2">
+        天空雪あそびキャンプ【年末】・【年始】
+      </h2>
 
-        <h2 class="text-2xl md:text-4xl font-bold text-center mb-8">
-          セクションタイトル
-        </h2>
+      <div class="bg-white p-6 rounded-lg shadow space-y-10">
 
-        <div class="space-y-6">
-          <p>
-            ここに本文テキストが入ります。
-          </p>
-        </div>
+        <!-- ====== 画像ギャラリー ====== -->
+        <section class="space-y-3">
+
+          <div class="relative w-full overflow-hidden rounded-lg">
+            <img
+              id="mainImage"
+              src="{{ site.baseurl }}/images/uploads/IMG_0161.jpeg"
+              alt="天空雪あそび メイン画像"
+              class="w-full object-contain gallery-main-img"
+            >
+          </div>
+
+          <div class="flex gap-2 overflow-x-auto pb-1 lg:w-[300px]">
+            <img src="{{ site.baseurl }}/images/uploads/IMG_0161.jpeg" class="gallery-thumb active-thumb" alt="天空雪あそび0" onclick="changeImage(this)">
+            <img src="{{ site.baseurl }}/images/uploads/IMG_8383.jpeg" class="gallery-thumb" alt="天空雪あそび1" onclick="changeImage(this)">
+            <img src="{{ site.baseurl }}/images/uploads/IMG_8382.jpeg" class="gallery-thumb" alt="天空雪あそび2" onclick="changeImage(this)">
+            <img src="{{ site.baseurl }}/images/uploads/IMG_8379.jpeg" class="gallery-thumb" alt="天空雪あそび3" onclick="changeImage(this)">
+          </div>
+
+        </section>
+
+        <!-- ====== 説明本文 ====== -->
+        <section class="space-y-4">
+          <p>日本有数の豪雪地、南魚沼！！雪の体験村キャンプのお知らせです！</p>
+          <p>腰まで埋まる雪の中で思いっきり雪遊び</p>
+          <p>自分で作ったコースでソリ遊び！雪の上でのキャンプファイヤー♪</p>
+          <p>大自然に囲まれて直感で遊びます。</p>
+          <p>雪国ならではの雪の楽しさをお教えします！！！</p>
+          <p>「コシヒカリの郷」子ども自然体験村IN南魚沼</p>
+        </section>
+
+        <!-- ====== 募集要項 ====== -->
+        <section class="space-y-6">
+
+          <h3 class="text-xl font-semibold border-b-2 pb-1">日程</h3>
+          <p>① 年末コース：2025年12月27日（土）～29日（月）</p>
+          <p>② 年始コース：2026年1月10日（土）～12日（月・祝）</p>
+
+          <h3 class="text-xl font-semibold border-b-2 pb-1">開催場所</h3>
+          <p>新潟県南魚沼市 八海山</p>
+
+          <h3 class="text-xl font-semibold border-b-2 pb-1">参加対象</h3>
+          <p>小学校3年生～中学校3年生</p>
+
+          <h3 class="text-xl font-semibold border-b-2 pb-1">参加費用</h3>
+          <p>27,200円</p>
+
+          <h3 class="text-xl font-semibold border-b-2 pb-1">募集人数</h3>
+          <p>各コース先着25名（最少催行15名）</p>
+
+        </section>
+
+        <!-- ====== 申込み ====== -->
+        <section class="pt-6">
+          <h3 class="text-xl font-semibold border-b-2 pb-1 mb-3">お申込み</h3>
+          <p class="pb-3">以下のフォームよりお申込みください。</p>
+
+          <a
+            href="{{ site.baseurl }}/contact"
+            class="inline-block bg-maingreen text-white px-4 py-2 rounded hover:bg-maingreen1"
+          >
+            申し込みフォームへ
+          </a>
+        </section>
 
       </div>
-    </section>
-
-    <!-- セクション②（カードなど） -->
-    <section class="py-12 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-4">
-
-        <h2 class="text-2xl font-bold mb-6">
-          別のセクション
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <div class="bg-white rounded-xl shadow p-6">
-            <h3 class="font-bold mb-2">カード1</h3>
-            <p>説明文</p>
-          </div>
-
-          <div class="bg-white rounded-xl shadow p-6">
-            <h3 class="font-bold mb-2">カード2</h3>
-            <p>説明文</p>
-          </div>
-
-          <div class="bg-white rounded-xl shadow p-6">
-            <h3 class="font-bold mb-2">カード3</h3>
-            <p>説明文</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-gray-800 text-white">
-    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-center">
-      © 2026 Your Project Name
     </div>
-  </footer>
+  </section>
 
-</body>
-</html>
+</main>
+
+<script>
+function changeImage(thumbnail) {
+  const mainImage = document.getElementById("mainImage");
+  mainImage.src = thumbnail.src;
+  mainImage.alt = thumbnail.alt;
+
+  document.querySelectorAll(".gallery-thumb").forEach(img => {
+    img.classList.remove("active-thumb");
+  });
+
+  thumbnail.classList.add("active-thumb");
+}
+</script>
