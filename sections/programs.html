@@ -259,14 +259,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
          
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const slider = document.getElementById('spring-slider');
-  const slides = document.querySelectorAll('#spring-slider .slide');
-  const dotsContainer = document.getElementById('spring-dots');
+  const slider = document.getElementById("spring-slider");
+  const slides = document.querySelectorAll("#spring-slider .slide");
+  const dotsContainer = document.getElementById("spring-dots");
 
+  let current = 0;
   let slidesPerView = getSlidesPerView();
-  let currentIndex = 0;
   let interval;
 
   function getSlidesPerView() {
@@ -274,45 +274,83 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth >= 640) return 2;
     return 1;
   }
-  const totalSlides = slides.length;
-  // ドット自動生成
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement('button');
-    dot.className = "w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600";
-    dot.dataset.index = i;
-    dotsContainer.appendChild(dot);
+
+  function createDots() {
+
+    dotsContainer.innerHTML = "";
+
+    const pages = Math.ceil(slides.length / slidesPerView);
+
+    for (let i = 0; i < pages; i++) {
+
+      const dot = document.createElement("button");
+
+      dot.className = "w-3 h-3 rounded-full bg-gray-400";
+
+      dot.addEventListener("click", () => {
+        current = i;
+        update();
+        restart();
+      });
+
+      dotsContainer.appendChild(dot);
+
+    }
+
   }
-  const dots = document.querySelectorAll('#spring-dots button');
-  function updateSlide(index) {
-    const maxIndex = totalSlides - slidesPerView;
-    if (index > maxIndex) index = maxIndex;
-    const offset = -(index * (100 / slidesPerView));
-    slider.style.transform = `translateX(${offset}%)`;
-    dots.forEach(dot => dot.classList.remove('bg-blue-500'));
-    if (dots[index]) dots[index].classList.add('bg-blue-500');
+
+  function update() {
+
+    const slideWidth = slides[0].offsetWidth;
+
+    slider.style.transform =
+      `translateX(-${current * slideWidth * slidesPerView}px)`;
+
+    const dots = dotsContainer.querySelectorAll("button");
+
+    dots.forEach(d => d.classList.remove("bg-blue-500"));
+
+    if (dots[current]) dots[current].classList.add("bg-blue-500");
+
   }
-  function startAutoSlide() {
-    interval = setInterval(() => {
-      currentIndex++;
-      const maxIndex = totalSlides - slidesPerView;
-      if (currentIndex > maxIndex) currentIndex = 0;
-      updateSlide(currentIndex);
-    }, 4000);
+
+  function next() {
+
+    const pages = Math.ceil(slides.length / slidesPerView);
+
+    current++;
+
+    if (current >= pages) current = 0;
+
+    update();
+
   }
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      clearInterval(interval);
-      currentIndex = i;
-      updateSlide(currentIndex);
-      startAutoSlide();
-    });
-  });
-  window.addEventListener('resize', () => {
+
+  function start() {
+    interval = setInterval(next, 4000);
+  }
+
+  function restart() {
+    clearInterval(interval);
+    start();
+  }
+
+  window.addEventListener("resize", () => {
+
     slidesPerView = getSlidesPerView();
-    updateSlide(currentIndex);
+
+    current = 0;
+
+    createDots();
+
+    update();
+
   });
-  updateSlide(currentIndex);
-  startAutoSlide();
+
+  createDots();
+  update();
+  start();
+
 });
 </script>
          
