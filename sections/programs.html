@@ -142,7 +142,7 @@ title: プログラム紹介
            data-full-img="{{ site.baseurl }}/images/uploads/spfire_5.jpg"
            class="w-full h-64 object-cover rounded-lg">
     </div>
-        <div class="slide">
+      <div class="slide">
       <img src="{{ site.baseurl }}/images/uploads/spfire_6.jpg" 
            alt="spfire6"
            data-full-img="{{ site.baseurl }}/images/uploads/spfire_6.jpg"
@@ -746,17 +746,13 @@ title: プログラム紹介
 
          
   <!-- ドット -->
-  <div id="slider-dots"
-       class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-  </div>
-
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const slider = document.getElementById("slider-wrapper");
   const slides = document.querySelectorAll(".slide");
-  const dotsContainer = document.getElementById("slider-dots");
+  const dotsContainer = document.querySelector(".slider-dots");
 
   let current = 0;
   let slidesPerView = getSlidesPerView();
