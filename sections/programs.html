@@ -110,8 +110,8 @@ title: プログラム紹介
           <div class="p-6">
          
 <!-- スライドショー全体 -->
-<div class="slider-wrapper">
-  <div class="slider">
+<div class="slider-wrapper overflow-hidden">
+  <div class="slider flex transition-transform duration-700 ease-in-out">
     <div class="slide">
       <img src="{{ site.baseurl }}/images/uploads/spfire_1.jpg" 
            alt="spfire1"
@@ -751,8 +751,8 @@ title: プログラム紹介
 
 document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
   
-  const slider = document.querySelector(".slider");
-  const slides = document.querySelectorAll(".slide");
+  const slider = wrapper.querySelector(".slider");
+  const slides = wrapper.querySelectorAll(".slide");
   const dotsContainer = document.querySelector(".slider-dots");
 
   let current = 0;
