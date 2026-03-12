@@ -748,9 +748,10 @@ title: プログラム紹介
   <!-- ドット -->
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
 
-  const slider = document.getElementById("slider-wrapper");
+document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
+  
+  const slider = document.querySelector(".slider");
   const slides = document.querySelectorAll(".slide");
   const dotsContainer = document.querySelector(".slider-dots");
 
