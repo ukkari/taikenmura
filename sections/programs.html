@@ -754,7 +754,7 @@ document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
   
   const slider = wrapper.querySelector(".slider");
   const slides = wrapper.querySelectorAll(".slide");
-  const dotsContainer = document.querySelector(".slider-dots");
+  const dotsContainer = wrapper.querySelector(".slider-dots");
 
   let current = 0;
   let slidesPerView = getSlidesPerView();
