@@ -82,15 +82,19 @@ custom_css: |
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('#hero-slideshow .slide');
   let current = 0;
-
-  setInterval(() => {
+  function showNextSlide() {
+    // 現在をフェードアウト
     slides[current].classList.remove('active');
-    // フェード完了後に次画像へ
+    // フェード後に次表示
     setTimeout(() => {
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-     }, 1500); // ← transition時間と合わせる
-  }, 5000); // 5秒ごとに切り替え
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+      // 次の切り替え予約
+      setTimeout(showNextSlide, 5000);
+    }, 1500);
+  }
+  // 最初の開始
+  setTimeout(showNextSlide, 5000);
 });
 </script>
 
