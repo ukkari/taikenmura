@@ -139,16 +139,33 @@ animation: zoom 19.5s ease-in-out infinite;
   
   <!-- 最新情報セクション -->
   <section id="news"> 
-    <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mt-2 mb-4">最新情報</h2>
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mt-2 mb-4">
+      <a href="https://taiken-mura.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-inherit hover:underline">
+        体験村ブログより
+      </a>
+    </h2>
     <div class="bg-white p-6 rounded-lg shadow">
-      <p class="mb-4">
-        体験村のブログから最新情報をお届けします。
-      </p>
-      <div id="news-content" class="mt-4">
-        <!-- JavaScriptによって動的にコンテンツが追加されます -->
-      </div>
-      <div id="news-images" class="mt-6">
-        <!-- ブログからの画像がここに表示されます -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div>
+          <h3 class="text-lg font-bold mb-3">最新情報</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            参加者募集のお知らせをブログからお届けします。
+          </p>
+          <div id="news-content">
+            <!-- JavaScriptによって動的にコンテンツが追加されます -->
+          </div>
+          <div class="mt-4 text-right">
+            <a href="https://taiken-mura.blogspot.com/search/label/%E5%8F%82%E5%8A%A0%E8%80%85%E5%8B%9F%E9%9B%86" target="_blank" rel="noopener noreferrer" class="text-xs text-maingreen hover:underline">
+              もっと見る →
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 pt-6 lg:border-t-0 lg:pt-0">
+          <h3 class="text-lg font-bold mb-3">ブログからの写真</h3>
+          <div id="news-images">
+            <!-- ブログからの画像がここに表示されます -->
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   {% if page.url == "/" %}
-  <script src="{{ site.baseurl }}/news.js" defer></script>
+  <script src="{{ site.baseurl }}/news.js?v={{ site.time | date: '%s' }}" defer></script>
   {% endif %}
   {% if page.custom_css %}
   <style>

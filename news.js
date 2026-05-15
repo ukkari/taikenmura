@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
   const newsContainer = document.getElementById('news-content');
   const imagesContainer = document.getElementById('news-images');
+  if (!newsContainer || !imagesContainer) {
+    return;
+  }
+
   const loadingElement = document.createElement('p');
   loadingElement.textContent = '読み込み中...';
+  loadingElement.className = 'text-sm text-gray-600';
   newsContainer.appendChild(loadingElement);
 
+  const participantLabel = encodeURIComponent('参加者募集');
   const newsScript = document.createElement('script');
-  newsScript.src = 'https://taiken-mura.blogspot.com/feeds/posts/default?max-results=5&alt=json-in-script&callback=handleNewsResponse';
+  newsScript.src = `https://taiken-mura.blogspot.com/feeds/posts/default/-/${participantLabel}?max-results=5&alt=json-in-script&callback=handleNewsResponse`;
   document.body.appendChild(newsScript);
   
   const imagesScript = document.createElement('script');
-  imagesScript.src = 'https://taiken-mura.blogspot.com/feeds/posts/default?max-results=20&alt=json-in-script&callback=handleImagesResponse';
+  imagesScript.src = 'https://taiken-mura.blogspot.com/feeds/posts/default?max-results=24&alt=json-in-script&callback=handleImagesResponse';
   document.body.appendChild(imagesScript);
   
   window.feedTimeout = setTimeout(function() {
@@ -18,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       newsContainer.removeChild(loadingElement);
       const errorElement = document.createElement('p');
       errorElement.textContent = '情報の読み込みに失敗しました。後でもう一度お試しください。';
-      errorElement.className = 'text-red-600';
+      errorElement.className = 'text-sm text-red-600';
       newsContainer.appendChild(errorElement);
     }
   }, 10000);
@@ -35,7 +41,7 @@ window.handleNewsResponse = function(data) {
   
   if (data.feed && data.feed.entry && data.feed.entry.length > 0) {
     const newsListElement = document.createElement('ul');
-    newsListElement.className = 'space-y-2';
+    newsListElement.className = 'divide-y divide-gray-100';
     
     data.feed.entry.forEach(entry => {
       const title = entry.title.$t;
@@ -51,13 +57,14 @@ window.handleNewsResponse = function(data) {
       }
       
       const listItem = document.createElement('li');
-      listItem.className = 'py-1';
+      listItem.className = 'py-3 first:pt-0 last:pb-0';
       
       const linkElement = document.createElement('a');
       linkElement.href = postLink;
       linkElement.textContent = title;
-      linkElement.className = 'text-blue-600 hover:underline';
+      linkElement.className = 'block font-bold text-maingreen hover:underline leading-relaxed';
       linkElement.target = '_blank';
+      linkElement.rel = 'noopener noreferrer';
       
       listItem.appendChild(linkElement);
       newsListElement.appendChild(listItem);
@@ -66,7 +73,8 @@ window.handleNewsResponse = function(data) {
     newsContainer.appendChild(newsListElement);
   } else {
     const noNewsElement = document.createElement('p');
-    noNewsElement.textContent = '最新の情報はありません。';
+    noNewsElement.textContent = '参加者募集のお知らせはありません。';
+    noNewsElement.className = 'text-sm text-gray-600';
     newsContainer.appendChild(noNewsElement);
   }
 };
@@ -84,7 +92,7 @@ window.handleImagesResponse = function(data) {
     data.feed.entry.forEach(entry => {
       if (entry.content && entry.content.$t) {
         const content = entry.content.$t;
-        const imgRegex = /<img[^>]+src="([^">]+)"/g;
+        const imgRegex = /<img[^>]+src=["']([^"']+)["']/g;
         let match;
         
         while ((match = imgRegex.exec(content)) !== null) {
@@ -93,7 +101,7 @@ window.handleImagesResponse = function(data) {
             allImages.push({
               src: imgSrc,
               title: entry.title.$t,
-              link: entry.link.find(link => link.rel === 'alternate')?.href || ''
+              link: entry.link?.find(link => link.rel === 'alternate')?.href || ''
             });
           }
         }
@@ -101,29 +109,26 @@ window.handleImagesResponse = function(data) {
     });
     
     if (allImages.length > 0) {
-      const shuffledImages = allImages.sort(() => 0.5 - Math.random());
-      const selectedImages = shuffledImages.slice(0, Math.min(10, shuffledImages.length));
-      
-      const imagesTitle = document.createElement('h3');
-      imagesTitle.textContent = 'ブログからの写真';
-      imagesTitle.className = 'text-lg font-bold mb-3 mt-2';
-      imagesContainer.appendChild(imagesTitle);
+      const selectedImages = allImages.slice(0, Math.min(10, allImages.length));
       
       const imageGrid = document.createElement('div');
-      imageGrid.className = 'grid grid-cols-2 md:grid-cols-5 gap-2';
+      imageGrid.className = 'grid grid-cols-2 lg:grid-cols-3 gap-2';
       
-      selectedImages.forEach(img => {
+      selectedImages.forEach((img, index) => {
         const imgContainer = document.createElement('div');
-        imgContainer.className = 'relative overflow-hidden rounded-lg h-32';
+        imgContainer.className = `relative overflow-hidden rounded-lg aspect-square bg-gray-100${index >= 6 ? ' lg:hidden' : ''}`;
         
         const imgElement = document.createElement('img');
         imgElement.src = img.src;
         imgElement.alt = img.title;
         imgElement.className = 'w-full h-full object-cover hover:scale-110 transition-transform duration-300';
+        imgElement.loading = 'lazy';
         
         const imgLink = document.createElement('a');
         imgLink.href = img.link;
         imgLink.target = '_blank';
+        imgLink.rel = 'noopener noreferrer';
+        imgLink.className = 'block w-full h-full';
         imgLink.appendChild(imgElement);
         
         imgContainer.appendChild(imgLink);
@@ -131,6 +136,11 @@ window.handleImagesResponse = function(data) {
       });
       
       imagesContainer.appendChild(imageGrid);
+    } else {
+      const noImagesElement = document.createElement('p');
+      noImagesElement.textContent = '表示できる写真がありません。';
+      noImagesElement.className = 'text-sm text-gray-600';
+      imagesContainer.appendChild(noImagesElement);
     }
   }
 };
