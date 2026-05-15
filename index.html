@@ -82,12 +82,19 @@ custom_css: |
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('#hero-slideshow .slide');
   let current = 0;
-
-  setInterval(() => {
+  function showNextSlide() {
+    // 現在をフェードアウト
     slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 5000); // 5秒ごとに切り替え
+    // フェード後に次表示
+    setTimeout(() => {
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+      // 次の切り替え予約
+      setTimeout(showNextSlide, 5000);
+    }, 1500);
+  }
+  // 最初の開始
+  setTimeout(showNextSlide, 5000);
 });
 </script>
 
@@ -111,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: zoom 20s ease-in-out infinite;
+animation: zoom 19.5s ease-in-out infinite;
 }
 
 @keyframes zoom {
