@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setInterval(() => {
     slides[current].classList.remove('active');
+    // フェード完了後に次画像へ
+    setTimeout(() => {
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
      }, 1500); // ← transition時間と合わせる
