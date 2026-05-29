@@ -43,7 +43,7 @@ custom_css: |
 <h2 class="text-xl md:text-4xl font-bold text-center pt-4 md:pt-6 mb-4 ">一般社団法人 自然体験村</h2>
 
   
-    <div class="rice-svg-container">
+<div class="rice-svg-container">
   <!-- 背景としてお米の形を配置 -->
   <svg class="rice-shape" viewBox="0 0 200 150" preserveAspectRatio="none">
     <!-- お米のパスデータ（上部が少し尖った形） -->
@@ -60,10 +60,29 @@ custom_css: |
   <div class="rice-text">
     こだわりの<br>お米です！
   </div>
-</div>
+</div>  
   
-  
-  
+<!-- ① まずデザイン（CSS）を書く -->
+<style>
+  .rice-balloon {
+    display: inline-block;
+    padding: 30px 40px;
+    background-color: #fff;
+    border: 2px solid #d4b285;
+    color: #333;
+    font-weight: bold;
+    border-radius: 50% 60% 45% 55% / 40% 65% 35% 60%;
+    transform: rotate(-3deg); 
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 300px;
+  }
+</style>
+
+<!-- ② そのあとに中身（HTML）を書く -->
+<div class="rice-balloon">
+  ここにテキストが入ります。お米の形っぽい吹き出しです！
+</div>  
   
 
   
