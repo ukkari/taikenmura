@@ -56,24 +56,36 @@ custom_css: |
 <div class="container mx-auto h-full flex justify-start items-start relative z-20 p-6 md:p-10">
 
 <div class="relative w-fit pt-[25rem] md:pt-52 lg:pt-10 md:pl-4 lg:pl-6">
-  
-  <img 
-  src="{{ site.baseurl }}/images/uploads/お米アイコン.png"
-  alt=""
-  class="absolute block lg:hidden w-[210px] md:w-[320px] max-w-none opacity-90 -z-10 left-[1%] md:left-[1%]  top-[80%] md:top-[60%] -translate-y-1/2 pointer-events-none"
-/>
-  
-<h2 class="text-maingreen text-xl md:text-2xl lg:text-6xl font-bold leading-none text-left md:pt-2"
-style="font-family: 'Zen Maru Gothic', sans-serif;">
-  <span class="block tracking-tight ">
-    自然豊かな南魚沼で
-  </span>
-  <span class="block mt-2 pl-2 tracking-tighter">
-    思いっきり遊ぼう！
-  </span>
-</h2>
+
+  <!-- 米アイコン＋見出しをまとめてラップ（sm/mdのみ） -->
+  <div class="relative block lg:hidden w-[210px] md:w-[320px]">
+    
+    <!-- 米アイコン（背景として敷く） -->
+    <img 
+      src="{{ site.baseurl }}/images/uploads/お米アイコン.png"
+      alt=""
+      class="w-full opacity-90 pointer-events-none"
+    />
+
+    <!-- アイコンの上に見出しを重ねる -->
+    <div class="absolute inset-0 flex items-center justify-center px-2">
+      <h2 class="text-maingreen text-xl md:text-2xl font-bold leading-none text-left"
+          style="font-family: 'Zen Maru Gothic', sans-serif;">
+        <span class="block tracking-tight">自然豊かな南魚沼で</span>
+        <span class="block mt-2 pl-2 tracking-tighter">思いっきり遊ぼう！</span>
+      </h2>
+    </div>
+
   </div>
-  </div>  
+
+  <!-- lg以上は通常表示（アイコンなし） -->
+  <h2 class="hidden lg:block text-maingreen lg:text-6xl font-bold leading-none text-left md:pt-2"
+      style="font-family: 'Zen Maru Gothic', sans-serif;">
+    <span class="block tracking-tight">自然豊かな南魚沼で</span>
+    <span class="block mt-2 pl-2 tracking-tighter">思いっきり遊ぼう！</span>
+  </h2>
+
+</div>
   
 
   <!-- スライド画像 -->
