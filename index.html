@@ -51,7 +51,7 @@ custom_css: |
 <div class="relative w-fit pt-[20rem] md:pt-52 lg:pt-10 md:pl-4 lg:pl-6 z-30">
 
   <!-- 米アイコン＋見出しをまとめてラップ（sm/mdのみ） -->
-  <div class="relative block w-[210px] md:w-[320px] lg:w-[430px]">
+  <div class="relative block w-[210px] md:w-[320px] lg:w-[360px]">
     <img 
       src="{{ site.baseurl }}/images/uploads/お米アイコン.png"
       alt=""
@@ -59,7 +59,7 @@ custom_css: |
     />
     <div class="absolute inset-[10%] inset-x-[12%] overflow-hidden flex flex-col items-center justify-center gap-2">
       
-      <h2 class="text-maingreen text-[18px] md:text-[26px] font-bold leading-snug text-center w-full"
+      <h2 class="text-maingreen text-[18px] md:text-[26px] lg:text-[30px] font-bold leading-snug text-center w-full"
           style="font-family: 'Zen Maru Gothic', sans-serif;">
         <span class="block tracking-tight">南魚沼で</span>
         <span class="block mt-1 tracking-tighter">思いっきり遊ぼう！</span>
@@ -77,14 +77,16 @@ custom_css: |
   </div>
 
   <!-- lg以上は通常表示（アイコンなし） -->
+  <!--
   <h2 class="hidden lg:block text-maingreen lg:text-6xl font-bold leading-none text-left md:pt-8"
       style="font-family: 'Zen Maru Gothic', sans-serif;">
     <span class="block tracking-tight">南魚沼で</span>
     <span class="block mt-2 pl-2 tracking-tighter">思いっきり遊ぼう！</span>
   </h2>
+  -->
 
 </div>
-</div> <!-- ← ここが抜けていた！container の閉じタグ -->
+</div> 
 
 <!-- スライド画像（背景） -->
 <div class="slideshow-container absolute inset-0 z-0">
