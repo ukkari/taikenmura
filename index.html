@@ -40,35 +40,56 @@ custom_css: |
 <main class="relative pt-0 mt-0 bg-mainwhite">
   <!-- ページ内容 -->
   
-<h2 class="text-xl md:text-4xl font-bold text-center pt-4 md:pt-6 mb-4 ">一般社団法人 自然体験村</h2>
-
-
+<h2 class="text-xl md:text-4xl font-bold text-center pt-1 md:pt-6 mb-1 md:mb-4 leading-tight">
+  <span class="text-xs md:text-2xl">一般社団法人</span><br class="md:hidden">
+  自然体験村
+</h2>
   
 <!-- ヒーロースライドショーセクション -->
 <section class="relative h-[700px] bg-cover bg-center overflow-hidden" id="hero-slideshow">
+<div class="container mx-auto h-full flex justify-start items-start relative z-20 p-6 md:p-10">
+<div class="relative w-fit pt-[20rem] md:pt-52 lg:pt-20 md:pl-4 lg:pl-6 z-30">
 
-  <!--
-  <div class="absolute inset-0 bg-black opacity-50 z-10">
+  <!-- 米アイコン＋見出しをまとめてラップ（sm/mdのみ） -->
+  <div class="relative block w-[210px] md:w-[320px] lg:w-[360px]">
+    <img 
+      src="{{ site.baseurl }}/images/uploads/お米アイコン.png"
+      alt=""
+      class="w-full opacity-90 pointer-events-none"
+    />
+    <div class="absolute inset-[10%] inset-x-[12%] overflow-hidden flex flex-col items-center justify-center gap-2">
+      
+      <h2 class="text-maingreen text-[18px] md:text-[26px] lg:text-[30px] font-bold leading-snug text-center w-full"
+          style="font-family: 'Zen Maru Gothic', sans-serif;">
+        <span class="block tracking-tight">南魚沼で</span>
+        <span class="block mt-1 tracking-tighter">思いっきり遊ぼう！</span>
+      </h2>
+      
+          <!-- 山のライン（テキストの下） -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 250 80"
+         class="w-[85%] opacity-80 pointer-events-none"
+         fill="none">
+      <path d="m250 133c-2.41 0.01-3.78-0.53-5.95-2.47-3.73-3.28-6.93-4.88-11.2-7.35-2.88-1.59-4.72-2.45-7.35-4.6-1.95-1.55-4.98-1.77-7.84-2.82-3.04-1.11-6.37-2.53-9.34-2.7-2.16-0.12-2.09-0.49-4.5-0.12-1.2 0.21-3.14-0.09-5.09 0.4-3.65 0.98-3.91 1.09-6.68 2.41-2.36 0.85-5.11 1.83-7.6 2.64-2.53 1.09-4.24 0.85-7.56 0.56-4.7 0-7.42-2.27-10.17-6.3-0.89-1.1-1.5-1.05-3.53-0.57-2.1 0.49-4.08 0.11-5.21 0.21-0.99 0.08-1.76 0.56-2.75-0.01-1.33-0.8-2.21-0.74-3.18-1-1.3-0.37-1.5-1.62-3.18-1.76-1.46-0.13-1.16 0.73-2.61 0.73-2.09 0-2.07-1.25-3.66-1.16-1.68 0.09-2.71 2.62-5.16 2.91-2.46 0.28-4.81-2.44-7.65-2.44-2.51 0-2.57-1-4.29-0.91-1.5 0.08-2.37 1.02-4.81 0.97-2.51-0.06-3.62 0.36-5.24 0.13-2.25-0.34-3.83 0.7-5.66 0.4-1.9-0.32-2.77-1.39-4.79-0.87-1.5 0.44-1.63 0.99-3.71 0.85-1.26-0.09-1.23-1.36-2.62-0.54-1.45 0.89-1.92 3.07-3.4 3.2-1.68 0.15-1.74-0.81-3.12-0.58-1.54 0.28-2.41 0.94-4.31 0.76-2.64-0.29-3.09-0.04-5.69 1.24-1.7 0.86-3.17 0.82-5.46 0.37-2.46-0.18-3.2-1.58-5.49-2.41-2.85-1.04-4.01-1.15-5.57-1.37-4.45-0.62-7.57 0.79-11.05 2.61-2.78 1.32-5.38 2.18-7.84 3.35-2.35 1.05-4.05 2.82-6.48 3.11-5.53 0.69-13.45 5.58-18.16 7.03-2.76 0.88-4.51 1.69-7.43 1.98-2.55 0.28-3.69 0.8-5.98 1.71-2.66 1.07-4.8 1.23-8.67 1.49"
+        stroke="#0B7679" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    </svg>
+      
+    </div>
   </div>
+
+  <!-- lg以上は通常表示（アイコンなし） -->
+  <!--
+  <h2 class="hidden lg:block text-maingreen lg:text-6xl font-bold leading-none text-left md:pt-8"
+      style="font-family: 'Zen Maru Gothic', sans-serif;">
+    <span class="block tracking-tight">南魚沼で</span>
+    <span class="block mt-2 pl-2 tracking-tighter">思いっきり遊ぼう！</span>
+  </h2>
   -->
 
-<div class="container mx-auto h-full flex justify-center md:justify-start items-start relative z-20 p-6 md:p-10">
+</div>
+</div> 
 
-<div class="pt-96 md:pt-72 lg:pt-10 md:pl-2 lg:pl-6">
-<h2 class="text-white text-3xl md:text-4xl lg:text-6xl font-bold leading-none text-center md:text-left"
-style="font-family: 'Zen Maru Gothic', sans-serif;">
-  <span class="block tracking-tight ">
-    自然豊かな南魚沼で
-  </span>
-  <span class="block mt-2 pl-2 tracking-tighter">
-    思いっきり遊ぼう！
-  </span>
-</h2>
-  </div>
-  </div>
-
-  <!-- スライド画像 -->
-  <div class="slideshow-container absolute inset-0">
+<!-- スライド画像（背景） -->
+<div class="slideshow-container absolute inset-0 z-0">
   <div class="slide active">
     <img src="{{ site.baseurl }}/images/uploads/img_2480.jpeg" alt="" class="zoom-img">
   </div>
@@ -81,7 +102,7 @@ style="font-family: 'Zen Maru Gothic', sans-serif;">
 </div>
 
 </section>
-
+  
 <!-- スクリプト--> 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -123,9 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;/* スマホ */
 animation: zoom 19.7s ease-in-out infinite;
 }
-/* mdサイズだけ少し上を切る */
+/* mdサイズも上を切る */
 @media (min-width: 768px) and (max-width: 1023px) {
   .zoom-img {
     object-position: center -32px;
@@ -341,20 +363,20 @@ animation: zoom 19.7s ease-in-out infinite;
         体験村のプログラムに参加した子どもたちや保護者の方々からの声をご紹介します。
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-blue-50 p-4 rounded-lg">
+        <div class="bg-blue-50 p-4 rounded-lg flex flex-col">
           <img src="{{ site.baseurl }}/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
-          <p class="italic">「初めてのキャンプで不安でしたが、すぐに友達ができて毎日が楽しかったです。来年も絶対に参加したいです！」</p>
-          <p class="text-right mt-2 font-bold">小学5年生 男子</p>
+          <p class="italic">"スイカわりや、キャンプファイヤー、野菜収穫。もっともっと楽しかったことはいっぱいあるけど一番楽しかったのは川遊び。なぜかというと、川の水が冷たくて、それが一番思い出に残ったからです。あと川でスイカを食べたことです。"</p>
+          <p class="text-right mt-auto pt-2 font-bold">小学3年生 女子</p>
         </div>
-        <div class="bg-blue-50 p-4 rounded-lg">
+        <div class="bg-blue-50 p-4 rounded-lg flex flex-col">
           <img src="{{ site.baseurl }}/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
-          <p class="italic">「自分で考えて行動する力が身についたと感じます。帰宅後も進んで家の手伝いをするようになりました。」</p>
-          <p class="text-right mt-2 font-bold">保護者 40代女性</p>
+          <p class="italic">"虫が嫌だ、汚れるのもあまり好きではない、そんな娘が「カエル捕まえたよ！」「裸足で田んぼに入って泥だらけで気持ちがよかった！」と自然の物への抵抗感がなくなったことです。"</p>
+          <p class="text-right mt-auto pt-2 font-bold">小学2年生の保護者</p>
         </div>
-        <div class="bg-blue-50 p-4 rounded-lg">
+        <div class="bg-blue-50 p-4 rounded-lg flex flex-col">
           <img src="{{ site.baseurl }}/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
-          <p class="italic">「自然の中での体験は、学校では学べない貴重なものでした。スタッフの方々の温かいサポートに感謝しています。」</p>
-          <p class="text-right mt-2 font-bold">小学6年生 女子</p>
+          <p class="italic">"一人でできた、という自信がつけられたことです。親がいると自然と親に頼って何もしなくなってしまいますが、一人で知らない人の輪に入り少し成長できたと思います。"</p>
+          <p class="text-right mt-auto pt-2 font-bold">小学4年生の保護者</p>
         </div>
       </div>
    
