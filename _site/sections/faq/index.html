@@ -32,7 +32,7 @@
   <style>
     /* バナーが有効な場合のセクションタイトル用マージン */
     main section h2 {
-      padding-top: 2.5rem; /* バナーの高さ分の余白を追加 */
+      padding-top: 2.5rem; /* バナーの高さ分の余白を追加*/
     }
     @media (max-width: 768px) {
       main section h2 {
@@ -40,130 +40,210 @@
       }
     }
   </style>
+
+  
+
+   <!--追加してみた影、-->
+  <style>
+.text-shadow-white {
+  text-shadow: 
+    1px 1px 2px rgba(255,255,255,0.9),
+    -1px -1px 2px rgba(255,255,255,0.9);
+}
+</style>
+
+<!--フォントの読み込み-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
-<header class="bg-blue-600 text-white sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-    <div class="flex items-center justify-between w-full md:w-auto">
+<header class="bg-transparent text-maingreen fixed top-0 z-50 w-full">
+  <div class="container mx-auto px-4 py-2 md:py-4 h-16 md:h-24 w-full">
+
+    <!-- ロゴとメニューボタンを同じ flex の中に -->
+    <div class="flex items-center justify-between w-full">
       <a href="/">
-        <img src="/images/logo.png" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
+        <img src="/images/logo.png" 
+             alt="自然体験村 ロゴ"
+             class="h-10 md:h-14 mr-2 rounded mb-1">
       </a>
-      <h1 class="text-2xl md:text-3xl font-bold">
-        <a href="/">一般社団法人自然体験村</a>
-      </h1>
-      <button id="mobile-menu-button" class="md:hidden text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+      <!-- メニューボタン（右寄せ） -->
+<!--      <button id="mobile-menu-button" class="text-black p-2 md:p-3 lg:p-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-12 md:w-12" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-      </button>
+      </button> -->
+<button id="mobile-menu-button" class="text-black p-2 md:p-3 lg:p-4">
+  <div id="hamburger-line-wrapper" class="relative w-10 h-6">
+    <span class="absolute top-0 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center"></span>
+    <span class="absolute top-1/2 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center -translate-y-1/2"></span>
+    <span class="absolute bottom-0 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center"></span>
+  </div>
+</button>
+
+      
     </div>
-    <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
-      <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
-        <li><a href="/sections/about" class="hover:text-blue-200 block py-2 md:py-0">体験村について</a></li>
-        <li><a href="/sections/programs" class="hover:text-blue-200 block py-2 md:py-0">キャンプ一覧</a></li>
-        <li><a href="/sections/staff" class="hover:text-blue-200 block py-2 md:py-0">スタッフ紹介</a></li>
-        <li><a href="/sections/testimonials" class="hover:text-blue-200 block py-2 md:py-0">参加者の声</a></li>
-        <li><a href="/sections/faq" class="hover:text-blue-200 block py-2 md:py-0">FAQ</a></li>
-        <li><a href="/#contact" class="hover:text-blue-200 block py-2 md:py-0">お問い合わせ</a></li>
+
+    <!-- ナビゲーション（開いたとき下に表示） -->
+    <nav class="hidden mt-3 text-right" id="mobile-menu">
+      <ul class="flex flex-col space-y-2 text-base">
+   <!--
+        <li><a href="/sections/join" class="font-bold fontcolor-red hover:text-blue-200 py-1">参加者募集！</a></li>
+   -->
+       <li><a href="/sections/about" class="font-bold hover:text-blue-200 py-1">体験村について</a></li>
+        <li><a href="/sections/programs" class="font-bold hover:text-blue-200 py-1">キャンプ一覧</a></li>
+        <li><a href="/sections/testimonials" class="font-bold hover:text-blue-200 py-1">参加者の声</a></li>
+        <!--
+        <li><a href="/sections/leader" class="font-bold hover:text-blue-200 py-1">リーダー募集</a></li>
+        -->
+        <li><a href="/sections/staff" class="font-bold hover:text-blue-200 py-1">スタッフ</a></li>
+        <li><a href="/sections/faq" class="font-bold hover:text-blue-200 py-1">FAQ</a></li>
+        <li><a href="/#contact" class="font-bold hover:text-blue-200 py-1">お問合わせ</a></li>
       </ul>
     </nav>
+
   </div>
+  
+  
+  <style>
+  #hamburger-line-wrapper.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #hamburger-line-wrapper.open span:nth-child(2) {
+    opacity: 0;
+  }
+  #hamburger-line-wrapper.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+</style>
+
 </header>
+<!-- オーバーレイ -->
+<div id="overlay"
+     class="fixed inset-0 bg-white bg-opacity-90 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+</div>
 
   <!-- バナー -->
 
-<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300" style="top: var(--header-height, 112px);">
+<div id="banner" class="bg-green-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300">
   <div class="container mx-auto">
-    <a href="https://taiken-mura.blogspot.com/2025/04/2025.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
+    <a href="https://taiken-mura.blogspot.com/p/2026_07.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <span class="line-clamp-1">2025春の田植え 親子キャンプ参加者募集！</span>
+      <span class="line-clamp-1">2026 夏キャンプ　参加者募集！（仮）</span>
     </a>
   </div>
 </div>
 
+<style>
+  #banner {
+    top: 58px;
+  }
+  @media (min-width: 768px) {
+    #banner {
+      top: 80px;
+    }
+  }
+</style>
 
 
-  <main class="container mx-auto px-4 py-8 space-y-12">
+  <main class="container mx-auto px-4 py-0 space-y-12 bg-mainwhite">
   <!-- FAQセクション詳細 -->
   <section>
-    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">よくある質問</h2>
+    <h2 class="text-xl md:text-4xl font-bold text-center pt-4 md:pt-6 mb-4 ">一般社団法人 自然体験村</h2>
+
+
+    <h2 class="text-3xl font-bold border-b-4 border-maingreen pb-2 mb-6">よくある質問</h2>
     
-    <div class="bg-white p-6 rounded-lg shadow">
+    <div class="bg-mainwhite p-6 rounded-lg shadow">
       <!-- メインイメージ -->
+
       <p class="mb-6">
         体験村のキャンプに関するよくある質問をまとめました。その他のご質問がございましたら、お気軽にお問い合わせください。
       </p>
       
       <!-- 基本的な質問 -->
+  
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">基本的な質問</h3>
+        <h3 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2 mb-6">参加にあたって</h3>
         
         <div class="space-y-6">
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 初めてのキャンプですが、大丈夫でしょうか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 初めてのキャンプですが、大丈夫でしょうか？</h4>
             <div class="pl-6">
-              <p>A: 安全管理体制やスタッフの充実した研修により、初参加のお子様も安心してご参加いただけます。毎年、参加者の約40%が初めてのお子様です。事前説明会や詳細な資料で準備をサポートしますので、ご安心ください。</p>
+              <p>A: 安全管理体制やスタッフ研修により、初参加のお子さまも安心してご参加いただけます。毎年、参加者の約40%が初めてのお子様です。事前説明会や詳細な資料で準備をサポートしますので、ご安心ください。</p>
             </div>
           </div>
           
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 送迎や保険の対応はありますか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 送迎や保険の対応はありますか？</h4>
             <div class="pl-6">
-              <p>A: 全国からの参加をサポートするため、送迎バスの手配や各種保険に加入し、万一の事故にも対応できる体制を整えています。東京、大阪、名古屋からの送迎バスを運行しており、その他の地域からも公共交通機関を利用して参加可能です。また、すべての参加者は傷害保険と賠償責任保険に加入しています。</p>
+              <p>A: 東京方面からは越後湯沢駅が終点始発の新幹線(たにがわ)をご案内しています。帰りも新幹線乗車までスタッフがご案内致します。越後湯沢駅から現地までの交通手段はバスを用意しています。また、すべての参加者は傷害保険に加入しています。</p>
             </div>
           </div>
         </div>
       </div>
       
       <!-- 健康・安全に関する質問 -->
+
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">健康・安全に関する質問</h3>
+        <h3 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2 mb-6">健康・安全について</h3>
         
         <div class="space-y-6">
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 食物アレルギーがある場合でも参加できますか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 食物アレルギーがある場合でも参加できますか？</h4>
             <div class="pl-6">
               <p>A: はい、参加可能です。申込時にアレルギーについて詳しくお知らせください。アレルギーの種類や程度によって個別に対応いたします。重度のアレルギーの場合は、事前に個別相談をさせていただくことがあります。</p>
-              <p class="mt-2">対応可能なアレルギー：卵、乳製品、小麦、そば、落花生、えび、かに、その他多数</p>
+           <!--ｺﾒﾝﾄｱｳﾄ   <p class="mt-2">対応可能なアレルギー：卵、乳製品、小麦、そば、落花生、えび、かに、その他多数</p>-->
             </div>
           </div>
           
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 体調不良や怪我をした場合の対応は？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 体調不良や怪我をした場合の対応は？</h4>
             <div class="pl-6">
-              <p>A: 看護師が常駐しており、軽度の体調不良や怪我には迅速に対応します。必要に応じて近隣の医療機関と連携し、適切な医療ケアを提供します。また、緊急時の対応マニュアルを整備し、スタッフ全員が救急法を習得しています。</p>
+              <p>A: <!--ｺﾒﾝﾄｱｳﾄ看護師が常駐しておりません。-->軽度の体調不良や怪我には迅速に対応します。必要に応じて近隣の医療機関へ適切な医療ケアを提供します。また、緊急時の対応マニュアルを整備し、救命法を習得したスタッフが対応します。
+                 平熱 +1℃ の発熱があった場合は、原則当日中にお迎えに来ていただく事を参加前に同意していただきます。
+              </p>
             </div>
           </div>
           
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 自然災害時の対応は？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 自然災害時の対応は？</h4>
             <div class="pl-6">
-              <p>A: 気象情報を常に確認し、危険が予測される場合はプログラムの変更や中止を判断します。避難場所や避難経路を事前に確認し、定期的に避難訓練を実施しています。また、非常食や防災用品を備蓄し、万一の事態に備えています。</p>
+              <p>A: 気象情報を常に確認し、危険が予測される場合はプログラムの変更や中止を判断します。避難場所や避難経路を事前に確認し<!--ｺﾒﾝﾄｱｳﾄ、定期的に避難訓練を実施し-->ています。<!--また、非常食や防災用品を備蓄し、万一の事態に備えています。--></p>
             </div>
           </div>
         </div>
       </div>
       
       <!-- プログラムに関する質問 -->
+
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">プログラムに関する質問</h3>
+        <h3 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2 mb-6">プログラムについて</h3>
         
         <div class="space-y-6">
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 年齢に合わせたプログラム内容ですか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 年齢に合わせたプログラム内容ですか？</h4>
             <div class="pl-6">
-              <p>A: はい、年齢や発達段階に応じたプログラム設計を行っています。低学年向け、高学年向け、中高生向けなど、それぞれの年齢に適した活動内容と難易度を提供しています。また、グループ分けも年齢を考慮して行います。</p>
+              <p>A: ほとんどのキャンプの対象年齢は小学校中学年から中学生と幅広いため、基本的には年齢・学年を超えたグループでの活動を行っています。しかし、部屋割り等の生活面においては年齢を考慮しています。
+                
+                <!--はい、年齢や発達段階に応じたプログラム設計を行っています。低学年向け、高学年向け、中高生向けなど、それぞれの年齢に適した活動内容と難易度を提供しています。また、グループ分けも年齢を考慮して行います。--></p>
             </div>
           </div>
           
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 雨天時のプログラムはありますか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 雨天時のプログラムはありますか？</h4>
             <div class="pl-6">
-              <p>A: 雨天時には、屋内で実施可能な代替プログラムを用意しています。クラフト作り、室内ゲーム、環境学習ワークショップなど、天候に左右されず楽しめる活動を提供します。安全面を考慮しながら、雨の中でしかできない体験活動を行うこともあります。</p>
+              <p>A: <!--基本的に少しの-->雨でも屋外で活動を行いますが、荒天時は屋内で代替プログラムを用意しています。自然物を使ったクラフト、室内ゲーム、環境学習ワークショップなど、天候に左右されず楽しめる活動を提供します。安全面を考慮しながら、雨の中でしかできない体験活動を行うこともあります。</p>
             </div>
           </div>
         </div>
@@ -171,21 +251,22 @@
       
       <!-- 持ち物・準備に関する質問 -->
       <div class="mb-10">
-        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">持ち物・準備に関する質問</h3>
+        <h3 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2 mb-6">持ち物・準備について</h3>
         
         <div class="space-y-6">
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 必要な持ち物は何ですか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 必要な持ち物は何ですか？</h4>
             <div class="pl-6">
-              <p>A: 各プログラムごとに詳細な持ち物リストをお送りします。基本的には以下のものをご用意ください：</p>
+              <p>A: 各プログラムごとに詳細な持ち物リストをお送りします。基本的には以下のものをご用意ください。</p>
               <div class="mt-2 pl-4">
                 <ul class="list-disc space-y-1">
-                  <li>着替え（活動用・就寝用）</li>
-                  <li>タオル類</li>
-                  <li>歯ブラシなどの洗面用具</li>
-                  <li>水筒</li>
-                  <li>雨具（レインコート）</li>
-                  <li>帽子</li>
+                  <li>着替え（野外での活動時は、虫刺されを防ぐために長袖長ズボンを着用します。）</li>
+                  <li>防寒着（夏場であっても朝夜は温度が下がることがあります。）</li>
+                  <li>タオル（バスタオルのような大きめのものは、乾きづらいためお勧めしません。）</li>
+                  <li>水筒（野外活動時に持参するので、大きすぎないものがおすすめです。）</li>
+                  <li>雨具（上下セパレートタイプのレインコート。傘不可。）</li>
+                  <li>帽子（野外活動での熱中症のリスクを低下させます。キャップ型、ハット型種類は問いません。）</li>
+                  <li>歯ブラシなど洗面用具</li>
                 </ul>
               </div>
               <p class="mt-2">高価な物や貴重品の持参はご遠慮ください。紛失や破損の責任は負いかねます。</p>
@@ -193,15 +274,18 @@
           </div>
           
           <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-            <h4 class="font-bold text-lg text-blue-600 mb-3">Q: 事前に準備しておくことはありますか？</h4>
+            <h4 class="font-bold text-lg text-maingreen-600 mb-3">Q: 事前に準備しておくことはありますか？</h4>
             <div class="pl-6">
-              <p>A: 以下の準備をお勧めします：</p>
+              <p>A: 以下の準備をお願いします。</p>
               <div class="mt-2 pl-4">
                 <ul class="list-disc space-y-1">
-                  <li>体力づくり（ウォーキングなど）</li>
-                  <li>持ち物への名前の記入</li>
-                  <li>荷物の詰め方の練習（お子様自身で管理できるように）</li>
-                  <li>健康調査票の記入（アレルギーや既往症などの情報）</li>
+                  <!--<li>体力づくり（ウォーキングなど）</li>-->
+                  <li>持ち物への名前の記入（毎年、他の参加者の荷物に混ざってしまうことがが起きています。細かいものにも名前の記入をお願いします。）</li>
+                  <li>荷物の詰め方の練習（お子さま自身で管理できるように、お子さまが荷造りを行ってください。）</li>
+                  <li>お送りする直前健康調査票の記入（アレルギーや既往症などの情報、またお子さまが乗る新幹線の座席・降車駅・切符かsuicaか等の新幹線についての情報記入をお忘れなきようにお願いします。）</li>
+                  <li>雨具の確認（キャンプ中は雨天時でも活動しますので、上下セパレートタイプの雨具をご用意ください。また、コンビニ等で販売されているビニール製の物のものは破れやすいため、おやめください。）</li>
+                  <li>十分な睡眠と体調管理（発熱などの体調不良があれば、途中帰宅となりますのでお迎えをお願いする場合があります。）</li>
+
                 </ul>
               </div>
             </div>
@@ -210,48 +294,64 @@
       </div>
       
       <!-- お問い合わせ関連 -->
-      <div class="mt-12 bg-blue-50 p-6 rounded-lg">
-        <h3 class="text-2xl font-bold text-blue-700 mb-6">その他のご質問</h3>
-        
+      
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-maingreen border-b-2 border-maingreen pb-2 mb-6">その他のご質問</h3>
+     <div class="space-y-6">
+   <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
+     <div> 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h4 class="font-bold text-blue-600 mb-2">お電話でのお問い合わせ</h4>
-            <p class="text-xl">025-783-3377</p>
+            <h4 class="font-bold text-maingreen mb-2">お電話でのお問い合わせ</h4>
+            <p class="text-xl">090-4923-4440</p>
             <p class="text-sm text-gray-600 mt-1">受付時間：平日9:00〜17:00</p>
           </div>
           <div>
-            <h4 class="font-bold text-blue-600 mb-2">メールでのお問い合わせ</h4>
+            <h4 class="font-bold text-maingreen mb-2">メールでのお問い合わせ</h4>
             <p class="text-xl">taikenmura4124@gmail.com</p>
             <p class="text-sm text-gray-600 mt-1">24時間受付（返信は営業日内）</p>
           </div>
         </div>
         
-        <div class="mt-6">
-          <h4 class="font-bold text-blue-600 mb-2">説明会情報</h4>
-          <p>キャンプ参加を検討されている方向けに、定期的に説明会を開催しています。日程や参加方法については、ホームページやSNSでお知らせします。</p>
-        </div>
-      </div>
+     </div>
+   </div>
       
       <div class="mt-8 text-center">
-        <a href="/#faq" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
-      </div>
+        <a href="/#faq" class="inline-block bg-maingreen text-white px-6 py-2 rounded hover:bg-maingreen transition">トップページに戻る</a>      
+   　 </div>
+    
     </div>
+      </div>
+</div>
   </section>
 </main>
 
 
   <!-- フッター -->
 <!-- 詳細なフッター（セクションページ用） -->
-<footer class="bg-blue-800 text-white py-8">
+<footer class="bg-maingreen text-white py-8">
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row justify-between">
       <div>
-        <h3 class="text-xl font-bold mb-4">一般社団法人自然体験村</h3>
-        <p>〒949-6680</p>
-        <p>新潟県南魚沼市下一日市855</p>
-        <p>TEL: 025-783-3377</p>
+        <h3 class="text-xl font-bold mb-4">一般社団法人 自然体験村</h3>
+        <p>〒949-7302</p>
+        <p>新潟県南魚沼市浦佐487-7-101</p>
         <p>Email: taikenmura4124@gmail.com</p>
       </div>
+      
+      <div class="mt-6 md:mt-0">
+        
+      【情報をいち早くGET! 公式LINEはこちら】<br />
+        <a href="https://lin.ee/ulWzlDV"><img alt="友だち追加" 
+                                              border="0" 
+                                              height="36" 
+                                              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" / 
+                                              class="mt-2"
+                                              />
+        </a>
+      </div>
+    </div>
+      <!--ｺﾒﾝﾄｱｳﾄ
       <div class="mt-6 md:mt-0">
         <h3 class="text-xl font-bold mb-4">リンク</h3>
         <ul class="space-y-2">
@@ -260,125 +360,155 @@
           <li><a href="/#contact" class="hover:text-blue-200">お問い合わせ</a></li>
         </ul>
       </div>
+ｺﾒﾝﾄｱｳﾄ-->
     </div>
     <div class="mt-8 text-center">
-      <p>&copy; 2025 一般社団法人自然体験村 All Rights Reserved.</p>
+      <p>&copy; 2025 一般社団法人 自然体験村 All Rights Reserved.</p>
     </div>
-  </div>
+  
 </footer>
 
 
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        // モバイルメニューの表示/非表示を切り替え
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
+ 
+
+    
+
+  
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+    //ハンバーガーの定義
+  const hamburger = document.getElementById("hamburger-line-wrapper");
+
+const toggleMenu = () => {
+    const isHidden = mobileMenu.classList.contains("hidden");
+
+    if (isHidden) {
+      // 開く
+      mobileMenu.classList.remove("hidden");
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100");
+      hamburger.classList.add("open");
+    } else {
+      // 閉じる
+      overlay.classList.remove("opacity-100");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+      mobileMenu.classList.add("hidden");
+      hamburger.classList.remove("open");
+    }
+  };
+
+  menuButton.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
+});
+</script>
+
+  
+      <style>
+        :root{
+          --main-green:#078080
+          --maingreen1:#83C0C0;
+          --maingreen2:#C1E0E0;
+          --maingreen3:#F0F8F8;
+
+          --main-bg:#f8f5f2
         }
-      });
-      
-      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
-      const navLinks = document.querySelectorAll('#mobile-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // モバイル表示時のみメニューを閉じる
-          if (window.innerWidth < 768) { // md breakpointは768px
-            mobileMenu.classList.add('hidden');
-            
-            // モバイルメニューからのナビゲーション時にバナーを非表示にするためのフラグを設定
-            localStorage.setItem('fromMobileMenu', 'true');
-          }
-        });
-      });
-      
-      // バナーのスクロール制御
-      
-      const banner = document.getElementById('banner');
-      const header = document.querySelector('header');
-      let lastScrollTop = 0;
-      const bannerHeight = banner ? banner.offsetHeight : 0;
-      let isMobileMenuOpen = false;
-      
-      // ヘッダーの高さをCSSカスタムプロパティとして設定
-      function updateHeaderHeight() {
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-      }
-      
-      // モバイルメニューからのナビゲーション時のバナー状態を確認
-      function checkMobileMenuNavigation() {
-        if (localStorage.getItem('fromMobileMenu') === 'true' && banner) {
-          // モバイルメニューからのナビゲーション時はバナーを非表示
-          banner.style.transform = 'translateY(-100%)';
-          
-          // フラグをクリア（少し遅延させる）
-          setTimeout(() => {
-            localStorage.removeItem('fromMobileMenu');
-          }, 1000);
-        }
-      }
-      
-      // 初期設定とリサイズ時に更新
-      updateHeaderHeight();
-      checkMobileMenuNavigation();
-      window.addEventListener('resize', updateHeaderHeight);
-      
-      // モバイルメニュー開閉時の処理
-      mobileMenuButton.addEventListener('click', function() {
-        // メニュー開閉状態を更新
-        isMobileMenuOpen = !mobileMenu.classList.contains('hidden');
-        
-        // メニュー開閉後に少し遅延させて高さを更新
-        setTimeout(updateHeaderHeight, 50);
-        
-        // モバイルメニューが開いているときはバナーを隠す
-        if (banner) {
-          if (isMobileMenuOpen) {
-            // 完全に非表示にする
-            banner.style.display = 'none';
-          } else {
-            // メニューが閉じられたときはバナーを再表示し、スクロール位置に応じて表示/非表示
-            banner.style.display = '';
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop <= header.offsetHeight) {
-              banner.style.transform = 'translateY(0)';
-            }
-          }
-        }
-      });
-      
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (banner && !isMobileMenuOpen) {
-          // ヘッダーの高さ以上スクロールしたらバナーを隠す
-          if (scrollTop > header.offsetHeight) {
-            // 下にスクロールしたときはバナーを隠す
-            if (scrollTop > lastScrollTop) {
-              banner.style.transform = 'translateY(-100%)';
-            } 
-            // 上にスクロールしたときはバナーを表示
-            else {
-              banner.style.transform = 'translateY(0)';
-            }
-          } else {
-            // ヘッダー内にいるときは常に表示
-            banner.style.transform = 'translateY(0)';
-          }
-        }
-        
-        lastScrollTop = scrollTop;
-      });
-      
-      
-      
-    });
-  </script>
+      </style>
+
+ <!--メインカラー設定-->
+  <style>
+  :root {
+    --maingreen: #078080;
+    --maingreen1:#83C0C0;
+    --maingreen2:#C1E0E0;
+    --maingreen3:#F0F8F8;
+    --mainwhite: #f8f5f2;
+  }
+
+  .text-maingreen {
+    color: var(--maingreen);
+  }
+  .bg-maingreen {
+    background-color: var(--maingreen);
+  }
+    .border-maingreen{
+    border-color: var(--maingreen);
+  }
+  .text-maingreen1 {
+    color: var(--maingreen1);
+  }
+  .bg-maingreen1 {
+    background-color: var(--maingreen1);
+  }
+    .border-maingreen1{
+    border-color: var(--maingreen1);
+  }
+    .hover-bg-maingreen1:hover {
+    background-color: var(--maingreen1);
+  }
+  .text-maingreen2 {
+    color: var(--maingreen2);
+  }
+  .bg-maingreen2 {
+    background-color: var(--maingreen2);
+  }
+    .border-maingreen2{
+    border-color: var(--maingreen2);
+  }
+  .text-maingreen3 {
+    color: var(--maingreen3);
+  }
+  .bg-maingreen3 {
+    background-color: var(--maingreen3);
+  }
+    .border-maingreen3{
+    border-color: var(--maingreen3);
+  }
+    
+  .text-mainwhite {
+    color: var(--mainwhite);
+  }
+  .bg-mainwhite {
+    background-color: var(--mainwhite);
+  }
+   .border-mainwhite{
+    border-color: var(--mainwhite);
+  }
+</style>
+  
+  <style>
+/* メイン画像の比率調整 */
+.gallery-main-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+  /*border-radius: 12px;*/
+}
+
+/* サムネイル */
+.gallery-thumb {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* 選択中のサムネイル */
+.active-thumb {
+  border-color: var(--maingreen);
+  transform: scale(1.05);
+}
+</style>
+
+  
+
+  
 </body>
 </html>

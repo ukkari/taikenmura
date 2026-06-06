@@ -1,6 +1,6 @@
 <!-- バナー -->
 {% if site.data.banner.enabled %}
-<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300" style="top: var(--header-height, 112px);">
+<div id="banner" class="bg-green-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300">
   <div class="container mx-auto">
     <a href="{{ site.data.banner.url }}" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -10,4 +10,15 @@
     </a>
   </div>
 </div>
+
+<style>
+  #banner {
+    top: 58px;
+  }
+  @media (min-width: 768px) {
+    #banner {
+      top: 80px;
+    }
+  }
+</style>
 {% endif %}

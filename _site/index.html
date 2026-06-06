@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>安心と信頼の自然体験キャンプ -  一般社団法人自然体験村 -　新潟県南魚沼市の子ども向け自然体験キャンプ</title>
+  <title>新潟県南魚沼市の子ども向けの自然体験キャンプ -  一般社団法人自然体験村 -　新潟県南魚沼市の子ども向け自然体験キャンプ</title>
   <meta name="description" content="新潟県南魚沼市の子ども向け自然体験キャンプ" />
   <meta name="keywords" content="自然体験,キャンプ,新潟県,南魚沼市,子ども,アウトドア,体験学習" />
   <meta name="author" content="一般社団法人自然体験村" />
   
   <!-- OGP -->
-  <meta property="og:title" content="安心と信頼の自然体験キャンプ - 一般社団法人自然体験村" />
+  <meta property="og:title" content="新潟県南魚沼市の子ども向けの自然体験キャンプ - 一般社団法人自然体験村" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://localhost:4000/" />
   <meta property="og:image" content="http://localhost:4000/images/ogp.jpg" />
@@ -18,7 +18,7 @@
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="安心と信頼の自然体験キャンプ - 一般社団法人自然体験村" />
+  <meta name="twitter:title" content="新潟県南魚沼市の子ども向けの自然体験キャンプ - 一般社団法人自然体験村" />
   <meta name="twitter:description" content="新潟県南魚沼市の子ども向け自然体験キャンプ" />
   <meta name="twitter:image" content="http://localhost:4000/images/ogp.jpg" />
   
@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <script src="/news.js" defer></script>
+  <script src="/news.js?v=1780763015" defer></script>
   
   
   <style>
@@ -35,7 +35,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 .slide {
   width: 100%;
@@ -66,7 +66,7 @@
   <style>
     /* バナーが有効な場合のセクションタイトル用マージン */
     main section h2 {
-      padding-top: 2.5rem; /* バナーの高さ分の余白を追加 */
+      padding-top: 2.5rem; /* バナーの高さ分の余白を追加*/
     }
     @media (max-width: 768px) {
       main section h2 {
@@ -74,86 +74,295 @@
       }
     }
   </style>
+
+  
+
+   <!--追加してみた影、-->
+  <style>
+.text-shadow-white {
+  text-shadow: 
+    1px 1px 2px rgba(255,255,255,0.9),
+    -1px -1px 2px rgba(255,255,255,0.9);
+}
+</style>
+
+<!--フォントの読み込み-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
-<header class="bg-blue-600 text-white sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-    <div class="flex items-center justify-between w-full md:w-auto">
+<header class="bg-transparent text-maingreen fixed top-0 z-50 w-full">
+  <div class="container mx-auto px-4 py-2 md:py-4 h-16 md:h-24 w-full">
+
+    <!-- ロゴとメニューボタンを同じ flex の中に -->
+    <div class="flex items-center justify-between w-full">
       <a href="/">
-        <img src="/images/logo.png" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
+        <img src="/images/logo.png" 
+             alt="自然体験村 ロゴ"
+             class="h-10 md:h-14 mr-2 rounded mb-1">
       </a>
-      <h1 class="text-2xl md:text-3xl font-bold">
-        <a href="/">一般社団法人自然体験村</a>
-      </h1>
-      <button id="mobile-menu-button" class="md:hidden text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+      <!-- メニューボタン（右寄せ） -->
+<!--      <button id="mobile-menu-button" class="text-black p-2 md:p-3 lg:p-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-12 md:w-12" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-      </button>
+      </button> -->
+<button id="mobile-menu-button" class="text-black p-2 md:p-3 lg:p-4">
+  <div id="hamburger-line-wrapper" class="relative w-10 h-6">
+    <span class="absolute top-0 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center"></span>
+    <span class="absolute top-1/2 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center -translate-y-1/2"></span>
+    <span class="absolute bottom-0 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center"></span>
+  </div>
+</button>
+
+      
     </div>
-    <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
-      <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
-        <li><a href="/sections/about" class="hover:text-blue-200 block py-2 md:py-0">体験村について</a></li>
-        <li><a href="/sections/programs" class="hover:text-blue-200 block py-2 md:py-0">キャンプ一覧</a></li>
-        <li><a href="/sections/staff" class="hover:text-blue-200 block py-2 md:py-0">スタッフ紹介</a></li>
-        <li><a href="/sections/testimonials" class="hover:text-blue-200 block py-2 md:py-0">参加者の声</a></li>
-        <li><a href="/sections/faq" class="hover:text-blue-200 block py-2 md:py-0">FAQ</a></li>
-        <li><a href="/#contact" class="hover:text-blue-200 block py-2 md:py-0">お問い合わせ</a></li>
+
+    <!-- ナビゲーション（開いたとき下に表示） -->
+    <nav class="hidden mt-3 text-right" id="mobile-menu">
+      <ul class="flex flex-col space-y-2 text-base">
+   <!--
+        <li><a href="/sections/join" class="font-bold fontcolor-red hover:text-blue-200 py-1">参加者募集！</a></li>
+   -->
+       <li><a href="/sections/about" class="font-bold hover:text-blue-200 py-1">体験村について</a></li>
+        <li><a href="/sections/programs" class="font-bold hover:text-blue-200 py-1">キャンプ一覧</a></li>
+        <li><a href="/sections/testimonials" class="font-bold hover:text-blue-200 py-1">参加者の声</a></li>
+        <!--
+        <li><a href="/sections/leader" class="font-bold hover:text-blue-200 py-1">リーダー募集</a></li>
+        -->
+        <li><a href="/sections/staff" class="font-bold hover:text-blue-200 py-1">スタッフ</a></li>
+        <li><a href="/sections/faq" class="font-bold hover:text-blue-200 py-1">FAQ</a></li>
+        <li><a href="/#contact" class="font-bold hover:text-blue-200 py-1">お問合わせ</a></li>
       </ul>
     </nav>
+
   </div>
+  
+  
+  <style>
+  #hamburger-line-wrapper.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #hamburger-line-wrapper.open span:nth-child(2) {
+    opacity: 0;
+  }
+  #hamburger-line-wrapper.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+</style>
+
 </header>
+<!-- オーバーレイ -->
+<div id="overlay"
+     class="fixed inset-0 bg-white bg-opacity-90 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+</div>
 
   <!-- バナー -->
 
-<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300" style="top: var(--header-height, 112px);">
+<div id="banner" class="bg-green-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300">
   <div class="container mx-auto">
-    <a href="https://taiken-mura.blogspot.com/2025/04/2025.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
+    <a href="https://taiken-mura.blogspot.com/p/2026_07.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <span class="line-clamp-1">2025春の田植え 親子キャンプ参加者募集！</span>
+      <span class="line-clamp-1">2026 夏キャンプ　参加者募集！（仮）</span>
     </a>
   </div>
 </div>
 
+<style>
+  #banner {
+    top: 58px;
+  }
+  @media (min-width: 768px) {
+    #banner {
+      top: 80px;
+    }
+  }
+</style>
 
 
-  <!-- ヒーロースライドショーセクション -->
-<section class="relative h-96 bg-cover bg-center" id="hero-slideshow">
-  <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
-  <div class="container mx-auto h-full flex items-center justify-center relative z-20">
-    <h2 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold bg-black bg-opacity-50 px-6 py-4 rounded">新潟県南魚沼市の子ども向け自然体験キャンプ</h2>
+  <!--<style>
+  body, main, header, #banner, .banner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+</style>-->
+<main class="relative pt-0 mt-0 bg-mainwhite">
+  <!-- ページ内容 -->
+  
+<h2 class="text-xl md:text-4xl font-bold text-center pt-1 md:pt-6 mb-1 md:mb-4 leading-tight">
+  <span class="text-xs md:text-2xl">一般社団法人</span><br class="md:hidden">
+  自然体験村
+</h2>
+  
+<!-- ヒーロースライドショーセクション -->
+<section class="relative h-[700px] bg-cover bg-center overflow-hidden" id="hero-slideshow">
+<div class="container mx-auto h-full flex justify-start items-start relative z-20 p-6 md:p-10">
+<div class="relative w-fit pt-[20rem] md:pt-52 lg:pt-20 md:pl-4 lg:pl-6 z-30">
+
+  <!-- 米アイコン＋見出しをまとめてラップ（sm/mdのみ） -->
+  <div class="relative block w-[210px] md:w-[320px] lg:w-[360px]">
+    <img 
+      src="/images/uploads/お米アイコン.png"
+      alt=""
+      class="w-full opacity-90 pointer-events-none"
+    />
+    <div class="absolute inset-[10%] inset-x-[12%] overflow-hidden flex flex-col items-center justify-center gap-2">
+      
+      <h2 class="text-maingreen text-[18px] md:text-[26px] lg:text-[30px] font-bold leading-snug text-center w-full"
+          style="font-family: 'Zen Maru Gothic', sans-serif;">
+        <span class="block tracking-tight">南魚沼で</span>
+        <span class="block mt-1 tracking-tighter">思いっきり遊ぼう！</span>
+      </h2>
+      
+          <!-- 山のライン（テキストの下） -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 250 80"
+         class="w-[85%] opacity-80 pointer-events-none"
+         fill="none">
+      <path d="m250 133c-2.41 0.01-3.78-0.53-5.95-2.47-3.73-3.28-6.93-4.88-11.2-7.35-2.88-1.59-4.72-2.45-7.35-4.6-1.95-1.55-4.98-1.77-7.84-2.82-3.04-1.11-6.37-2.53-9.34-2.7-2.16-0.12-2.09-0.49-4.5-0.12-1.2 0.21-3.14-0.09-5.09 0.4-3.65 0.98-3.91 1.09-6.68 2.41-2.36 0.85-5.11 1.83-7.6 2.64-2.53 1.09-4.24 0.85-7.56 0.56-4.7 0-7.42-2.27-10.17-6.3-0.89-1.1-1.5-1.05-3.53-0.57-2.1 0.49-4.08 0.11-5.21 0.21-0.99 0.08-1.76 0.56-2.75-0.01-1.33-0.8-2.21-0.74-3.18-1-1.3-0.37-1.5-1.62-3.18-1.76-1.46-0.13-1.16 0.73-2.61 0.73-2.09 0-2.07-1.25-3.66-1.16-1.68 0.09-2.71 2.62-5.16 2.91-2.46 0.28-4.81-2.44-7.65-2.44-2.51 0-2.57-1-4.29-0.91-1.5 0.08-2.37 1.02-4.81 0.97-2.51-0.06-3.62 0.36-5.24 0.13-2.25-0.34-3.83 0.7-5.66 0.4-1.9-0.32-2.77-1.39-4.79-0.87-1.5 0.44-1.63 0.99-3.71 0.85-1.26-0.09-1.23-1.36-2.62-0.54-1.45 0.89-1.92 3.07-3.4 3.2-1.68 0.15-1.74-0.81-3.12-0.58-1.54 0.28-2.41 0.94-4.31 0.76-2.64-0.29-3.09-0.04-5.69 1.24-1.7 0.86-3.17 0.82-5.46 0.37-2.46-0.18-3.2-1.58-5.49-2.41-2.85-1.04-4.01-1.15-5.57-1.37-4.45-0.62-7.57 0.79-11.05 2.61-2.78 1.32-5.38 2.18-7.84 3.35-2.35 1.05-4.05 2.82-6.48 3.11-5.53 0.69-13.45 5.58-18.16 7.03-2.76 0.88-4.51 1.69-7.43 1.98-2.55 0.28-3.69 0.8-5.98 1.71-2.66 1.07-4.8 1.23-8.67 1.49"
+        stroke="#0B7679" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    </svg>
+      
+    </div>
   </div>
-  <div class="slideshow-container absolute inset-0">
-    <div class="slide fade active" style="background-image: url('/images/hero.jpg');"></div>
-    <div class="slide fade" style="background-image: url('/images/hero2.jpg');"></div>
-    <div class="slide fade" style="background-image: url('/images/hero3.jpg');"></div>
+
+  <!-- lg以上は通常表示（アイコンなし） -->
+  <!--
+  <h2 class="hidden lg:block text-maingreen lg:text-6xl font-bold leading-none text-left md:pt-8"
+      style="font-family: 'Zen Maru Gothic', sans-serif;">
+    <span class="block tracking-tight">南魚沼で</span>
+    <span class="block mt-2 pl-2 tracking-tighter">思いっきり遊ぼう！</span>
+  </h2>
+  -->
+
+</div>
+</div> 
+
+<!-- スライド画像（背景） -->
+<div class="slideshow-container absolute inset-0 z-0">
+  <div class="slide active">
+    <img src="/images/uploads/img_2480.jpeg" alt="" class="zoom-img">
   </div>
+  <div class="slide">
+    <img src="/images/uploads/img_3680.jpeg" alt="" class="zoom-img">
+  </div>
+  <div class="slide">
+    <img src="/images/uploads/img_9341.jpeg" alt="" class="zoom-img">
+  </div>
+</div>
+
 </section>
+  
+<!-- スクリプト--> 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('#hero-slideshow .slide');
+  let current = 0;
+  function showNextSlide() {
+    // 現在をフェードアウト
+    slides[current].classList.remove('active');
+    // フェード後に次表示
+    setTimeout(() => {
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+      // 次の切り替え予約
+      setTimeout(showNextSlide, 5000);
+    }, 1500);
+  }
+  // 最初の開始
+  setTimeout(showNextSlide, 5000);
+});
+</script>
 
-<main class="container mx-auto px-4 py-8 space-y-12">
+<!-- スタイル -->
+<style>
+/* スライド全体の設定 */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.zoom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;/* スマホ */
+animation: zoom 19.7s ease-in-out infinite;
+}
+/* mdサイズも上を切る */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .zoom-img {
+    object-position: center -32px;
+  }
+}  
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1.2); }
+}
+
+</style>
+
+
+<!--????main class="container mx-auto px-4 py-8 space-y-12"-->
+
+
+<div class="container mx-auto px-4">  
+  
   <!-- 最新情報セクション -->
-  <section id="news">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">最新情報</h2>
+  <section id="news"> 
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mt-2 mb-4">
+      <a href="https://taiken-mura.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-inherit hover:underline">
+        体験村ブログより
+      </a>
+    </h2>
     <div class="bg-white p-6 rounded-lg shadow">
-      <p class="mb-4">
-        体験村のブログから最新情報をお届けします。
-      </p>
-      <div id="news-content" class="mt-4">
-        <!-- JavaScriptによって動的にコンテンツが追加されます -->
-      </div>
-      <div id="news-images" class="mt-6">
-        <!-- ブログからの画像がここに表示されます -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div>
+          <h3 class="text-lg font-bold mb-3">最新情報</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            参加者募集のお知らせをブログからお届けします。
+          </p>
+          <div id="news-content">
+            <!-- JavaScriptによって動的にコンテンツが追加されます -->
+          </div>
+          <div class="mt-4 text-right">
+            <a href="https://taiken-mura.blogspot.com/search/label/%E5%8F%82%E5%8A%A0%E8%80%85%E5%8B%9F%E9%9B%86" target="_blank" rel="noopener noreferrer" class="text-xs text-maingreen hover:underline">
+              もっと見る →
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 pt-6 lg:border-t-0 lg:pt-0">
+          <h3 class="text-lg font-bold mb-3">ブログからの写真</h3>
+          <div id="news-images">
+            <!-- ブログからの画像がここに表示されます -->
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
   <!-- 年間プログラム紹介セクション -->
   <section id="programs">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">年間プログラム</h2>
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mb-4">年間プログラム</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <p class="mb-6">
         自然体験村では、季節に応じた様々なプログラムを提供しています。子どもたちの「生きる力」を育む体験の場をご用意しています。
@@ -161,75 +370,111 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- 春のプログラム -->
-        <div class="bg-green-50 p-4 rounded-lg h-full flex flex-col">
+        <div class="bg-green-50 rounded-lg h-full flex flex-col overflow-hidden">
+          <a href="/sections/programs#spring">
           <div class="h-40 overflow-hidden mb-3">
             <img src="/images/top/spring.jpg" alt="春のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
+          </a>
+          
+               <div class="p-4 flex flex-col flex-grow">          
+          
           <h3 class="font-bold text-lg text-green-700 mb-2">春のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>新緑ハイキング</li>
-            <li>田植え体験</li>
-            <li>山菜採り</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+            <li> <font class="font-bold">キャンプ場コテージ泊! 春の火あそびキャンプ</font>(2泊3日)</li>
+            <li> <font class="font-bold">春の田植え 親子キャンプ</font>(1泊2日)</li>
           </ul>
+        
           <div class="mt-3">
-            <a href="/sections/programs#spring-fire" class="text-green-600 hover:underline text-sm">詳細を見る →</a>
+            <a href="/sections/programs#spring" class="text-green-600 hover:underline text-sm">詳細を見る →</a>
           </div>
+               </div>
         </div>
         
         <!-- 夏のプログラム -->
-        <div class="bg-yellow-50 p-4 rounded-lg h-full flex flex-col">
+        <div class="bg-yellow-50 rounded-lg h-full flex flex-col overflow-hidden">
+         <a href="/sections/programs#summer">
           <div class="h-40 overflow-hidden mb-3">
             <img src="/images/top/summer.jpg" alt="夏のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
+         </a>
+          
+               <div class="p-4 flex flex-col flex-grow">
+          
           <h3 class="font-bold text-lg text-yellow-700 mb-2">夏のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>まっ黒わんぱく夏休み（8-12泊）</li>
-            <li>思いっきり夏キャンプ（3-5泊）</li>
-            <li>あそびばキャンプ（2泊3日）</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+            <li> <font class="font-bold">まっ黒わんぱく夏休み</font>（2-12泊）</li>
+            <li class="list-none" >・わくわく12泊</li>
+            <li class="list-none" >・スタート2泊</li>
+            <li class="list-none" >・チャレンジ6泊</li>
+            <li class="list-none" >・ゆったり8泊</li>
+            <li> <font class="font-bold">思いっきり夏キャンプ</font>（6泊7日）</li>
+            <li class="list-none" >・どきどき6泊</li>
+            <li> <font class="font-bold">あそびばキャンプ</font>（2泊3日）</li>
           </ul>
+          
           <div class="mt-3">
             <a href="/sections/programs#summer" class="text-yellow-600 hover:underline text-sm">詳細を見る →</a>
           </div>
+            
+               </div>
+            
         </div>
         
         <!-- 秋のプログラム -->
-        <div class="bg-orange-50 p-4 rounded-lg h-full flex flex-col">
+        <div class="bg-orange-50 rounded-lg h-full flex flex-col overflow-hidden">
+          <a href="/sections/programs#autumn"> 
           <div class="h-40 overflow-hidden mb-3">
             <img src="/images/top/fall.jpg" alt="秋のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
+          </a>
+                    
+               <div class="p-4 flex flex-col flex-grow">
+                 
           <h3 class="font-bold text-lg text-orange-700 mb-2">秋のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>稲刈り体験</li>
-            <li>紅葉ハイキング</li>
-            <li>収穫祭</li>
-            <li>きのこ狩り</li>
-            <li>星空観察会</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+           <li> <font class="font-bold">秋のキャンプ場　火あそびキャンプ</font> (1泊2日)</li>
+           <li> <font class="font-bold">秋の稲刈り 親子キャンプ</font> (2泊3日)</li>
+           <li> <font class="font-bold">キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ</font>（2泊3日）<li>
+
           </ul>
+       
           <div class="mt-3">
-            <a href="/sections/programs#autumn-fire" class="text-orange-600 hover:underline text-sm">詳細を見る →</a>
-          </div>
+            <a href="/sections/programs#autumn" class="text-orange-600 hover:underline text-sm">詳細を見る →</a>
+          </div>          
+               </div>
+
         </div>
         
         <!-- 冬のプログラム -->
-        <div class="bg-blue-50 p-4 rounded-lg h-full flex flex-col">
+        <div class="bg-blue-50 rounded-lg h-full flex flex-col overflow-hidden">
+         <a href="/sections/programs#winter">
           <div class="h-40 overflow-hidden mb-3">
             <img src="/images/top/winter.jpg" alt="冬のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
           </div>
+         </a>
+                    
+               <div class="p-4 flex flex-col flex-grow">
+                 
           <h3 class="font-bold text-lg text-blue-700 mb-2">冬のプログラム</h3>
-          <ul class="list-disc pl-5 space-y-1 flex-grow">
-            <li>天空雪あそびキャンプ（2-4泊）</li>
-            <li>スキー・スノーボード教室</li>
-            <li>雪国文化体験</li>
-            <li>かまくら作り体験</li>
+          <ul class="list-disc pl-5 space-y-1 flex-grow list-none">
+            <li> <font class="font-bold">天空雪あそびキャンプ[年末]</font>（2泊3日）</li>
+            <li> <font class="font-bold">天空雪あそびキャンプ(年始)</font>（2泊3日）</li>
+            <li> <font class="font-bold">ガンガン滑ろうキャンプ</font>(1泊2日)</li>
+            <li> <font class="font-bold">思いっきり雪まみれキャンプ</font>(1泊2日)</li>
+
           </ul>
           <div class="mt-3">
-            <a href="/sections/programs#winter-snow" class="text-blue-600 hover:underline text-sm">詳細を見る →</a>
+            <a href="/sections/programs#winter" class="text-maingreen hover:underline text-sm">詳細を見る →</a>
           </div>
+
         </div>
+               </div>
       </div>
       
+
       <div class="mt-6 text-center">
-        <a href="/sections/programs" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">プログラム詳細を見る</a>
+        <a href="/sections/programs" class="inline-block bg-maingreen text-white px-6 py-2 rounded hover:bg-maingreen2 transition">プログラム詳細を見る</a>
       </div>
       
       <div class="mt-4 text-sm text-gray-600">
@@ -238,9 +483,9 @@
     </div>
   </section>
 
-  <!-- スタッフ紹介セクション -->
+<!--ｺﾒﾝﾄｱｳﾄ
   <section id="staff" class="clear-both">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">スタッフ紹介</h2>
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pb-2 mb-4">スタッフ紹介</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <p class="mb-6">
         体験村のプログラムを支える経験豊富なスタッフをご紹介します。子どもたちの成長をサポートするプロフェッショナルです。
@@ -248,18 +493,18 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="text-center">
           <img src="/images/profile_temp.jpg" alt="スタッフ1" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-          <h3 class="font-bold">山田</h3>
+          <h3 class="font-bold"><font color=red>武宮　敬介</font></h3>
           <p class="text-sm text-gray-600">プロデューサー/代表理事</p>
         </div>
         <div class="text-center">
           <img src="/images/profile_temp.jpg" alt="スタッフ2" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-          <h3 class="font-bold">鈴木 花子</h3>
-          <p class="text-sm text-gray-600">プログラムディレクター</p>
+          <h3 class="font-bold"><font color=red>村野　美和</font></h3>
+          <p class="text-sm text-gray-600"><font color=pink>プログラムディレクター</font></p>
         </div>
         <div class="text-center">
           <img src="/images/profile_temp.jpg" alt="スタッフ3" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-          <h3 class="font-bold">佐藤 健太</h3>
-          <p class="text-sm text-gray-600">安全管理責任者</p>
+          <h3 class="font-bold"><font color=red>松原　響佑</font></h3>
+          <p class="text-sm text-gray-600"><font color=pink>安全管理責任者</font></p>
         </div>
       </div>
       <div class="mt-6 text-center">
@@ -267,90 +512,132 @@
       </div>
     </div>
   </section>
+ｺﾒﾝﾄｱｳﾄ-->
 
   <!-- 参加者の声セクション -->
   <section id="testimonials">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">参加者の声</h2>
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mb-4">参加者の声</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <p class="mb-6">
         体験村のプログラムに参加した子どもたちや保護者の方々からの声をご紹介します。
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-blue-50 p-4 rounded-lg">
-          <img src="/images/profile_temp.jpg" alt="引用符" class="w-8 h-8 mb-2">
-          <p class="italic">「初めてのキャンプで不安でしたが、すぐに友達ができて毎日が楽しかったです。来年も絶対に参加したいです！」</p>
-          <p class="text-right mt-2 font-bold">小学5年生 男子</p>
+        <div class="bg-blue-50 p-4 rounded-lg flex flex-col">
+          <img src="/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
+          <p class="italic">"スイカわりや、キャンプファイヤー、野菜収穫。もっともっと楽しかったことはいっぱいあるけど一番楽しかったのは川遊び。なぜかというと、川の水が冷たくて、それが一番思い出に残ったからです。あと川でスイカを食べたことです。"</p>
+          <p class="text-right mt-auto pt-2 font-bold">小学3年生 女子</p>
         </div>
-        <div class="bg-blue-50 p-4 rounded-lg">
-          <img src="/images/profile_temp.jpg" alt="引用符" class="w-8 h-8 mb-2">
-          <p class="italic">「自分で考えて行動する力が身についたと感じます。帰宅後も進んで家の手伝いをするようになりました。」</p>
-          <p class="text-right mt-2 font-bold">保護者 40代女性</p>
+        <div class="bg-blue-50 p-4 rounded-lg flex flex-col">
+          <img src="/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
+          <p class="italic">"虫が嫌だ、汚れるのもあまり好きではない、そんな娘が「カエル捕まえたよ！」「裸足で田んぼに入って泥だらけで気持ちがよかった！」と自然の物への抵抗感がなくなったことです。"</p>
+          <p class="text-right mt-auto pt-2 font-bold">小学2年生の保護者</p>
         </div>
-        <div class="bg-blue-50 p-4 rounded-lg">
-          <img src="/images/profile_temp.jpg" alt="引用符" class="w-8 h-8 mb-2">
-          <p class="italic">「自然の中での体験は、学校では学べない貴重なものでした。スタッフの方々の温かいサポートに感謝しています。」</p>
-          <p class="text-right mt-2 font-bold">小学6年生 女子</p>
+        <div class="bg-blue-50 p-4 rounded-lg flex flex-col">
+          <img src="/images/uploads/参加者.png" alt="引用符" class="w-8 h-8 mb-2">
+          <p class="italic">"一人でできた、という自信がつけられたことです。親がいると自然と親に頼って何もしなくなってしまいますが、一人で知らない人の輪に入り少し成長できたと思います。"</p>
+          <p class="text-right mt-auto pt-2 font-bold">小学4年生の保護者</p>
         </div>
       </div>
+   
       <div class="mt-6 text-center">
-        <a href="/sections/testimonials" class="text-blue-600 hover:underline font-medium">もっと見る</a>
+        <a href="/sections/testimonials" class="text-maingreen hover:underline font-medium">もっと見る</a>
       </div>
     </div>
   </section>
 
   <!-- よくある質問セクション -->
   <section id="faq">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">よくある質問</h2>
+    <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mb-4">よくある質問</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <div class="space-y-4">
         <div class="border-b pb-4">
-          <h3 class="font-bold text-lg">Q: 初めての参加でも大丈夫ですか？</h3>
-          <p>A: はい、毎年多くの初参加者を受け入れています。経験豊富なスタッフがサポートしますので、安心してご参加ください。</p>
+          <h3 class="font-bold text-lg">Q : 初めての参加でも大丈夫ですか？</h3>
+          <p>A : はい、毎年多くの初参加者を受け入れています。経験豊富なスタッフがサポートしますので、安心してご参加ください。</p>
         </div>
         <div class="border-b pb-4">
-          <h3 class="font-bold text-lg">Q: アレルギーがある場合は参加できますか？</h3>
-          <p>A: 食物アレルギーなど、健康上の配慮が必要な場合は事前にご相談ください。可能な限り対応いたします。</p>
+          <h3 class="font-bold text-lg">Q : アレルギーがある場合は参加できますか？</h3>
+          <p>A : 食物アレルギーなど、健康上の配慮が必要な場合は事前にご相談ください。可能な限り対応いたします。</p>
         </div>
         <div>
-          <h3 class="font-bold text-lg">Q: キャンプに必要な持ち物は？</h3>
-          <p>A: 各プログラムごとに詳細な持ち物リストをお送りします。基本的な生活用品と動きやすい服装をご用意ください。</p>
+          <h3 class="font-bold text-lg">Q : キャンプに必要な持ち物は？</h3>
+          <p>A : 各プログラムごとに詳細な持ち物リストをお送りします。基本的な生活用品と動きやすい服装をご用意ください。</p>
         </div>
       </div>
+      
       <div class="mt-6 text-center">
-        <a href="/sections/faq" class="text-blue-600 hover:underline font-medium">もっと見る</a>
+        <a href="/sections/faq" class="text-maingreen hover:underline font-medium">もっと見る</a>
       </div>
     </div>
   </section>
+  
+  </div>
+  
+<!-- お問い合わせセクション -->
+<section id="contact" class="relative overflow-hidden w-full mt-6">
 
-  <!-- お問い合わせセクション -->
-  <section id="contact">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 mb-4">お問い合わせ</h2>
-    <div class="bg-white p-6 rounded-lg shadow">
-      <p class="mb-4">
-        体験村のプログラムについてのご質問やお申し込みは、以下の連絡先までお気軽にお問い合わせください。
-      </p>
-      <p class="text-lg">
-        TEL: 025-783-3377<br>
-        Email: taikenmura4124@gmail.com<br>
-        受付時間: 平日9:00〜17:00
-      </p>
+  <!-- 背景画像 -->
+  <div class="absolute inset-0">
+    <img src="/images/uploads/otoiawase.jpg"
+         alt="お問い合わせ背景"
+         class="w-full h-full object-cover">
+
+    <!-- 黒オーバーレイ -->
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <!-- コンテンツ -->
+  <div class="relative z-10 text-center text-white py-16 px-4">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      お問い合わせ
+    </h2>
+
+    <p class="max-w-2xl mx-auto leading-relaxed mb-8 text-sm md:text-base">
+      体験村のプログラムについてのご質問やお申し込みは、
+      <br class="hidden md:block">
+      以下の連絡先までお気軽にお問い合わせください。
+    </p>
+
+    <div class="text-lg md:text-xl leading-loose">
+      <p class="md:text-2xl font-semibold md:mb-4">
+  Email: taikenmura4124@gmail.com
+</p>
+      <p>受付時間: 平日9:00〜17:00</p>
     </div>
-  </section>
+
+  </div>
+
+</section>
+  
+  
 </main>
 
 
   <!-- フッター -->
 <!-- 詳細なフッター（セクションページ用） -->
-<footer class="bg-blue-800 text-white py-8">
+<footer class="bg-maingreen text-white py-8">
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row justify-between">
       <div>
-        <h3 class="text-xl font-bold mb-4">一般社団法人自然体験村</h3>
-        <p>〒949-6680</p>
-        <p>新潟県南魚沼市下一日市855</p>
-        <p>TEL: 025-783-3377</p>
+        <h3 class="text-xl font-bold mb-4">一般社団法人 自然体験村</h3>
+        <p>〒949-7302</p>
+        <p>新潟県南魚沼市浦佐487-7-101</p>
         <p>Email: taikenmura4124@gmail.com</p>
       </div>
+      
+      <div class="mt-6 md:mt-0">
+        
+      【情報をいち早くGET! 公式LINEはこちら】<br />
+        <a href="https://lin.ee/ulWzlDV"><img alt="友だち追加" 
+                                              border="0" 
+                                              height="36" 
+                                              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" / 
+                                              class="mt-2"
+                                              />
+        </a>
+      </div>
+    </div>
+      <!--ｺﾒﾝﾄｱｳﾄ
       <div class="mt-6 md:mt-0">
         <h3 class="text-xl font-bold mb-4">リンク</h3>
         <ul class="space-y-2">
@@ -359,146 +646,155 @@
           <li><a href="/#contact" class="hover:text-blue-200">お問い合わせ</a></li>
         </ul>
       </div>
+ｺﾒﾝﾄｱｳﾄ-->
     </div>
     <div class="mt-8 text-center">
-      <p>&copy; 2025 一般社団法人自然体験村 All Rights Reserved.</p>
+      <p>&copy; 2025 一般社団法人 自然体験村 All Rights Reserved.</p>
     </div>
-  </div>
+  
 </footer>
 
 
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        // モバイルメニューの表示/非表示を切り替え
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
+ 
+
+    
+
+  
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+    //ハンバーガーの定義
+  const hamburger = document.getElementById("hamburger-line-wrapper");
+
+const toggleMenu = () => {
+    const isHidden = mobileMenu.classList.contains("hidden");
+
+    if (isHidden) {
+      // 開く
+      mobileMenu.classList.remove("hidden");
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100");
+      hamburger.classList.add("open");
+    } else {
+      // 閉じる
+      overlay.classList.remove("opacity-100");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+      mobileMenu.classList.add("hidden");
+      hamburger.classList.remove("open");
+    }
+  };
+
+  menuButton.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
+});
+</script>
+
+  
+      <style>
+        :root{
+          --main-green:#078080
+          --maingreen1:#83C0C0;
+          --maingreen2:#C1E0E0;
+          --maingreen3:#F0F8F8;
+
+          --main-bg:#f8f5f2
         }
-      });
-      
-      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
-      const navLinks = document.querySelectorAll('#mobile-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // モバイル表示時のみメニューを閉じる
-          if (window.innerWidth < 768) { // md breakpointは768px
-            mobileMenu.classList.add('hidden');
-            
-            // モバイルメニューからのナビゲーション時にバナーを非表示にするためのフラグを設定
-            localStorage.setItem('fromMobileMenu', 'true');
-          }
-        });
-      });
-      
-      // バナーのスクロール制御
-      
-      const banner = document.getElementById('banner');
-      const header = document.querySelector('header');
-      let lastScrollTop = 0;
-      const bannerHeight = banner ? banner.offsetHeight : 0;
-      let isMobileMenuOpen = false;
-      
-      // ヘッダーの高さをCSSカスタムプロパティとして設定
-      function updateHeaderHeight() {
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-      }
-      
-      // モバイルメニューからのナビゲーション時のバナー状態を確認
-      function checkMobileMenuNavigation() {
-        if (localStorage.getItem('fromMobileMenu') === 'true' && banner) {
-          // モバイルメニューからのナビゲーション時はバナーを非表示
-          banner.style.transform = 'translateY(-100%)';
-          
-          // フラグをクリア（少し遅延させる）
-          setTimeout(() => {
-            localStorage.removeItem('fromMobileMenu');
-          }, 1000);
-        }
-      }
-      
-      // 初期設定とリサイズ時に更新
-      updateHeaderHeight();
-      checkMobileMenuNavigation();
-      window.addEventListener('resize', updateHeaderHeight);
-      
-      // モバイルメニュー開閉時の処理
-      mobileMenuButton.addEventListener('click', function() {
-        // メニュー開閉状態を更新
-        isMobileMenuOpen = !mobileMenu.classList.contains('hidden');
-        
-        // メニュー開閉後に少し遅延させて高さを更新
-        setTimeout(updateHeaderHeight, 50);
-        
-        // モバイルメニューが開いているときはバナーを隠す
-        if (banner) {
-          if (isMobileMenuOpen) {
-            // 完全に非表示にする
-            banner.style.display = 'none';
-          } else {
-            // メニューが閉じられたときはバナーを再表示し、スクロール位置に応じて表示/非表示
-            banner.style.display = '';
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop <= header.offsetHeight) {
-              banner.style.transform = 'translateY(0)';
-            }
-          }
-        }
-      });
-      
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (banner && !isMobileMenuOpen) {
-          // ヘッダーの高さ以上スクロールしたらバナーを隠す
-          if (scrollTop > header.offsetHeight) {
-            // 下にスクロールしたときはバナーを隠す
-            if (scrollTop > lastScrollTop) {
-              banner.style.transform = 'translateY(-100%)';
-            } 
-            // 上にスクロールしたときはバナーを表示
-            else {
-              banner.style.transform = 'translateY(0)';
-            }
-          } else {
-            // ヘッダー内にいるときは常に表示
-            banner.style.transform = 'translateY(0)';
-          }
-        }
-        
-        lastScrollTop = scrollTop;
-      });
-      
-      
-      
-      // スライドショー制御
-      let slideIndex = 0;
-      const slides = document.querySelectorAll('.slide');
-      
-      // 初期表示
-      slides[0].classList.add('active');
-      
-      // スライドショーの自動切り替え
-      function showSlides() {
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].classList.remove('active');
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].classList.add('active');
-        setTimeout(showSlides, 5000); // 5秒ごとに切り替え
-      }
-      
-      // スライドショー開始
-      setTimeout(showSlides, 5000);
-      
-    });
-  </script>
+      </style>
+
+ <!--メインカラー設定-->
+  <style>
+  :root {
+    --maingreen: #078080;
+    --maingreen1:#83C0C0;
+    --maingreen2:#C1E0E0;
+    --maingreen3:#F0F8F8;
+    --mainwhite: #f8f5f2;
+  }
+
+  .text-maingreen {
+    color: var(--maingreen);
+  }
+  .bg-maingreen {
+    background-color: var(--maingreen);
+  }
+    .border-maingreen{
+    border-color: var(--maingreen);
+  }
+  .text-maingreen1 {
+    color: var(--maingreen1);
+  }
+  .bg-maingreen1 {
+    background-color: var(--maingreen1);
+  }
+    .border-maingreen1{
+    border-color: var(--maingreen1);
+  }
+    .hover-bg-maingreen1:hover {
+    background-color: var(--maingreen1);
+  }
+  .text-maingreen2 {
+    color: var(--maingreen2);
+  }
+  .bg-maingreen2 {
+    background-color: var(--maingreen2);
+  }
+    .border-maingreen2{
+    border-color: var(--maingreen2);
+  }
+  .text-maingreen3 {
+    color: var(--maingreen3);
+  }
+  .bg-maingreen3 {
+    background-color: var(--maingreen3);
+  }
+    .border-maingreen3{
+    border-color: var(--maingreen3);
+  }
+    
+  .text-mainwhite {
+    color: var(--mainwhite);
+  }
+  .bg-mainwhite {
+    background-color: var(--mainwhite);
+  }
+   .border-mainwhite{
+    border-color: var(--mainwhite);
+  }
+</style>
+  
+  <style>
+/* メイン画像の比率調整 */
+.gallery-main-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+  /*border-radius: 12px;*/
+}
+
+/* サムネイル */
+.gallery-thumb {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* 選択中のサムネイル */
+.active-thumb {
+  border-color: var(--maingreen);
+  transform: scale(1.05);
+}
+</style>
+
+  
+
+  
 </body>
 </html>

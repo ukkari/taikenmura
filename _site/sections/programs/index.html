@@ -32,7 +32,7 @@
   <style>
     /* バナーが有効な場合のセクションタイトル用マージン */
     main section h2 {
-      padding-top: 2.5rem; /* バナーの高さ分の余白を追加 */
+      padding-top: 2.5rem; /* バナーの高さ分の余白を追加*/
     }
     @media (max-width: 768px) {
       main section h2 {
@@ -40,309 +40,822 @@
       }
     }
   </style>
+
+  
+
+   <!--追加してみた影、-->
+  <style>
+.text-shadow-white {
+  text-shadow: 
+    1px 1px 2px rgba(255,255,255,0.9),
+    -1px -1px 2px rgba(255,255,255,0.9);
+}
+</style>
+
+<!--フォントの読み込み-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
-<header class="bg-blue-600 text-white sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-    <div class="flex items-center justify-between w-full md:w-auto">
+<header class="bg-transparent text-maingreen fixed top-0 z-50 w-full">
+  <div class="container mx-auto px-4 py-2 md:py-4 h-16 md:h-24 w-full">
+
+    <!-- ロゴとメニューボタンを同じ flex の中に -->
+    <div class="flex items-center justify-between w-full">
       <a href="/">
-        <img src="/images/logo.png" alt="自然体験村 ロゴ" class="h-16 mr-4 rounded">
+        <img src="/images/logo.png" 
+             alt="自然体験村 ロゴ"
+             class="h-10 md:h-14 mr-2 rounded mb-1">
       </a>
-      <h1 class="text-2xl md:text-3xl font-bold">
-        <a href="/">一般社団法人自然体験村</a>
-      </h1>
-      <button id="mobile-menu-button" class="md:hidden text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+      <!-- メニューボタン（右寄せ） -->
+<!--      <button id="mobile-menu-button" class="text-black p-2 md:p-3 lg:p-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-12 md:w-12" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-      </button>
+      </button> -->
+<button id="mobile-menu-button" class="text-black p-2 md:p-3 lg:p-4">
+  <div id="hamburger-line-wrapper" class="relative w-10 h-6">
+    <span class="absolute top-0 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center"></span>
+    <span class="absolute top-1/2 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center -translate-y-1/2"></span>
+    <span class="absolute bottom-0 left-0 w-full h-1 bg-black rounded transition-all duration-300 origin-center"></span>
+  </div>
+</button>
+
+      
     </div>
-    <nav class="hidden w-full md:block md:w-auto md:mt-0 mt-4" id="mobile-menu">
-      <ul class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-2">
-        <li><a href="/sections/about" class="hover:text-blue-200 block py-2 md:py-0">体験村について</a></li>
-        <li><a href="/sections/programs" class="hover:text-blue-200 block py-2 md:py-0">キャンプ一覧</a></li>
-        <li><a href="/sections/staff" class="hover:text-blue-200 block py-2 md:py-0">スタッフ紹介</a></li>
-        <li><a href="/sections/testimonials" class="hover:text-blue-200 block py-2 md:py-0">参加者の声</a></li>
-        <li><a href="/sections/faq" class="hover:text-blue-200 block py-2 md:py-0">FAQ</a></li>
-        <li><a href="/#contact" class="hover:text-blue-200 block py-2 md:py-0">お問い合わせ</a></li>
+
+    <!-- ナビゲーション（開いたとき下に表示） -->
+    <nav class="hidden mt-3 text-right" id="mobile-menu">
+      <ul class="flex flex-col space-y-2 text-base">
+   <!--
+        <li><a href="/sections/join" class="font-bold fontcolor-red hover:text-blue-200 py-1">参加者募集！</a></li>
+   -->
+       <li><a href="/sections/about" class="font-bold hover:text-blue-200 py-1">体験村について</a></li>
+        <li><a href="/sections/programs" class="font-bold hover:text-blue-200 py-1">キャンプ一覧</a></li>
+        <li><a href="/sections/testimonials" class="font-bold hover:text-blue-200 py-1">参加者の声</a></li>
+        <!--
+        <li><a href="/sections/leader" class="font-bold hover:text-blue-200 py-1">リーダー募集</a></li>
+        -->
+        <li><a href="/sections/staff" class="font-bold hover:text-blue-200 py-1">スタッフ</a></li>
+        <li><a href="/sections/faq" class="font-bold hover:text-blue-200 py-1">FAQ</a></li>
+        <li><a href="/#contact" class="font-bold hover:text-blue-200 py-1">お問合わせ</a></li>
       </ul>
     </nav>
+
   </div>
+  
+  
+  <style>
+  #hamburger-line-wrapper.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #hamburger-line-wrapper.open span:nth-child(2) {
+    opacity: 0;
+  }
+  #hamburger-line-wrapper.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+</style>
+
 </header>
+<!-- オーバーレイ -->
+<div id="overlay"
+     class="fixed inset-0 bg-white bg-opacity-90 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+</div>
 
   <!-- バナー -->
 
-<div id="banner" class="bg-yellow-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300" style="top: var(--header-height, 112px);">
+<div id="banner" class="bg-green-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300">
   <div class="container mx-auto">
-    <a href="https://taiken-mura.blogspot.com/2025/04/2025.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
+    <a href="https://taiken-mura.blogspot.com/p/2026_07.html" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <span class="line-clamp-1">2025春の田植え 親子キャンプ参加者募集！</span>
+      <span class="line-clamp-1">2026 夏キャンプ　参加者募集！（仮）</span>
     </a>
   </div>
 </div>
 
+<style>
+  #banner {
+    top: 58px;
+  }
+  @media (min-width: 768px) {
+    #banner {
+      top: 80px;
+    }
+  }
+</style>
 
 
-  <main class="container mx-auto px-4 py-8 space-y-12">
+  <main class="container mx-auto px-4 py-4 space-y-12 bg-mainwhite">
+  <!-- 体験村について詳細 --<main class="relative pt-0 mt-0 mb-0 bg-mainwhite">-->
+  <!-- ページ内容 -->
+  
+<h2 class="text-xl md:text-4xl font-bold text-center pt-4 md:pt-6 mb-4 ">一般社団法人 自然体験村</h2>
+
   <!-- 年間プログラムスケジュール詳細 -->
   <section id="annual-schedule">
-    <h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-6">年間プログラムスケジュール</h2>
+ 
+<h2 class="text-2xl sm:text-3xl text-center font-bold border-b-4 border-maingreen pb-2 mb-6">
+  年間プログラムスケジュール
+</h2>
     
     <div class="bg-white p-6 rounded-lg shadow mb-12">
       <!-- メインイメージ -->
 
+ 
       <p class="mb-6">
-        体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2025年度の年間スケジュールの詳細をご確認ください。
+        自然体験村では、一年を通して様々な自然体験プログラムを提供しています。各季節の特色を活かした体験を通じて、子どもたちの成長をサポートします。2026年度の年間スケジュールの詳細をご確認ください。
       </p>
       
       <!-- プログラム一覧（画像付き） -->
+
       <div class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-center">2025年度 プログラム一覧</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <h3 class="text-xl font-bold mb-4 text-center">2026年度 プログラム一覧</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <!-- 春のプログラム -->
+
           <div class="bg-white rounded-lg shadow overflow-hidden">
-            <div class="h-40 overflow-hidden">
-              <img src="/images/top/spring.jpg" alt="春のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            <div class="h-40 sm:aspect-video md:h-30 overflow-hidden">
+              <a href="#spring">
+              <img src="/images/top/spring.jpg" alt="春のプログラム" class="w-full h-full object-cover object-top sm:object-center hover:scale-110 transition-transform duration-300">
+              </a>
             </div>
             <div class="p-3 bg-green-50 h-full flex flex-col">
-              <h4 class="font-bold text-green-700 mb-1"><a href="#spring-fire" class="text-green-700 underline">春のプログラム</a></h4>
-              <ul class="text-xs space-y-1 flex-grow">
-                <li>・春の火あそびキャンプ (5/3-5/5)</li>
-                <li>・春の田植え親子キャンプ (5/31-6/1)</li>
+              <h4 class="font-bold text-green-700 mb-1">
+                <a href="#spring" class="text-green-700 underline hover:text-green-200">春のプログラム
+                </a></h4>
+              <ul class="text-sm sm:text-xs space-y-2 flex-grow">
+              <a href="#spring-fire">
+                <li> <font class="font-bold hover:text-green-500">キャンプ場コテージ泊！　春のキャンプ場 火あそびキャンプ</font> (5/2-5/5)</li>
+              </a>
+              <a href="#spring-rice">  
+                <li> <font class="font-bold hover:text-green-500">春の田植え 親子キャンプ</font> (5/30-5/31)</li>
+              </a>
               </ul>
             </div>
           </div>
           
           <!-- 夏のプログラム -->
+
           <div class="bg-white rounded-lg shadow overflow-hidden">
-            <div class="h-40 overflow-hidden">
-              <img src="/images/top/summer.jpg" alt="夏のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            <div class="h-40 sm:aspect-video md:h-30 overflow-hidden">
+               <a href="#summer">
+              <img src="/images/top/summer.jpg" alt="夏のプログラム" class="w-full h-full object-cover object-top sm:object-center hover:scale-110 transition-transform duration-300">
+               </a>
             </div>
             <div class="p-3 bg-yellow-50 h-full flex flex-col">
-              <h4 class="font-bold text-yellow-700 mb-1"><a href="#summer" class="text-yellow-700 underline">夏のプログラム</a></h4>
-              <ul class="text-xs space-y-1 flex-grow">
-                <li>・まっ黒わんぱく夏休み (7/27-8/8)</li>
-                <li>・思いっきり夏キャンプ (8/11-8/17)</li>
-                <li>・あそびばキャンプ (8/20-8/22)</li>
+              <h4 class="font-bold text-yellow-700 mb-1">
+                <a href="#summer" class="text-yellow-700 underline  hover:text-yellow-200">夏のプログラム
+                </a></h4>
+              <ul class="text-sm sm:text-xs space-y-2 flex-grow">
+                <a href="#summer-asobiba">
+                  <li> <font class="font-bold hover:text-yellow-500">あそびばキャンプ</font> (7/18-7/20)</li> </a>
+              <a href="#summer-long">
+                <li> <font class="font-bold hover:text-yellow-500">まっ黒わんぱく夏休み</font> (7/27-8/8)  </li>
+                <li>・わくわく12泊 (7/27-8/8)</li>
+                <li>・スタート2泊 (7/27-7/29)</li>
+                <li>・チャレンジ6泊 (7/31-8/6)</li>
+                <li>・ゆったり8泊 (7/31-8/8)</li> </a>
+                <a href="#summer-dokidoki">
+                  <li> <font class="font-bold hover:text-yellow-500">思いっきり夏キャンプ　どきどき6泊</font> (8/11-8/17)</li> </a>
               </ul>
             </div>
           </div>
           
           <!-- 秋のプログラム -->
+  
           <div class="bg-white rounded-lg shadow overflow-hidden">
-            <div class="h-40 overflow-hidden">
-              <img src="/images/top/fall.jpg" alt="秋のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            <div class="h-40 sm:aspect-video md:h-30 overflow-hidden">
+               <a href="#autumn">
+              <img src="/images/top/fall.jpg" alt="秋のプログラム" class="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-300">
+               </a>
             </div>
             <div class="p-3 bg-orange-50 h-full flex flex-col">
-              <h4 class="font-bold text-orange-700 mb-1"><a href="#autumn-fire" class="text-orange-700 underline">秋のプログラム</a></h4>
-              <ul class="text-xs space-y-1 flex-grow">
-                <li>・キャンプ場火あそびキャンプ (9/13-9/15)</li>
-                <li>・秋の稲刈り親子キャンプ (9/27-9/28)</li>
+              <h4 class="font-bold text-orange-700 mb-1">
+                <a href="#autumn" class="text-orange-700 underline hover:text-orange-200">秋のプログラム
+                </a></h4>
+              <ul class="text-sm sm:text-xs space-y-2 flex-grow">
+                 <a href="#autumn-fire">
+                <li> <font class="font-bold hover:text-orange-500">秋のキャンプ場 火あそびキャンプ</font> (9/19-9/23)</li>
+                 </a>
+                 <a href="#autumn-rice">
+                <li> <font class="font-bold hover:text-orange-500">秋の稲刈り 親子キャンプ</font> (9/26-9/27)</li>
+                 </a>
+                 <a href="#autumn-color">
+                <li> <font class="font-bold hover:text-orange-500">キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ</font>（10/10-10/12）</li>
+                 </a>
               </ul>
             </div>
           </div>
           
           <!-- 冬のプログラム -->
+
           <div class="bg-white rounded-lg shadow overflow-hidden">
-            <div class="h-40 overflow-hidden">
-              <img src="/images/top/winter.jpg" alt="冬のプログラム" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            <div class="h-40 sm:aspect-video md:h-30 overflow-hidden">
+              
+                <a href="#winter">
+              <img src="/images/top/winter.jpg" alt="冬のプログラム" class="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-300">
+                </a>
             </div>
             <div class="p-3 bg-blue-50 h-full flex flex-col">
-              <h4 class="font-bold text-blue-700 mb-1"><a href="#winter-snow" class="text-blue-700 underline">冬のプログラム</a></h4>
-              <ul class="text-xs space-y-1 flex-grow">
-                <li>・天空雪あそびキャンプ【年末】 (12/27-12/29)</li>
-                <li>・天空雪あそびキャンプ（年始） (1/10-1/12)</li>
-                <li>・ガンガン滑ろうキャンプ (1/24-1/25)</li>
+              <h4 class="font-bold text-blue-700 mb-1">
+                <a href="#winter" class="text-blue-700 underline hover:text-blue-200">冬のプログラム
+                </a></h4>
+              <ul class="text-sm sm:text-xs space-y-2 flex-grow">
+                
+                  <a href="#winter-snow">
+                <li> <font class="font-bold hover:text-blue-500">天空雪あそびキャンプ【年末】</font> (12/27-12/29)</li>
+                <li> <font class="font-bold hover:text-blue-500">天空雪あそびキャンプ【年始】</font> (1/9-1/11)</li>
+                  </a>
+                
+                  <a href="#winter-ski">
+                <li> <font class="font-bold hover:text-blue-500">ガンガン滑ろうキャンプ</font> (1/23-1/24)</li>
+                  </a>
+                  <a href="#winter-snow-play">
+                <li> <font class="font-bold hover:text-blue-500">思いっきり雪まみれキャンプ</font> (2/20-2/21)</li>
+                  </a>
               </ul>
             </div>
           </div>
+          
         </div>
       </div>
+    </div>
+    
       
       <!-- 春のプログラム -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
-        
-        <!-- 春の季節写真ギャラリー -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/spring/spring1.jpg" alt="春の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring1.jpg">
-            </div>
-            <!-- 画像2 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/spring/spring2.jpg" alt="春の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring2.jpg">
-            </div>
-            <!-- 画像3 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/spring/spring3.jpg" alt="春の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring3.jpg">
-            </div>
-            <!-- 画像4 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/spring/spring4.jpg" alt="春の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring4.jpg">
-            </div>
-            <!-- 画像5 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/spring/spring5.jpg" alt="春の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring5.jpg">
-            </div>
-            <!-- 画像6 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/spring/spring6.jpg" alt="春の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/spring/spring6.jpg">
-            </div>
-        </div>
-        
-        <!-- 春の火あそびキャンプ -->
-        <div id="spring-fire" class="bg-white rounded-lg shadow overflow-hidden mb-8">
+
+       <div class="mb-10" id="spring">
+    <h3 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-6">春のプログラム</h3>
+    <div class="bg-white rounded-lg shadow overflow-hidden">
+         
+                 
+        <!-- キャンプ場 春の火あそびキャンプ -->
+
+        <div id="spring-fire" >
+          <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+         
+<!-- スライドショー全体 -->
+<div class="slider-wrapper relative w-full overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+    
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+       <img src="/images/uploads/spfire_1.jpg" 
+           alt="spfire1"
+           data-full-img="/images/uploads/spfire_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_2.jpg" 
+           alt="spfire2"
+           data-full-img="/images/uploads/spfire_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_3.jpg" 
+           alt="spfire3"
+           data-full-img="/images/uploads/spfire_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_4.jpg"
+           alt="spfire4"
+           data-full-img="/images/uploads/spfire_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_5.jpg"
+           alt="spfire5"
+           data-full-img="/images/uploads/spfire_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_6.jpg" 
+           alt="spfire6"
+           data-full-img="/images/uploads/spfire_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_7.jpg" 
+           alt="spfire7"
+           data-full-img="/images/uploads/spfire_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_8.jpg" 
+           alt="spfire8"
+           data-full-img="/images/uploads/spfire_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_9.jpg" 
+           alt="spfire9"
+           data-full-img="/images/uploads/spfire_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_10.jpg" 
+           alt="spfire10"
+           data-full-img="/images/uploads/spfire_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_11.jpg" 
+           alt="spfire11"
+           data-full-img="/images/uploads/spfire_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1">
+        <img src="/images/uploads/spfire_12.jpg" 
+           alt="spfire12"
+           data-full-img="/images/uploads/spfire_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+</div>
+
+
+    <!--GWキャンプ説明-->
           <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">キャンプ場コテージ泊！春の火あそびキャンプ</h4>
-            <p class="text-sm font-semibold mb-2">5/3(土)～5/5(月)</p>
-            <p class="mb-4">春の自然の中で火を使った野外活動を体験します。火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます。</p>
+            <h4 class="font-bold text-xl mt-2 mb-3">キャンプ場コテージ泊！<span class="block md:inline">春の火あそびキャンプ</span></h4>
+            <p class="text-sm font-semibold mb-2">5/2(土)～5/5(火・祝)</p>
+            <p class="mb-4">春の雪解けとともに目覚める自然の中で遊び、自分たちで火おこしをして料理を作ります。火の扱い方を通して、自然の中での生活を楽しみながら学びます。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
                   <li>火起こし体験</li>
-                  <li>野外料理（ピザ作り、ダッチオーブン料理）</li>
-                  <li>キャンプファイヤー</li>
+                  <li>野外料理</li>
                   <li>春の自然観察</li>
-                  <li>クラフト活動</li>
+                  <li>たき火を囲んであたたまろう</li>
+                  <li>ホットサンドづくりに挑戦</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 午前の活動（火起こし体験）</li>
-                  <li>12:00 昼食（自分たちで作る野外料理）</li>
-                  <li>13:30 午後の活動（クラフト、自然観察）</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 キャンプファイヤー</li>
-                  <li>21:00 就寝準備</li>
+                     
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：4日間（3泊4日）</li>
+                  <li>定員：20名</li>
                 </ul>
               </div>
             </div>
             
-            <div class="bg-green-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：20名</li>
-              </ul>
-            </div>
           </div>
+            
         </div>
+      </div>
         
         <!-- 春の田植え 親子キャンプ -->
-        <div id="spring-rice" class="bg-white rounded-lg shadow overflow-hidden">
-          <div class="p-6">
+  <div id="spring-rice">
+    <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+         
+         
+    <!-- スライドショー -->
+
+<div class="slider-wrapper relative w-full overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_1.jpg"
+             alt="田植え１"
+             data-full-img="/images/uploads/taue_1.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_2.jpg"
+             alt="田植え２"
+             data-full-img="/images/uploads/taue_2.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_3.jpg"
+             alt="田植え３"
+             data-full-img="/images/uploads/taue_3.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_4.jpg"
+             alt="田植え４"
+             data-full-img="/images/uploads/taue_4.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_5.jpg"
+             alt="田植え５ "
+             data-full-img="/images/uploads/taue_5.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_6.jpg"
+             alt="田植え６"
+             data-full-img="/images/uploads/taue_6.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_7.jpg"
+             alt="田植え７"
+             data-full-img="/images/uploads/taue_7.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_8.jpg"
+             alt="田植え８"
+             data-full-img="/images/uploads/taue_8.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div> 
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_9.jpg"
+             alt="田植え９"
+             data-full-img="/images/uploads/taue_9.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div> 
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_10.jpg"
+             alt="田植え１０"
+             data-full-img="/images/uploads/taue_10.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div> 
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_11.jpg"
+             alt="田植え１１"
+             data-full-img="/images/uploads/taue_11.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div> 
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/taue_12.jpg"
+             alt="田植え１２"
+             data-full-img="/images/uploads/taue_12.jpg"
+             class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+  </div>
+
+               
+      <!--田植え説明-->
+        <div class="p-6">
             <h4 class="font-bold text-xl mb-3">春の田植え 親子キャンプ</h4>
-            <p class="text-sm font-semibold mb-2">5/31(土)～6/1(日)</p>
-            <p class="mb-4">親子で田植え体験を通じて食の大切さを学びます。秋には収穫体験も行い、食の循環を体験できるプログラムです。</p>
+            <p class="text-sm font-semibold mb-2">5/30(土)～5/31(日)</p>
+            <p class="mb-4">米どころ南魚沼でも特に最高峰と評される地区の塩沢で、親子で田植え体験を通じて食の大切さを学びます。秋におこなわれる稲刈りキャンプでは、植えた稲の収穫もできます。<br>
+                            <font color=red>お子さまのみでの参加も可能です！</font>
+            </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
                   <li>田植え体験</li>
-                  <li>農業についての学習</li>
-                  <li>食育ワークショップ</li>
-                  <li>親子で協力する野外炊飯</li>
-                  <li>地元食材を使った料理体験</li>
+                  <li>ぬか釜を使ったお米炊き見学</li>
+                  <li>地元食材を使った料理をいただきます</li>
+                  <li>春の里山 生き物・自然観察</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>08:00 集合・オリエンテーション</li>
-                  <li>09:00 田植え体験</li>
-                  <li>12:00 昼食（地元食材を使った料理）</li>
-                  <li>13:30 食育ワークショップ</li>
-                  <li>15:30 自由時間</li>
-                  <li>17:00 野外炊飯（親子で協力）</li>
-                  <li>19:00 キャンプファイヤー</li>
-                  <li>21:00 就寝準備</li>
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学2年生から高校3年生（子どものみの参加者）、その家族または引率者</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：30名（最小催行人数12名）</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-green-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学生とその保護者</li>
-                <li>期間：2日間（1泊2日）</li>
-                <li>定員：15組</li>
-              </ul>
-            </div>
-            
-
+          
           </div>
-        </div>
-      </div>
       
+        </div>
+    
+      </div>
+    </div>
+      
+      
+    </div> 
+         
       <!-- 夏のプログラム -->
+ 
       <div class="mb-10" id="summer">
         <h3 class="text-2xl font-bold text-yellow-700 border-b-2 border-yellow-200 pb-2 mb-6">夏のプログラム</h3>
+        <div class="bg-white rounded-lg shadow overflow-hidden mt-8 mb-8">
         
         <!-- 夏の季節写真ギャラリー -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer1.jpg" alt="夏の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer1.jpg">
+          
+                  <!-- あそびばキャンプ -->
+   
+        <div id="summer-asobiba">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/asobiba_1.jpg" 
+           alt="asobiba1"
+           data-full-img="/images/uploads/asobiba_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/asobiba_2.jpg" 
+           alt="asobiba2"
+           data-full-img="/images/uploads/asobiba_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/asobiba_3.jpg" 
+           alt="asobiba3"
+           data-full-img="/images/uploads/asobiba_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_1.jpg" 
+           alt="summer-asobiba1"
+           data-full-img="/images/uploads/summer-asobiba_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_2.jpg" 
+           alt="summer-asobiba2"
+           data-full-img="/images/uploads/summer-asobiba_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_3.jpg" 
+           alt="summer-asobiba3"
+           data-full-img="/images/uploads/summer-asobiba_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_4.jpg"
+           alt="summer-asobiba4"
+           data-full-img="/images/uploads/summer-asobiba_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_5.jpg"
+           alt="summer-asobiba5"
+           data-full-img="/images/uploads/summer-asobiba_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_6.jpg" 
+           alt="summer-asobiba6"
+           data-full-img="/images/uploads/summer-asobiba_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_7.jpg" 
+           alt="summer-asobiba7"
+           data-full-img="/images/uploads/summer-asobiba_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_8.jpg" 
+           alt="summer-asobiba8"
+           data-full-img="/images/uploads/summer-asobiba_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_9.jpg" 
+           alt="summer-asobiba9"
+           data-full-img="/images/uploads/summer-asobiba_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_10.jpg" 
+           alt="summer-asobiba10"
+           data-full-img="/images/uploads/summer-asobiba_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_11.jpg" 
+           alt="summer-asobiba11"
+           data-full-img="/images/uploads/summer-asobiba_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-asobiba_12.jpg" 
+           alt="summer-asobiba12"
+           data-full-img="/images/uploads/summer-asobiba_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+</div>
+            
+   <!--あそびば説明-->       
+        <div class="p-6">            
+            <h4 class="font-bold text-xl mb-3">あそびばキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">7/18(土)～7/20(月・祝)</p>
+            <p class="mb-4">短期間で自然体験を楽しみたい子どもたちのための特別プログラム。初めてのキャンプに挑戦するお子さまにもぴったりの2泊3日の短期キャンプです！</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-gray-50 p-4 rounded">
+                <h5 class="font-bold mb-2">主な活動内容</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                    <!--ｺﾒﾝﾄｱｳﾄ<li>野外料理体験</li>
+                  <li>ネイチャーゲーム</li>-->
+                  <li>八海山から流れる川で川遊び</li>
+                  <li>ウェルカムキャンプファイヤー</li>
+                  <li>星空観察</li>
+                </ul>
+              </div>
+              <div class="bg-yellow-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学2年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：40名</li>
+                </ul>
+              </div>
             </div>
-            <!-- 画像2 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer2.jpg" alt="夏の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer2.jpg">
-            </div>
-            <!-- 画像3 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer3.jpg" alt="夏の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer3.jpg">
-            </div>
-            <!-- 画像4 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer4.jpg" alt="夏の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer4.jpg">
-            </div>
-            <!-- 画像5 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer5.jpg" alt="夏の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer5.jpg">
-            </div>
-            <!-- 画像6 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer6.jpg" alt="夏の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer6.jpg">
-            </div>
-            <!-- 画像7 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer7.jpg" alt="夏の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer7.jpg">
-            </div>
-            <!-- 画像8 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer8.jpg" alt="夏の活動8" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer8.jpg">
-            </div>
-            <!-- 画像9 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer9.jpg" alt="夏の活動9" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer9.jpg">
-            </div>
-            <!-- 画像10 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/summer/summer10.jpg" alt="夏の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/summer/summer10.jpg">
-            </div>
+          
+          </div>
+
+             </div>
         </div>
-        
+
+ 
         <!-- まっ黒わんぱく夏休み -->
-        <div id="summer-long" class="bg-white rounded-lg shadow overflow-hidden mb-8">
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">まっ黒わんぱく夏休み</h4>
-            <p class="text-sm font-semibold mb-2">7/27(日)～8/8(金)</p>
+          <div id="summer-long">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+ <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_1.jpg" 
+           alt="12_1"
+           data-full-img="/images/uploads/12_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_2.jpg" 
+           alt="12_2"
+           data-full-img="/images/uploads/12_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_3.jpg" 
+           alt="12_3"
+           data-full-img="/images/uploads/12_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_4.jpg" 
+           alt="12_4"
+           data-full-img="/images/uploads/12_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_5.jpg" 
+           alt="12_5"
+           data-full-img="/images/uploads/12_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_6.jpg" 
+           alt="12_6"
+           data-full-img="/images/uploads/12_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_7.jpg" 
+           alt="12_7"
+           data-full-img="/images/uploads/12_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_8.jpg" 
+           alt="12_8"
+           data-full-img="/images/uploads/12_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_9.jpg" 
+           alt="12_9"
+           data-full-img="/images/uploads/12_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_10.jpg" 
+           alt="12_10"
+           data-full-img="/images/uploads/12_10.jpg"
+           class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_11.jpg" 
+           alt="12_11"
+           data-full-img="/images/uploads/12_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/12_12.jpg" 
+           alt="12_12"
+           data-full-img="/images/uploads/12_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_1.jpg" 
+           alt="summer-long1"
+           data-full-img="/images/uploads/summer-long_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_2.jpg" 
+           alt="summer-long2"
+           data-full-img="/images/uploads/summer-long_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_3.jpg" 
+           alt="summer-long3"
+           data-full-img="/images/uploads/summer-long_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_4.jpg"
+           alt="summer-long4"
+           data-full-img="/images/uploads/summer-long_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_5.jpg"
+           alt="summer-long5"
+           data-full-img="/images/uploads/summer-long_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_6.jpg" 
+           alt="summer-long6"
+           data-full-img="/images/uploads/summer-long_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_7.jpg" 
+           alt="summer-long7"
+           data-full-img="/images/uploads/summer-long_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_8.jpg" 
+           alt="summer-long8"
+           data-full-img="/images/uploads/summer-long_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_9.jpg" 
+           alt="summer-long9"
+           data-full-img="/images/uploads/summer-long_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_10.jpg" 
+           alt="summer-long10"
+           data-full-img="/images/uploads/summer-long_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_11.jpg" 
+           alt="summer-long11"
+           data-full-img="/images/uploads/summer-long_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-long_12.jpg" 
+           alt="summer-long12"
+           data-full-img="/images/uploads/summer-long_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center gap-2 mt-4 max-w-xs mx-auto">
+    </div>
+
+</div>
+   <!--まっ黒説明-->       
+        <div class="p-6">
+            <h4 class="font-bold text-xl mb-3">まっ黒わんぱく夏休み<br>
+                                               わくわく12泊
+            </h4>
+            <p class="text-sm font-semibold mb-2">7/27(月)～8/8(土)</p>
             <p class="mb-4">
               体験村の夏の看板プログラム。12泊13日の長期キャンプで、子どもたちの自主性と協調性を育みます。<br>
               自然の中での長期生活を通じて、生きる力と仲間との絆を深めます。<br>
+              12泊、8泊、6泊、2泊と日数が異なる4つのコースからお選びいただけます。<br>
               毎年多くのリピーターがいる人気プログラムです。
             </p>
             
@@ -350,327 +863,649 @@
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>野外炊事（自分たちで計画・実行）</li>
+                  <li>野外炊事（自分たちでメニュー計画・調理）</li>
                   <li>川遊び・水遊び</li>
-                  <li>山登り・ハイキング</li>
-                  <li>キャンプファイヤー</li>
-                  <li>一日フリープログラム</li>
-                  <li>クラフト活動</li>
-                  <li>自然観察</li>
+                  <li>ウェルカムキャンプファイヤー</li>
+                  <li>早朝座禅体験</li>
+                  <li>フリープログラム（何をするか、どこに行くか、子どもたち自身で作るプログラム　<font color=red>※12泊・8泊のみ</font>）</li>
+                  <li>スパイスカレーを作ろう！</li>
+                  <li>満天の星空観察</li>
+                  <li>料理コンテスト</li>
                 </ul>
               </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>06:30 起床、朝の準備</li>
-                  <li>07:30 朝食</li>
-                  <li>09:00 午前の活動</li>
-                  <li>12:00 昼食</li>
-                  <li>13:30 午後の活動</li>
-                  <li>16:00 わんぱくタイム（自由時間）</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
+              <div class="bg-yellow-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学4年生～中学3年生</li>
+                  <li>期間：13日間（12泊13日）</li>
+                  <li>定員：12泊…20名　8泊…14名　6泊…14名　2泊…14名</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-yellow-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学4年生～中学3年生</li>
-                <li>期間：13日間（12泊13日）</li>
-                <li>定員：30名</li>
-              </ul>
-            </div>
-            
-
-          </div>
-        </div>
+          
+       </div>
+               
+     </div>
+   </div>
         
         <!-- 思いっきり夏キャンプ -->
-        <div id="summer-dokidoki" class="bg-white rounded-lg shadow overflow-hidden mb-8">
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">思いっきり夏キャンプ</h4>
-            <p class="text-sm font-semibold mb-2">8/11(月)～8/17(日)</p>
+ 
+        <div id="summer-dokidoki">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_1.jpg" 
+           alt="summer-dokidoki1"
+           data-full-img="/images/uploads/summer-dokidoki_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_2.jpg" 
+           alt="summer-dokidoki2"
+           data-full-img="/images/uploads/summer-dokidoki_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_3.jpg" 
+           alt="summer-dokidoki3"
+           data-full-img="/images/uploads/summer-dokidoki_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_4.jpg"
+           alt="summer-dokidoki4"
+           data-full-img="/images/uploads/summer-dokidoki_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_5.jpg"
+           alt="summer-dokidoki5"
+           data-full-img="/images/uploads/summer-dokidoki_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_6.jpg" 
+           alt="summer-dokidoki6"
+           data-full-img="/images/uploads/summer-dokidoki_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_7.jpg" 
+           alt="summer-dokidoki7"
+           data-full-img="/images/uploads/summer-dokidoki_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_8.jpg" 
+           alt="summer-dokidoki8"
+           data-full-img="/images/uploads/summer-dokidoki_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_9.jpg" 
+           alt="summer-dokidoki9"
+           data-full-img="/images/uploads/summer-dokidoki_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_10.jpg" 
+           alt="summer-dokidoki10"
+           data-full-img="/images/uploads/summer-dokidoki_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_11.jpg" 
+           alt="summer-dokidoki11"
+           data-full-img="/images/uploads/summer-dokidoki_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/summer-dokidoki_12.jpg" 
+           alt="summer-dokidoki12"
+           data-full-img="/images/uploads/summer-dokidoki_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+</div>
+                        
+   <!--まっ黒説明-->       
+        <div class="p-6">            
+            <h4 class="font-bold text-xl mb-3">思いっきり夏キャンプ <span class="block md:inline">どきどき6泊</span> [さいたま市限定]</h4>
+            <p class="text-sm font-semibold mb-2">8/11(火・祝)～8/17(月)</p>
             <p class="mb-4">「全力遊び」の中に発見がある。集団生活を通して、今の子ども達に欠けてきているけじめ、他を意識する心、想像力を養います。フリーな時間を設け、自ら感じ、考えながら、自発的な力を育みます。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>わんぱくタイム（自由遊び）</li>
-                  <li>川遊び</li>
+                  <li>わんぱくタイム（自分たちで何をするか決められる時間）</li>
+                  <li>キャンプ場で川遊び</li>
                   <li>野外炊事（本格スパイスカレー）</li>
                   <li>キャンプファイヤー</li>
-                  <li>クラフト活動</li>
-                  <li>自然観察</li>
-                  <li>スポーツ大会</li>
+                  <li>草花むかし遊び</li>
                 </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 午前の活動</li>
-                  <li>12:00 昼食</li>
-                  <li>13:30 午後の活動</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
+              </div>       
+              <div class="bg-yellow-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：7日間（6泊7日）</li>
+                  <li>定員：40名</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-yellow-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：7日間（6泊7日）</li>
-                <li>定員：20名</li>
-              </ul>
-            </div>
-            
-
+          
           </div>
+          
+             </div>
         </div>
         
-        <!-- あそびばキャンプ -->
-        <div id="summer-asobiba" class="bg-white rounded-lg shadow overflow-hidden mb-8">
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">あそびばキャンプ</h4>
-            <p class="text-sm font-semibold mb-2">8/20(火)～8/22(木)</p>
-            <p class="mb-4">短期間で自然体験を楽しみたい子どもたちのための特別プログラム。初めてのキャンプに挑戦する子どもにもぴったりの2泊3日の短期キャンプです。</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">主な活動内容</h5>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>野外料理体験</li>
-                  <li>ネイチャーゲーム</li>
-                  <li>水遊び</li>
-                  <li>キャンプファイヤー</li>
-                  <li>クラフト活動</li>
-                </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:30 起床、朝の準備</li>
-                  <li>08:30 朝食</li>
-                  <li>09:30 午前の活動</li>
-                  <li>12:00 昼食</li>
-                  <li>13:30 午後の活動</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="bg-yellow-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学1年生～小学6年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：15名</li>
-              </ul>
-            </div>
-            
-
-          </div>
-        </div>
-      </div>
+        
+    </div>     
+  </div>
       
       <!-- 秋のプログラム -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
-        
-        <!-- 秋の季節写真ギャラリー -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall1.jpg" alt="秋の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall1.jpg">
-            </div>
-            <!-- 画像2 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall2.jpg" alt="秋の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall2.jpg">
-            </div>
-            <!-- 画像3 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall3.jpg" alt="秋の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall3.jpg">
-            </div>
-            <!-- 画像4 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall4.jpg" alt="秋の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall4.jpg">
-            </div>
-            <!-- 画像5 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall5.jpg" alt="秋の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall5.jpg">
-            </div>
-            <!-- 画像6 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall6.jpg" alt="秋の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall6.jpg">
-            </div>
-            <!-- 画像7 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/fall/fall7.jpg" alt="秋の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/fall/fall7.jpg">
-            </div>
-        </div>
-        
-        <!-- キャンプ場 火あそびキャンプ -->
-        <div id="autumn-fire" class="bg-white rounded-lg shadow overflow-hidden mb-8">
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">キャンプ場 火あそびキャンプ</h4>
-            <p class="text-sm font-semibold mb-2">9/13(土)～9/15(月)</p>
-            <p class="mb-4">秋の自然の中で火を使った野外活動を体験します。火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます。</p>
+  
+      <div class="mb-10" id="autumn">
+  <h3 class="text-2xl font-bold text-orange-700 border-b-2 border-orange-200 pb-2 mb-6">秋のプログラム</h3>
+    <div class="bg-white rounded-lg shadow overflow-hidden">        
+
+        <div id="autumn-fire" >
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_1.jpg" 
+           alt="autumn-fire1"
+           data-full-img="/images/uploads/autumn-fire_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_2.jpg" 
+           alt="autumn-fire2"
+           data-full-img="/images/uploads/autumn-fire_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_3.jpg" 
+           alt="autumn-fire3"
+           data-full-img="/images/uploads/autumn-fire_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_4.jpg"
+           alt="autumn-fire4"
+           data-full-img="/images/uploads/autumn-fire_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_5.jpg"
+           alt="autumn-fire5"
+           data-full-img="/images/uploads/autumn-fire_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_6.jpg" 
+           alt="autumn-fire6"
+           data-full-img="/images/uploads/autumn-fire_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_7.jpg" 
+           alt="autumn-fire7"
+           data-full-img="/images/uploads/autumn-fire_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_8.jpg" 
+           alt="autumn-fire8"
+           data-full-img="/images/uploads/autumn-fire_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_9.jpg" 
+           alt="autumn-fire9"
+           data-full-img="/images/uploads/autumn-fire_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_10.jpg" 
+           alt="autumn-fire10"
+           data-full-img="/images/uploads/autumn-fire_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_11.jpg" 
+           alt="autumn-fire11"
+           data-full-img="/images/uploads/autumn-fire_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-fire_12.jpg" 
+           alt="autumn-fire12"
+           data-full-img="/images/uploads/autumn-fire_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+</div>
+
+   <!--火あそび説明-->       
+        <div class="p-6">               
+            <h4 class="font-bold text-xl mb-3">秋のキャンプ場 火あそびキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">9/19(土)～9/23(水・祝)</p>
+            <p class="mb-4">秋の自然の中で火を使った野外活動を体験します！火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
                   <li>火起こし体験</li>
-                  <li>野外料理（ピザ作り、ダッチオーブン料理）</li>
+                  <li>野外調理</li>
                   <li>キャンプファイヤー</li>
                   <li>秋の自然観察</li>
                   <li>クラフト活動</li>
                   <li>焚き火を囲んでの交流会</li>
                 </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 午前の活動（火起こし体験）</li>
-                  <li>12:00 昼食（自分たちで作る野外料理）</li>
-                  <li>13:30 午後の活動（クラフト、自然観察）</li>
-                  <li>16:00 自由時間</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 焚き火を囲んでの交流会</li>
-                  <li>21:00 就寝準備</li>
+              </div>            
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：5日間（4泊5日）</li>
+                  <li>定員：30名（最少催行人数20名）</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-orange-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：20名</li>
-              </ul>
-            </div>
+               
+        </div>
             
 
           </div>
         </div>
         
         <!-- 秋の稲刈り 親子キャンプ -->
-        <div id="autumn-rice" class="bg-white rounded-lg shadow overflow-hidden">
-          <div class="p-6">
+   
+        <div id="autumn-rice">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_1.jpg" 
+           alt="autumn-rice1"
+           data-full-img="/images/uploads/autumn-rice_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_2.jpg" 
+           alt="autumn-rice2"
+           data-full-img="/images/uploads/autumn-rice_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_3.jpg" 
+           alt="autumn-rice3"
+           data-full-img="/images/uploads/autumn-rice_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_4.jpg"
+           alt="autumn-rice4"
+           data-full-img="/images/uploads/autumn-rice_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_5.jpg"
+           alt="autumn-rice5"
+           data-full-img="/images/uploads/autumn-rice_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_6.jpg" 
+           alt="autumn-rice6"
+           data-full-img="/images/uploads/autumn-rice_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_7.jpg" 
+           alt="autumn-rice7"
+           data-full-img="/images/uploads/autumn-rice_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_8.jpg" 
+           alt="autumn-rice8"
+           data-full-img="/images/uploads/autumn-rice_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_9.jpg" 
+           alt="autumn-rice9"
+           data-full-img="/images/uploads/autumn-rice_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_10.jpg" 
+           alt="autumn-rice10"
+           data-full-img="/images/uploads/autumn-rice_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_11.jpg" 
+           alt="autumn-rice11"
+           data-full-img="/images/uploads/autumn-rice_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_12.jpg" 
+           alt="autumn-rice12"
+           data-full-img="/images/uploads/autumn-rice_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_13.jpg" 
+           alt="autumn-rice13"
+           data-full-img="/images/uploads/autumn-rice_13.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_14.jpg" 
+           alt="autumn-rice14"
+           data-full-img="/images/uploads/autumn-rice_14.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_15.jpg" 
+           alt="autumn-rice15"
+           data-full-img="/images/uploads/autumn-rice_15.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_16.jpg" 
+           alt="autumn-rice16"
+           data-full-img="/images/uploads/autumn-rice_16.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_17.jpg" 
+           alt="autumn-rice17"
+           data-full-img="/images/uploads/autumn-rice_17.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-rice_18.jpg" 
+           alt="autumn-rice18"
+           data-full-img="/images/uploads/autumn-rice_18.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center gap-2 mt-4 max-w-xs mx-auto">
+    </div>
+
+</div>
+            
+   <!--稲刈り説明-->
+        <div class="p-6">
             <h4 class="font-bold text-xl mb-3">秋の稲刈り 親子キャンプ</h4>
-            <p class="text-sm font-semibold mb-2">9/27(土)～9/28(日)</p>
-            <p class="mb-4">春に植えた稲を収穫し、食の循環を体験します。親子で協力して稲刈りを行い、収穫の喜びを分かち合います。</p>
+            <p class="text-sm font-semibold mb-2">9/26(土)～9/27(日)</p>
+            <p class="mb-4">地元の方からレクチャーを受けながら、春の田植えキャンプで植えた稲を収穫します！親子で協力して稲刈りを行い、収穫の喜びを分かち合います。<br>
+                            <font color=red>お子さまのみでの参加も可能です！</font>
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              
+              <div class="bg-gray-50 p-4 rounded">
+                <h5 class="font-bold mb-2">主な活動内容</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>稲刈り・はざかけ体験</li>
+                  <li>南魚沼産コシヒカリを使った料理</li>
+                  <li>お餅つき</li>
+                  <li>秋の里山 生き物・自然観察</li>
+                </ul>
+              </div>            
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学2年生～高校3年生（子どものみの参加者）、その家族または引率者</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：30名（最少催行人数15名）</li>
+                </ul>
+              </div>
+            
+            </div>
+        </div>
+        
+             </div>
+        </div>
+        
+              <!-- キャンプ場コテージ泊！秋色を楽しむ火あそびキャンプ -->
+   
+        <div id="autumn-color">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_1.jpg" 
+           alt="autumn-color1"
+           data-full-img="/images/uploads/autumn-color_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_2.jpg" 
+           alt="autumn-color2"
+           data-full-img="/images/uploads/autumn-color_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_3.jpg" 
+           alt="autumn-color3"
+           data-full-img="/images/uploads/autumn-color_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_4.jpg"
+           alt="autumn-color4"
+           data-full-img="/images/uploads/autumn-color_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_5.jpg"
+           alt="autumn-color5"
+           data-full-img="/images/uploads/autumn-color_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_6.jpg" 
+           alt="autumn-color6"
+           data-full-img="/images/uploads/autumn-color_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_7.jpg" 
+           alt="autumn-color7"
+           data-full-img="/images/uploads/autumn-color_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_8.jpg" 
+           alt="autumn-color8"
+           data-full-img="/images/uploads/autumn-color_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_9.jpg" 
+           alt="autumn-color9"
+           data-full-img="/images/uploads/autumn-color_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_10.jpg" 
+           alt="autumn-color10"
+           data-full-img="/images/uploads/autumn-color_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_11.jpg" 
+           alt="autumn-color11"
+           data-full-img="/images/uploads/autumn-color_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/autumn-color_12.jpg" 
+           alt="autumn-color12"
+           data-full-img="/images/uploads/autumn-color_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+
+</div>
+            
+   <!--秋色説明-->
+        <div class="p-6">
+            <h4 class="font-bold text-xl mb-3">キャンプ場コテージ泊！<span class="block md:inline">秋色を楽しむ火あそびキャンプ</span></h4>
+            <p class="text-sm font-semibold mb-2">10/10(土)～10/12(月・祝)</p>
+            <p class="mb-4">色づく葉っぱやキノコなどの自然の秋色を通して10月のキャンプ場を楽しむキャンプです。コテージに宿泊するため、野外泊が不安なお子様でも安心！秋色に色づくキャンプ場、みんなでパーティを楽しもう！</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>稲刈り体験</li>
-                  <li>脱穀・籾摺り体験</li>
-                  <li>収穫祭</li>
-                  <li>新米を使った料理体験</li>
-                  <li>食育ワークショップ</li>
+                  <li>秋色ガーラントづくり</li>
+                  <li>秋探しフィールドビンゴ</li>
+                  <li>CAMP×PARTY</li>
+                  <li>ダルマストーブで野外調理</li>
                   <li>秋の自然観察</li>
                 </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>08:00 集合・オリエンテーション</li>
-                  <li>09:00 稲刈り体験</li>
-                  <li>12:00 昼食（新米を使った料理）</li>
-                  <li>13:30 脱穀・籾摺り体験</li>
-                  <li>15:30 食育ワークショップ</li>
-                  <li>17:00 収穫祭の準備</li>
-                  <li>18:00 収穫祭（夕食）</li>
-                  <li>20:00 交流会</li>
-                  <li>21:00 就寝準備</li>
-                </ul>
+              </div>            
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～高校生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：15名</li>
+                </ul> 
               </div>
             </div>
-            
-            <div class="bg-orange-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学生とその保護者</li>
-                <li>期間：2日間（1泊2日）</li>
-                <li>定員：15組</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 冬のプログラム -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">冬のプログラム</h3>
+          
+         </div>
+               
+              </div>
+         </div>  
         
-        <!-- 冬の季節写真ギャラリー -->
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-4">
-            <!-- 画像1 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter1.jpg" alt="冬の活動1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter1.jpg">
-            </div>
-            <!-- 画像2 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter2.jpg" alt="冬の活動2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter2.jpg">
-            </div>
-            <!-- 画像3 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter3.jpg" alt="冬の活動3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter3.jpg">
-            </div>
-            <!-- 画像4 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter4.jpg" alt="冬の活動4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter4.jpg">
-            </div>
-            <!-- 画像5 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter5.jpg" alt="冬の活動5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter5.jpg">
-            </div>
-            <!-- 画像6 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter6.jpg" alt="冬の活動6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter6.jpg">
-            </div>
-            <!-- 画像7 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter7.jpg" alt="冬の活動7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter7.jpg">
-            </div>
-            <!-- 画像8 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter8.jpg" alt="冬の活動8" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter8.jpg">
-            </div>
-            <!-- 画像9 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter9.jpg" alt="冬の活動9" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter9.jpg">
-            </div>
-            <!-- 画像10 -->
-            <div class="relative overflow-hidden rounded-lg h-24 cursor-pointer gallery-item">
-              <img src="/images/winter/winter10.jpg" alt="冬の活動10" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" data-full-img="/images/winter/winter10.jpg">
-            </div>
-        </div>
+    </div>
+      </div>
+          
+      <!-- 冬のプログラム -->
+    
+      <div class="mb-10" id="winter">
+        <h3 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-6">冬のプログラム</h3>
+    <div class="bg-white rounded-lg shadow overflow-hidden">
+        
         
         <!-- 天空雪あそびキャンプ【年末】 -->
-        <div id="winter-snow" class="bg-white rounded-lg shadow overflow-hidden mb-8">
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">天空雪あそびキャンプ【年末】</h4>
-            <p class="text-sm font-semibold mb-2">12/27(土)～12/29(月)</p>
-            <p class="mb-4">年末の雪山で思いっきり雪遊びを楽しみます。雪国ならではの体験を通して、冬の自然の魅力を発見します。</p>
+
+        <div id="winter-snow">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-0 gallery-item">
+        <img src="/images/uploads/winter-snow_1.jpg" 
+           alt="winter-snow1"
+           data-full-img="/images/uploads/winter-snow_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-0 gallery-item">
+        <img src="/images/uploads/winter-snow_2.jpg" 
+           alt="winter-snow2"
+           data-full-img="/images/uploads/winter-snow_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-0 gallery-item">
+        <img src="/images/uploads/winter-snow_3.jpg" 
+           alt="winter-snow3"
+           data-full-img="/images/uploads/winter-snow_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_4.jpg"
+           alt="winter-snow4"
+           data-full-img="/images/uploads/winter-snow_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_5.jpg"
+           alt="winter-snow5"
+           data-full-img="/images/uploads/winter-snow_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_6.jpg" 
+           alt="winter-snow6"
+           data-full-img="/images/uploads/winter-snow_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_7.jpg" 
+           alt="winter-snow7"
+           data-full-img="/images/uploads/winter-snow_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_8.jpg" 
+           alt="winter-snow8"
+           data-full-img="/images/uploads/winter-snow_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_9.jpg" 
+           alt="winter-snow9"
+           data-full-img="/images/uploads/winter-snow_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_10.jpg" 
+           alt="winter-snow10"
+           data-full-img="/images/uploads/winter-snow_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_11.jpg" 
+           alt="winter-snow11"
+           data-full-img="/images/uploads/winter-snow_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow_12.jpg" 
+           alt="winter-snow12"
+           data-full-img="/images/uploads/winter-snow_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+</div>
+            
+   <!--天空説明-->
+        <div class="p-6">            
+            <h4 class="font-bold text-xl mb-3">天空雪あそびキャンプ<span class="block md:inline">【年末】・【年始】</span></h4>
+            <p class="text-sm font-semibold mb-2">【年末】12/27(日)～12/29(火)　・　【年始】1/9(土)～1/11(月・祝)</p>
+            <p class="mb-4">ロープウェーに乗って八海山へ！街を見下ろす絶景と、腰まで埋まるほどの雪原で思いっきり雪遊び。空に近いこの場所でしか味わえない、特別な冬のひとときが待っています。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
@@ -678,97 +1513,396 @@
                 <ul class="list-disc pl-5 space-y-1">
                   <li>雪遊び（かまくら作り、雪合戦）</li>
                   <li>そり滑り</li>
-                  <li>スノーシュー体験</li>
+                  <li>スノーシューハイキング</li>
                   <li>雪像づくり</li>
                   <li>星空観察</li>
-                  <li>温かい室内クラフト</li>
-                  <li>年越し準備体験</li>
+                  <!--ｺﾒﾝﾄｱｳﾄ<li>温かい室内クラフト</li>
+                  <li>年越し準備体験</li>-->
                 </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>07:00 起床、朝の準備</li>
-                  <li>08:00 朝食</li>
-                  <li>09:30 雪遊び（午前の部）</li>
-                  <li>12:00 昼食（温かい食事）</li>
-                  <li>13:30 雪遊び（午後の部）</li>
-                  <li>16:00 入浴、温まり</li>
-                  <li>18:00 夕食</li>
-                  <li>19:30 夜のプログラム</li>
-                  <li>21:00 就寝準備</li>
+              </div>    
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：25名（最少催行人数12名）</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-blue-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～中学3年生</li>
-                <li>期間：3日間（2泊3日）</li>
-                <li>定員：20名</li>
-              </ul>
-            </div>
-            
+          
+        </div>
 
-          </div>
+             </div>
         </div>
         
-        <!-- ガンガン滑ろうキャンプ -->
-        <div id="winter-ski" class="bg-white rounded-lg shadow overflow-hidden">
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-3">ガンガン滑ろうキャンプ</h4>
-            <p class="text-sm font-semibold mb-2">1/24(土)～1/25(日)</p>
-            <p class="mb-4">スキーやスノーボードを思いっきり楽しむキャンプです。初心者から経験者まで、それぞれのレベルに合わせた指導を行います。</p>
+                <!-- 思いっきり雪まみれキャンプ -->
+
+        <div id="winter-snow-play">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper relative overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_1.jpg" 
+           alt="winter-snow-play1"
+           data-full-img="/images/uploads/winter-snow-play_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_2.jpg" 
+           alt="winter-snow-play2"
+           data-full-img="/images/uploads/winter-snow-play_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_3.jpg" 
+           alt="winter-snow-play3"
+           data-full-img="/images/uploads/winter-snow-play_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_4.jpg"
+           alt="winter-snow-play4"
+           data-full-img="/images/uploads/winter-snow-play_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_5.jpg"
+           alt="winter-snow-play5"
+           data-full-img="/images/uploads/winter-snow-play_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_6.jpg" 
+           alt="winter-snow-play6"
+           data-full-img="/images/uploads/winter-snow-play_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_7.jpg" 
+           alt="winter-snow-play7"
+           data-full-img="/images/uploads/winter-snow-play_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_8.jpg" 
+           alt="winter-snow-play8"
+           data-full-img="/images/uploads/winter-snow-play_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_9.jpg" 
+           alt="winter-snow-play9"
+           data-full-img="/images/uploads/winter-snow-play_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_10.jpg" 
+           alt="winter-snow-play10"
+           data-full-img="/images/uploads/winter-snow-play_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_11.jpg" 
+           alt="winter-snow-play11"
+           data-full-img="/images/uploads/winter-snow-play_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_12.jpg" 
+           alt="winter-snow-play12"
+           data-full-img="/images/uploads/winter-snow-play_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_13.jpg" 
+           alt="winter-snow-play13"
+           data-full-img="/images/uploads/winter-snow-play_13.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_14.jpg" 
+           alt="winter-snow-play14"
+           data-full-img="/images/uploads/winter-snow-play_14.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_15.jpg" 
+           alt="winter-snow-play15"
+           data-full-img="/images/uploads/winter-snow-play_15.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_16.jpg" 
+           alt="winter-snow-play16"
+           data-full-img="/images/uploads/winter-snow-play_16.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_17.jpg" 
+           alt="winter-snow-play17"
+           data-full-img="/images/uploads/winter-snow-play_17.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-snow-play_18.jpg" 
+           alt="winter-snow-play18"
+           data-full-img="/images/uploads/winter-snow-play_18.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center gap-2 mt-4 max-w-xs mx-auto">
+    </div>
+</div>
+            
+   <!--雪まみれ説明-->
+        <div class="p-6">
+            <h4 class="font-bold text-xl mb-3">思いっきり雪まみれキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">2/20(土)～2/21(日)</p>
+            <p class="mb-4">南魚沼の里山で雪まみれになるほど思いっきり遊びます。豪雪地ならではの体験を通して忘れられない冬の思い出を作ります。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
                 <h5 class="font-bold mb-2">主な活動内容</h5>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>スキー・スノーボードレッスン</li>
-                  <li>ゲレンデ滑走</li>
-                  <li>雪遊び</li>
-                  <li>ナイターセッション</li>
-                  <li>ウィンタースポーツ講習</li>
-                  <li>温泉入浴体験</li>
+                  <li>雪遊び（かまくら作り、雪合戦）</li>
+                  <li>そり滑り</li>
+                  <li>夜プログラム(星空観察・屋内レクリエーションなど)</li>
+                  <li>スノートレッキング</li>
+                  <li>凍み渡り</li>
+                  <li>朝日を見よう！</li>
+                  <!--ｺﾒﾝﾄｱｳﾄ<li>温かい室内クラフト</li>
+                  <li>年越し準備体験</li>-->
                 </ul>
-              </div>
-              <div class="bg-gray-50 p-4 rounded">
-                <h5 class="font-bold mb-2">1日のスケジュール例</h5>
-                <ul class="list-none pl-0 space-y-1 text-sm">
-                  <li>06:30 起床、朝の準備</li>
-                  <li>07:30 朝食</li>
-                  <li>08:30 ゲレンデへ移動</li>
-                  <li>09:30 午前のレッスン</li>
-                  <li>12:00 昼食</li>
-                  <li>13:00 午後の自由滑走</li>
-                  <li>16:00 ゲレンデから帰還</li>
-                  <li>17:00 温泉入浴</li>
-                  <li>18:30 夕食</li>
-                  <li>20:00 就寝準備</li>
+              </div>                   
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～中学3年生</li>
+                  <li>期間：3日間（2泊3日）</li>
+                  <li>定員：25名（最少催行人数12名）</li>
                 </ul>
               </div>
             </div>
-            
-            <div class="bg-blue-50 p-4 rounded">
-              <h5 class="font-bold mb-2">対象・期間</h5>
-              <ul class="list-none pl-0 space-y-1">
-                <li>対象：小学3年生～高校3年生</li>
-                <li>期間：2日間（1泊2日）</li>
-                <li>定員：15名</li>
-              </ul>
-            </div>
-            
-
-          </div>
+          
         </div>
+
+             </div>
+        </div>
+        
+        
+        <!-- ガンガン滑ろうキャンプ -->
+
+        <div id="winter-ski">
+             <div class="overflow-hidden mt-8 mb-8 sm:p-6">
+            
+  <!-- スライドショー全体 -->
+<div class="slider-wrapper overflow-hidden">
+  <div class="slider flex will-change-transform transition-transform duration-700 ease-in-out">
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_1.jpg" 
+           alt="winter-ski1"
+           data-full-img="/images/uploads/winter-ski_1.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
       </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_2.jpg" 
+           alt="winter-ski2"
+           data-full-img="/images/uploads/winter-ski_2.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_3.jpg" 
+           alt="winter-ski3"
+           data-full-img="/images/uploads/winter-ski_3.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_4.jpg"
+           alt="winter-ski4"
+           data-full-img="/images/uploads/winter-ski_4.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_5.jpg"
+           alt="winter-ski5"
+           data-full-img="/images/uploads/winter-ski_5.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_6.jpg" 
+           alt="winter-ski6"
+           data-full-img="/images/uploads/winter-ski_6.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_7.jpg" 
+           alt="winter-ski7"
+           data-full-img="/images/uploads/winter-ski_7.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_8.jpg" 
+           alt="winter-ski8"
+           data-full-img="/images/uploads/winter-ski_8.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_9.jpg" 
+           alt="winter-ski9"
+           data-full-img="/images/uploads/winter-ski_9.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_10.jpg" 
+           alt="winter-ski10"
+           data-full-img="/images/uploads/winter-ski_10.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_11.jpg" 
+           alt="winter-ski11"
+           data-full-img="/images/uploads/winter-ski_11.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+      <div class="slide flex-none w-full sm:w-1/2 lg:w-1/3 px-1 gallery-item">
+        <img src="/images/uploads/winter-ski_12.jpg" 
+           alt="winter-ski12"
+           data-full-img="/images/uploads/winter-ski_12.jpg"
+           class="w-full aspect-[4/3] sm:h-64 object-cover">
+      </div>
+  </div>  
+    <div class="slider-dots flex justify-center space-x-2 mt-4">
+    </div>
+</div>
+            
+   <!--ガンガン説明-->
+        <div class="p-6">            
+            <h4 class="font-bold text-xl mb-3">ガンガン滑ろうキャンプ</h4>
+            <p class="text-sm font-semibold mb-2">1/23(土)～1/24(日)</p>
+            <p class="mb-4">雪の恵み豊かな南魚沼でスキーを思いっきり楽しむキャンプです。スキー初めての初心者から経験者まで、滑るスピードで分かれてスキーを楽しみます。<br>
+                            とにかくたくさん滑ることでスキーの楽しさを感じ、自然と上達していく——そんな理念のもと、子どもたちの「もっと滑りたい！」に応えるキャンプです。
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-gray-50 p-4 rounded">
+                <h5 class="font-bold mb-2">主な活動内容</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>スキーレッスン</li>
+                  <li>ゲレンデ滑走</li>
+                  <!--<li>ナイターセッション</li>
+                  <li>ウィンタースポーツ講習</li>-->
+                  <li>温泉入浴</li>
+                </ul>
+              </div>                  
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold mb-2">対象・期間</h5>
+                <ul class="list-none pl-0 space-y-1">
+                  <li>対象：小学3年生～高校3年生</li>
+                  <li>期間：2日間（1泊2日）</li>
+                  <li>定員：15名</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        
+             </div>
+        </div>
+      
+      </div>   
+         </div>
       
       <div class="mt-8 text-center">
-        <a href="/#annual-programs" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">トップページに戻る</a>
+        <a href="/#annual-programs" class="inline-block bg-maingreen text-white px-6 py-2 rounded hover:bg-maingreen transition">トップページに戻る</a>
       </div>
-    </div>
-  </section>
+  
+  
+         
+  <!-- ドット -->
+  <div id="slider-dots"
+       class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+  </div>
+
+
+         
+  <!-- ドット -->
+
+<script>
+
+document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
+  
+  const slider = wrapper.querySelector(".slider");
+  const slides = wrapper.querySelectorAll(".slide");
+  const dotsContainer = wrapper.querySelector(".slider-dots");
+
+  let current = 0;
+  let slidesPerView = getSlidesPerView();
+  let interval;
+
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = "";
+    const pages = Math.ceil(slides.length / slidesPerView);
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement("button");
+      dot.className = "w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition-all duration-300" 
+      dot.addEventListener("click", () => {
+        current = i;
+        update();
+        restart();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function update() {
+    const slideWidth = slides[0].offsetWidth;
+    slider.style.transform = `translateX(-${current * slideWidth * slidesPerView}px)`;
+    const dots = dotsContainer.querySelectorAll("button");
+    dots.forEach(d => d.classList.remove("bg-blue-500"));
+    if (dots[current]) dots[current].classList.add("bg-blue-500");
+  }
+
+  function next() {
+    const pages = Math.ceil(slides.length / slidesPerView);
+    current = (current + 1) % pages;
+    update();
+  }
+
+  function start() {
+    interval = setInterval(next, 4000);
+  }
+
+  function restart() {
+    clearInterval(interval);
+    start();
+  }
+
+  window.addEventListener("resize", () => {
+    slidesPerView = getSlidesPerView();
+    current = 0;
+    createDots();
+    update();
+  });
+
+  createDots();
+  update();
+  start();
+
+});
+</script>
+         
+         
+         
+         
+         
+         
   
   <!-- 画像拡大用モーダル -->
   <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden">
@@ -819,21 +1953,38 @@
       });
     });
   </script>
+      
+      
+    
+</section>
 </main>
 
 
   <!-- フッター -->
 <!-- 詳細なフッター（セクションページ用） -->
-<footer class="bg-blue-800 text-white py-8">
+<footer class="bg-maingreen text-white py-8">
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row justify-between">
       <div>
-        <h3 class="text-xl font-bold mb-4">一般社団法人自然体験村</h3>
-        <p>〒949-6680</p>
-        <p>新潟県南魚沼市下一日市855</p>
-        <p>TEL: 025-783-3377</p>
+        <h3 class="text-xl font-bold mb-4">一般社団法人 自然体験村</h3>
+        <p>〒949-7302</p>
+        <p>新潟県南魚沼市浦佐487-7-101</p>
         <p>Email: taikenmura4124@gmail.com</p>
       </div>
+      
+      <div class="mt-6 md:mt-0">
+        
+      【情報をいち早くGET! 公式LINEはこちら】<br />
+        <a href="https://lin.ee/ulWzlDV"><img alt="友だち追加" 
+                                              border="0" 
+                                              height="36" 
+                                              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" / 
+                                              class="mt-2"
+                                              />
+        </a>
+      </div>
+    </div>
+      <!--ｺﾒﾝﾄｱｳﾄ
       <div class="mt-6 md:mt-0">
         <h3 class="text-xl font-bold mb-4">リンク</h3>
         <ul class="space-y-2">
@@ -842,125 +1993,155 @@
           <li><a href="/#contact" class="hover:text-blue-200">お問い合わせ</a></li>
         </ul>
       </div>
+ｺﾒﾝﾄｱｳﾄ-->
     </div>
     <div class="mt-8 text-center">
-      <p>&copy; 2025 一般社団法人自然体験村 All Rights Reserved.</p>
+      <p>&copy; 2025 一般社団法人 自然体験村 All Rights Reserved.</p>
     </div>
-  </div>
+  
 </footer>
 
 
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        // モバイルメニューの表示/非表示を切り替え
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
+ 
+
+    
+
+  
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+    //ハンバーガーの定義
+  const hamburger = document.getElementById("hamburger-line-wrapper");
+
+const toggleMenu = () => {
+    const isHidden = mobileMenu.classList.contains("hidden");
+
+    if (isHidden) {
+      // 開く
+      mobileMenu.classList.remove("hidden");
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100");
+      hamburger.classList.add("open");
+    } else {
+      // 閉じる
+      overlay.classList.remove("opacity-100");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+      mobileMenu.classList.add("hidden");
+      hamburger.classList.remove("open");
+    }
+  };
+
+  menuButton.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
+});
+</script>
+
+  
+      <style>
+        :root{
+          --main-green:#078080
+          --maingreen1:#83C0C0;
+          --maingreen2:#C1E0E0;
+          --maingreen3:#F0F8F8;
+
+          --main-bg:#f8f5f2
         }
-      });
-      
-      // ナビゲーションリンクがクリックされたときにメニューを閉じる（モバイル表示時）
-      const navLinks = document.querySelectorAll('#mobile-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // モバイル表示時のみメニューを閉じる
-          if (window.innerWidth < 768) { // md breakpointは768px
-            mobileMenu.classList.add('hidden');
-            
-            // モバイルメニューからのナビゲーション時にバナーを非表示にするためのフラグを設定
-            localStorage.setItem('fromMobileMenu', 'true');
-          }
-        });
-      });
-      
-      // バナーのスクロール制御
-      
-      const banner = document.getElementById('banner');
-      const header = document.querySelector('header');
-      let lastScrollTop = 0;
-      const bannerHeight = banner ? banner.offsetHeight : 0;
-      let isMobileMenuOpen = false;
-      
-      // ヘッダーの高さをCSSカスタムプロパティとして設定
-      function updateHeaderHeight() {
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-      }
-      
-      // モバイルメニューからのナビゲーション時のバナー状態を確認
-      function checkMobileMenuNavigation() {
-        if (localStorage.getItem('fromMobileMenu') === 'true' && banner) {
-          // モバイルメニューからのナビゲーション時はバナーを非表示
-          banner.style.transform = 'translateY(-100%)';
-          
-          // フラグをクリア（少し遅延させる）
-          setTimeout(() => {
-            localStorage.removeItem('fromMobileMenu');
-          }, 1000);
-        }
-      }
-      
-      // 初期設定とリサイズ時に更新
-      updateHeaderHeight();
-      checkMobileMenuNavigation();
-      window.addEventListener('resize', updateHeaderHeight);
-      
-      // モバイルメニュー開閉時の処理
-      mobileMenuButton.addEventListener('click', function() {
-        // メニュー開閉状態を更新
-        isMobileMenuOpen = !mobileMenu.classList.contains('hidden');
-        
-        // メニュー開閉後に少し遅延させて高さを更新
-        setTimeout(updateHeaderHeight, 50);
-        
-        // モバイルメニューが開いているときはバナーを隠す
-        if (banner) {
-          if (isMobileMenuOpen) {
-            // 完全に非表示にする
-            banner.style.display = 'none';
-          } else {
-            // メニューが閉じられたときはバナーを再表示し、スクロール位置に応じて表示/非表示
-            banner.style.display = '';
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop <= header.offsetHeight) {
-              banner.style.transform = 'translateY(0)';
-            }
-          }
-        }
-      });
-      
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (banner && !isMobileMenuOpen) {
-          // ヘッダーの高さ以上スクロールしたらバナーを隠す
-          if (scrollTop > header.offsetHeight) {
-            // 下にスクロールしたときはバナーを隠す
-            if (scrollTop > lastScrollTop) {
-              banner.style.transform = 'translateY(-100%)';
-            } 
-            // 上にスクロールしたときはバナーを表示
-            else {
-              banner.style.transform = 'translateY(0)';
-            }
-          } else {
-            // ヘッダー内にいるときは常に表示
-            banner.style.transform = 'translateY(0)';
-          }
-        }
-        
-        lastScrollTop = scrollTop;
-      });
-      
-      
-      
-    });
-  </script>
+      </style>
+
+ <!--メインカラー設定-->
+  <style>
+  :root {
+    --maingreen: #078080;
+    --maingreen1:#83C0C0;
+    --maingreen2:#C1E0E0;
+    --maingreen3:#F0F8F8;
+    --mainwhite: #f8f5f2;
+  }
+
+  .text-maingreen {
+    color: var(--maingreen);
+  }
+  .bg-maingreen {
+    background-color: var(--maingreen);
+  }
+    .border-maingreen{
+    border-color: var(--maingreen);
+  }
+  .text-maingreen1 {
+    color: var(--maingreen1);
+  }
+  .bg-maingreen1 {
+    background-color: var(--maingreen1);
+  }
+    .border-maingreen1{
+    border-color: var(--maingreen1);
+  }
+    .hover-bg-maingreen1:hover {
+    background-color: var(--maingreen1);
+  }
+  .text-maingreen2 {
+    color: var(--maingreen2);
+  }
+  .bg-maingreen2 {
+    background-color: var(--maingreen2);
+  }
+    .border-maingreen2{
+    border-color: var(--maingreen2);
+  }
+  .text-maingreen3 {
+    color: var(--maingreen3);
+  }
+  .bg-maingreen3 {
+    background-color: var(--maingreen3);
+  }
+    .border-maingreen3{
+    border-color: var(--maingreen3);
+  }
+    
+  .text-mainwhite {
+    color: var(--mainwhite);
+  }
+  .bg-mainwhite {
+    background-color: var(--mainwhite);
+  }
+   .border-mainwhite{
+    border-color: var(--mainwhite);
+  }
+</style>
+  
+  <style>
+/* メイン画像の比率調整 */
+.gallery-main-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+  /*border-radius: 12px;*/
+}
+
+/* サムネイル */
+.gallery-thumb {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* 選択中のサムネイル */
+.active-thumb {
+  border-color: var(--maingreen);
+  transform: scale(1.05);
+}
+</style>
+
+  
+
+  
 </body>
 </html>
