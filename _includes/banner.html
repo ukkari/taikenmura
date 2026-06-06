@@ -1,6 +1,6 @@
 <!-- バナー -->
 {% if site.data.banner.enabled %}
-<div id="banner" class="bg-green-100 text-center py-2 px-4 w-full fixed z-40 transition-transform duration-300">
+<div id="banner" class="bg-green-100 text-center py-2 px-4 w-full fixed z-30 transition-transform duration-300">
   <div class="container mx-auto">
     <a href="{{ site.data.banner.url }}" class="text-blue-600 hover:underline font-medium flex items-center justify-center text-sm md:text-base">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -21,4 +21,18 @@
     }
   }
 </style>
+<script>
+  function updateBannerPosition() {
+    const banner = document.getElementById('banner');
+    const initialTop = window.innerWidth >= 768 ? 80 : 58;
+    if (window.scrollY > initialTop) {
+      banner.style.top = '0px';
+    } else {
+      banner.style.top = (initialTop - window.scrollY) + 'px';
+    }
+  }
+
+  window.addEventListener('scroll', updateBannerPosition);
+  window.addEventListener('resize', updateBannerPosition);
+</script>
 {% endif %}
