@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   loadingElement.className = 'text-sm text-gray-600';
   newsContainer.appendChild(loadingElement);
 
-  const participantLabel = encodeURIComponent('参加者募集');
+  const participantLabel = encodeURIComponent('キャンプの様子');
   const newsScript = document.createElement('script');
   newsScript.src = `https://taiken-mura.blogspot.com/feeds/posts/default/-/${participantLabel}?max-results=5&alt=json-in-script&callback=handleNewsResponse`;
   document.body.appendChild(newsScript);
@@ -73,7 +73,7 @@ window.handleNewsResponse = function(data) {
     newsContainer.appendChild(newsListElement);
   } else {
     const noNewsElement = document.createElement('p');
-    noNewsElement.textContent = '参加者募集のお知らせはありません。';
+    noNewsElement.textContent = 'キャンプの様子のお知らせはありません。';
     noNewsElement.className = 'text-sm text-gray-600';
     newsContainer.appendChild(noNewsElement);
   }
