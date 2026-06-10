@@ -130,9 +130,12 @@
 </header>
 
 
-<a id="header-banner-link" href="https://taiken-mura.blogspot.com/p/2026_0685008523.html" class="fixed top-9 md:top-11 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-8 flex items-center justify-center text-blue-600 hover:underline" style="z-index: 70; display:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<!-- スマホ用 -->
+<a id="header-banner-link" href="https://taiken-mura.blogspot.com/p/2026_0685008523.html" class="fixed top-9 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-8 flex items-center justify-center text-blue-600 hover:underline md:hidden" style="z-index: 70; display:none; margin-left:-5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<!-- PC用 -->
+<a id="header-banner-link-pc" href="https://taiken-mura.blogspot.com/p/2026_0685008523.html" class="fixed top-11 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-8 hidden md:flex items-center justify-start pl-6 text-blue-600 hover:underline" style="z-index: 70; display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 <style>
-  #header-banner-link:hover {
+  #header-banner-link:hover, #header-banner-link-pc:hover {
     text-decoration: underline;
     text-decoration-color: #2563eb;
   }
@@ -171,13 +174,19 @@
   function updateBannerPosition() {
     const banner = document.getElementById('banner');
     const headerLink = document.getElementById('header-banner-link');
+    const headerLinkPc = document.getElementById('header-banner-link-pc');
     const initialTop = window.innerWidth >= 768 ? 80 : 58;
     if (window.scrollY > initialTop) {
       banner.style.top = '0px';
-      if (headerLink) headerLink.style.display = 'block';
+      if (window.innerWidth >= 768) {
+        if (headerLinkPc) headerLinkPc.style.display = 'flex';
+      } else {
+        if (headerLink) headerLink.style.display = 'block';
+      }
     } else {
       banner.style.top = (initialTop - window.scrollY) + 'px';
       if (headerLink) headerLink.style.display = 'none';
+      if (headerLinkPc) headerLinkPc.style.display = 'none';
     }
   }
 
@@ -196,7 +205,7 @@
   <!-- 年間プログラムスケジュール詳細 -->
   <section id="annual-schedule">
  
-<h2 class="text-2xl sm:text-3xl text-center font-bold border-b-4 border-maingreen pb-2 mb-6 mt-10">
+<h2 class="text-2xl sm:text-3xl text-center font-bold border-b-4 border-maingreen pb-2 mb-6 mt-10 md:mt-20">
   年間プログラムスケジュール
 </h2>
     
