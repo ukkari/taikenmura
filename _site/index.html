@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <script src="/news.js?v=1780911856" defer></script>
+  <script src="/news.js?v=1781081890" defer></script>
   
   
   <style>
@@ -95,7 +95,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
-<header class="bg-transparent text-maingreen fixed top-0 z-50 w-full">
+<header class="bg-transparent text-maingreen fixed top-0 z-[60] w-full ">
   <div class="container mx-auto px-4 py-2 md:py-4 h-16 md:h-24 w-full">
 
     <!-- ロゴとメニューボタンを同じ flex の中に -->
@@ -157,12 +157,25 @@
     transform: translateY(-10px) rotate(-45deg);
   }
 
+  
+
 </style>
 
 </header>
+
+
+<a id="header-banner-link" href="https://taiken-mura.blogspot.com/p/2026_0685008523.html" class="fixed top-9 md:top-11 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-8 flex items-center justify-center text-blue-600 hover:underline" style="z-index: 70; display:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<style>
+  #header-banner-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+  }
+</style>
+
+
 <!-- オーバーレイ -->
 <div id="overlay"
-     class="fixed inset-0 bg-white bg-opacity-90 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+     class="fixed inset-0 bg-white bg-opacity-90 z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
 </div>
 
   <!-- バナー -->
@@ -191,11 +204,14 @@
 <script>
   function updateBannerPosition() {
     const banner = document.getElementById('banner');
+    const headerLink = document.getElementById('header-banner-link');
     const initialTop = window.innerWidth >= 768 ? 80 : 58;
     if (window.scrollY > initialTop) {
       banner.style.top = '0px';
+      if (headerLink) headerLink.style.display = 'block';
     } else {
       banner.style.top = (initialTop - window.scrollY) + 'px';
+      if (headerLink) headerLink.style.display = 'none';
     }
   }
 
@@ -379,7 +395,7 @@ animation: zoom 19.7s ease-in-out infinite;
     <h2 class="text-2xl font-bold border-b-4 border-maingreen pt-4 pb-2 mb-4">年間プログラム</h2>
     <div class="bg-white p-6 rounded-lg shadow">
       <p class="mb-6">
-        自然体験村では、季節に応じた様々なプログラムを提供しています。子どもたちの「生きる力」を育む体験の場をご用意しています。
+        自然体験村では、季節に応じた様々なプログラムがあります。南魚沼の豊かな自然を生かした楽しい"体験"がみなさんを待っています！
       </p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -616,7 +632,7 @@ animation: zoom 19.7s ease-in-out infinite;
       <p class="md:text-2xl font-semibold md:mb-4">
   Email: taikenmura4124@gmail.com
 </p>
-      <p>受付時間: 平日9:00〜17:00</p>
+      <p>24時間受付（返信は営業日以内）</p>
     </div>
 
   </div>

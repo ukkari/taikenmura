@@ -61,7 +61,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
-<header class="bg-transparent text-maingreen fixed top-0 z-50 w-full">
+<header class="bg-transparent text-maingreen fixed top-0 z-[60] w-full ">
   <div class="container mx-auto px-4 py-2 md:py-4 h-16 md:h-24 w-full">
 
     <!-- ロゴとメニューボタンを同じ flex の中に -->
@@ -123,12 +123,25 @@
     transform: translateY(-10px) rotate(-45deg);
   }
 
+  
+
 </style>
 
 </header>
+
+
+<a id="header-banner-link" href="https://taiken-mura.blogspot.com/p/2026_0685008523.html" class="fixed top-9 md:top-11 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-8 flex items-center justify-center text-blue-600 hover:underline" style="z-index: 70; display:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<style>
+  #header-banner-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+  }
+</style>
+
+
 <!-- オーバーレイ -->
 <div id="overlay"
-     class="fixed inset-0 bg-white bg-opacity-90 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+     class="fixed inset-0 bg-white bg-opacity-90 z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
 </div>
 
   <!-- バナー -->
@@ -157,11 +170,14 @@
 <script>
   function updateBannerPosition() {
     const banner = document.getElementById('banner');
+    const headerLink = document.getElementById('header-banner-link');
     const initialTop = window.innerWidth >= 768 ? 80 : 58;
     if (window.scrollY > initialTop) {
       banner.style.top = '0px';
+      if (headerLink) headerLink.style.display = 'block';
     } else {
       banner.style.top = (initialTop - window.scrollY) + 'px';
+      if (headerLink) headerLink.style.display = 'none';
     }
   }
 

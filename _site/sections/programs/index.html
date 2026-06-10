@@ -61,7 +61,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ヘッダー -->
-<header class="bg-transparent text-maingreen fixed top-0 z-50 w-full">
+<header class="bg-transparent text-maingreen fixed top-0 z-[60] w-full ">
   <div class="container mx-auto px-4 py-2 md:py-4 h-16 md:h-24 w-full">
 
     <!-- ロゴとメニューボタンを同じ flex の中に -->
@@ -123,12 +123,25 @@
     transform: translateY(-10px) rotate(-45deg);
   }
 
+  
+
 </style>
 
 </header>
+
+
+<a id="header-banner-link" href="https://taiken-mura.blogspot.com/p/2026_0685008523.html" class="fixed top-9 md:top-11 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-8 flex items-center justify-center text-blue-600 hover:underline" style="z-index: 70; display:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<style>
+  #header-banner-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+  }
+</style>
+
+
 <!-- オーバーレイ -->
 <div id="overlay"
-     class="fixed inset-0 bg-white bg-opacity-90 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+     class="fixed inset-0 bg-white bg-opacity-90 z-[55] opacity-0 pointer-events-none transition-opacity duration-300">
 </div>
 
   <!-- バナー -->
@@ -157,11 +170,14 @@
 <script>
   function updateBannerPosition() {
     const banner = document.getElementById('banner');
+    const headerLink = document.getElementById('header-banner-link');
     const initialTop = window.innerWidth >= 768 ? 80 : 58;
     if (window.scrollY > initialTop) {
       banner.style.top = '0px';
+      if (headerLink) headerLink.style.display = 'block';
     } else {
       banner.style.top = (initialTop - window.scrollY) + 'px';
+      if (headerLink) headerLink.style.display = 'none';
     }
   }
 
@@ -406,7 +422,7 @@
           <div class="p-6">
             <h4 class="font-bold text-xl mt-2 mb-3">キャンプ場コテージ泊！<span class="block md:inline">春の火あそびキャンプ</span></h4>
             <p class="text-sm font-semibold mb-2">5/2(土)～5/5(火・祝)</p>
-            <p class="mb-4">春の雪解けとともに目覚める自然の中で遊び、自分たちで火おこしをして料理を作ります。火の扱い方を通して、自然の中での生活を楽しみながら学びます。</p>
+            <p class="mb-4">春の雪解けとともに目覚める自然の中で遊び、自分たちで火おこしをして料理を作ります。火の扱い方を通して、自然の中での生活を楽しみながら学びます！</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
@@ -871,7 +887,7 @@
               体験村の夏の看板プログラム。12泊13日の長期キャンプで、子どもたちの自主性と協調性を育みます。<br>
               自然の中での長期生活を通じて、生きる力と仲間との絆を深めます。<br>
               12泊、8泊、6泊、2泊と日数が異なる4つのコースからお選びいただけます。<br>
-              毎年多くのリピーターがいる人気プログラムです。
+              毎年多くのリピーターがいる人気プログラムです！
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -1117,7 +1133,7 @@
         <div class="p-6">               
             <h4 class="font-bold text-xl mb-3">秋のキャンプ場 火あそびキャンプ</h4>
             <p class="text-sm font-semibold mb-2">9/19(土)～9/23(水・祝)</p>
-            <p class="mb-4">秋の自然の中で火を使った野外活動を体験します！火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます。</p>
+            <p class="mb-4">秋の自然の中で火を使った野外活動を体験します！火起こしから調理まで、火の扱い方を学びながら、自然の中での生活技術を身につけます！</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">
@@ -1273,7 +1289,7 @@
         <div class="p-6">
             <h4 class="font-bold text-xl mb-3">秋の稲刈り 親子キャンプ</h4>
             <p class="text-sm font-semibold mb-2">9/26(土)～9/27(日)</p>
-            <p class="mb-4">地元の方からレクチャーを受けながら、春の田植えキャンプで植えた稲を収穫します！親子で協力して稲刈りを行い、収穫の喜びを分かち合います。<br>
+            <p class="mb-4">地元の方からレクチャーを受けながら、春の田植えキャンプで植えた稲を収穫します！親子で協力して稲刈りを行い、収穫の喜びを分かち合いましょう！<br>
                             <font color=red>お子さまのみでの参加も可能です！</font>
             </p>
             
@@ -1795,7 +1811,7 @@
         <div class="p-6">
             <h4 class="font-bold text-xl mb-3">思いっきり雪まみれキャンプ</h4>
             <p class="text-sm font-semibold mb-2">2/20(土)～2/21(日)</p>
-            <p class="mb-4">南魚沼の里山で雪まみれになるほど思いっきり遊びます。豪雪地ならではの体験を通して忘れられない冬の思い出を作ります。</p>
+            <p class="mb-4">南魚沼の里山で雪まみれになるほど思いっきり遊びます。豪雪地ならではの体験を通して忘れられない冬の思い出を作りましょう！</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-50 p-4 rounded">

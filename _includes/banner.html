@@ -24,11 +24,14 @@
 <script>
   function updateBannerPosition() {
     const banner = document.getElementById('banner');
+    const headerLink = document.getElementById('header-banner-link');
     const initialTop = window.innerWidth >= 768 ? 80 : 58;
     if (window.scrollY > initialTop) {
       banner.style.top = '0px';
+      if (headerLink) headerLink.style.display = 'block';
     } else {
       banner.style.top = (initialTop - window.scrollY) + 'px';
+      if (headerLink) headerLink.style.display = 'none';
     }
   }
 
