@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   loadingElement.className = 'text-sm text-gray-600';
   newsContainer.appendChild(loadingElement);
 
-  const participantLabel = encodeURIComponent('キャンプの様子');
+  const participantLabel = encodeURIComponent('2026夏キャンプ');
   const newsScript = document.createElement('script');
   newsScript.src = `https://taiken-mura.blogspot.com/feeds/posts/default/-/${participantLabel}?max-results=5&alt=json-in-script&callback=handleNewsResponse`;
   document.body.appendChild(newsScript);
