@@ -123,6 +123,11 @@
     </div>
   </div>
 
+  <div class="input-area">
+    <strong>移動者名（必須）</strong>
+    <input id="movedBy" placeholder="山田太郎">
+  </div>
+
 
   <button class="scan"
           onclick="startScanner()">
@@ -287,7 +292,6 @@ function addManual() {
 
 }
 
-
 // 一覧表示
 function updateList() {
 
@@ -315,8 +319,16 @@ function updateList() {
 }
 
 
+
 // 登録（GASにfetchで送信）
 function registerItems() {
+
+  const movedBy = document.getElementById('movedBy').value.trim();
+
+  if (!movedBy) {
+    showError("移動者名を入力してください。");
+    return;
+  }
 
   if (!place) {
 
@@ -341,6 +353,7 @@ function registerItems() {
     "?action=moveItems" +
     "&place=" + encodeURIComponent(place) +
     "&ids=" + encodeURIComponent(JSON.stringify(itemIds));
+    "&movedBy=" + encodeURIComponent(movedBy);
 
   fetch(url)
 
@@ -348,30 +361,19 @@ function registerItems() {
 
     .then(data => {
 
-      let html =
-        "<div class='success'>" +
-        "✅ " +
-        data.results.length +
-        "件を " +
-        place +
-        " に移動しました。" +
-        "</div>";
+     if (data.error) {
+        showError(data.error);
+        return;
+      }
 
-      document.getElementById("message")
-        .innerHTML = html;
+      document.getElementById("message").innerHTML =
+        "<div class='success'>✅ " + data.results.length + "件を " + place + " に移動しました。</div>";
 
       itemIds = [];
-
       updateList();
 
     })
-
-    .catch(err => {
-
-      showError("送信に失敗しました：" + err);
-
-    });
-
+    .catch(err => showError("送信に失敗しました：" + err));
 }
 
 
