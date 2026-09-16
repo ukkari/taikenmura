@@ -352,7 +352,7 @@ function registerItems() {
     GAS_URL +
     "?action=moveItems" +
     "&place=" + encodeURIComponent(place) +
-    "&ids=" + encodeURIComponent(JSON.stringify(itemIds));
+    "&ids=" + encodeURIComponent(JSON.stringify(itemIds)) +
     "&movedBy=" + encodeURIComponent(movedBy);
 
   fetch(url)
