@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
   loadingElement.className = 'text-sm text-gray-600';
   newsContainer.appendChild(loadingElement);
 
-  const participantLabel = encodeURIComponent('2026夏キャンプ');
-  const newsScript = document.createElement('script');
-  newsScript.src = `https://taiken-mura.blogspot.com/feeds/posts/default/-/${participantLabel}?max-results=5&alt=json-in-script&callback=handleNewsResponse`;
+  // const participantLabel = encodeURIComponent('2026夏キャンプ');  // ラベル指定(元)
+const newsScript = document.createElement('script');
+newsScript.src = `https://taiken-mura.blogspot.com/feeds/posts/default?max-results=5&alt=json-in-script&callback=handleNewsResponse`;
   document.body.appendChild(newsScript);
   
   const imagesScript = document.createElement('script');
