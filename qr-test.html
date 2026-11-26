@@ -66,6 +66,11 @@
       color: white;
     }
 
+    .register:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
     .input-area {
       background: white;
       padding: 15px;
@@ -85,11 +90,98 @@
       margin-top: 15px;
     }
 
-    .item {
+    /* 読み取った備品1件ぶんのカード */
+    .item-card {
       background: white;
       padding: 12px;
-      margin-top: 8px;
+      margin-top: 10px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .item-card .title {
+      font-weight: bold;
+      padding-right: 40px;
+    }
+
+    .item-card .sub {
+      font-size: 13px;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .item-card .remove {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      margin: 0;
+      border-radius: 50%;
+      background: #eee;
+      font-size: 16px;
+    }
+
+    .item-card .from-row {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .item-card select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 4px;
+    }
+
+    .qty-row {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .qty-row button {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      margin: 0;
+      font-size: 20px;
+      background: #4285f4;
+      color: white;
       border-radius: 8px;
+    }
+
+    .qty-row input {
+      width: 70px;
+      margin: 0 8px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .qty-row button.all {
+      width: auto;
+      padding: 0 14px;
+      margin-left: 8px;
+      font-size: 16px;
+      background: #fbbc04;
+      color: #333;
+    }
+
+    .qty-row .max {
+      margin-left: 8px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .warn {
+      display: none;
+      background: #fff4e5;
+      padding: 8px 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 14px;
     }
 
     .success {
@@ -97,6 +189,11 @@
       padding: 15px;
       border-radius: 10px;
       margin-top: 15px;
+    }
+
+    .success ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
     }
 
     .error {
@@ -162,6 +259,7 @@
 
 
   <button class="register"
+          id="registerBtn"
           onclick="registerItems()">
 
     この備品をまとめて移動
@@ -187,7 +285,12 @@ document.getElementById('place').textContent =
   place || '（移動先が指定されていません。URLに ?dest=場所名 を付けてください）';
 
 
-let itemIds = [];
+// 読み取った備品の一覧。1件ごとに { id, name, places, from, qty, ... } を持つ
+let items = [];
+
+// 読み取り済み(または確認中)のID。同じQRを何度も読み込まないため
+const seen = new Set();
+
 let scanner = null;
 
 
@@ -253,7 +356,13 @@ function extractId(text) {
 }
 
 
-// 備品を追加
+// 同じIDをすぐ読み直せるようにする(エラーのとき、少し待ってから)
+function forgetLater(id) {
+  setTimeout(function () { seen.delete(id); }, 3000);
+}
+
+
+// 備品を追加(GASに名前と「どこに何個あるか」を聞いてから、一覧に出す)
 function addItem(rawText) {
 
   const id = extractId(rawText);
@@ -263,13 +372,53 @@ function addItem(rawText) {
   }
 
   // 二重登録防止
-  if (itemIds.includes(id)) {
+  if (seen.has(id)) {
     return;
   }
 
-  itemIds.push(id);
+  seen.add(id);
 
-  updateList();
+  fetch(GAS_URL + "?action=getItemInfo&id=" + encodeURIComponent(id))
+
+    .then(res => res.json())
+
+    .then(data => {
+
+      if (data.error) {
+        showError(data.error);
+        forgetLater(id);
+        return;
+      }
+
+      if (!data.places || data.places.length === 0) {
+        showError("「" + data.name + "」は保管場所が登録されていないため、移動できません。");
+        forgetLater(id);
+        return;
+      }
+
+      // 移動先と違う場所にある分を、最初の「どこから」にする
+      const other = data.places.find(function (p) { return p.place !== place; });
+
+      const it = {
+        id: data.id,
+        name: data.name,
+        places: data.places,
+        from: (other || data.places[0]).place,
+        qty: 1
+      };
+
+      items.push(it);
+      renderItem(it);
+      updateCount();
+
+      document.getElementById("message").innerHTML = "";
+
+    })
+
+    .catch(err => {
+      showError("読み取りに失敗しました：" + err);
+      forgetLater(id);
+    });
 
 }
 
@@ -292,32 +441,180 @@ function addManual() {
 
 }
 
-// 一覧表示
-function updateList() {
 
-  const container =
-    document.getElementById("items");
+// 「どこから」で選ばれている場所にある個数(=動かせる最大数)
+function maxOf(it) {
 
-  container.innerHTML = "";
+  const p = it.places.find(function (x) { return x.place === it.from; });
 
-  itemIds.forEach(id => {
-
-    const div =
-      document.createElement("div");
-
-    div.className = "item";
-
-    div.textContent = "📦 " + id;
-
-    container.appendChild(div);
-
-  });
-
-  document.getElementById("count")
-    .textContent = itemIds.length;
-
+  return p ? p.qty : 0;
 }
 
+
+// 入力欄の個数を、1〜最大の範囲に直して返す
+function readQty(it) {
+
+  let v = parseInt(it.qtyInput.value, 10);
+  const max = maxOf(it);
+
+  if (isNaN(v) || v < 1) v = 1;
+  if (v > max) v = max;
+
+  return v;
+}
+
+
+// カードの表示を最新にする
+function refresh(it) {
+
+  it.qty = readQty(it);
+  it.qtyInput.value = it.qty;
+
+  it.maxLabel.textContent = "最大 " + maxOf(it) + "個";
+
+  it.warn.style.display = (it.from === place) ? "block" : "none";
+}
+
+
+// 備品1件ぶんのカードを作る
+function renderItem(it) {
+
+  const card = document.createElement("div");
+  card.className = "item-card";
+
+  // ✕ボタン(読み取りまちがいを消す)
+  const removeBtn = document.createElement("button");
+  removeBtn.className = "remove";
+  removeBtn.textContent = "✕";
+  removeBtn.onclick = function () {
+    items = items.filter(function (x) { return x !== it; });
+    seen.delete(it.id);
+    card.remove();
+    updateCount();
+  };
+  card.appendChild(removeBtn);
+
+  // 名前とID
+  const title = document.createElement("div");
+  title.className = "title";
+  title.textContent = "📦 " + it.name;
+  card.appendChild(title);
+
+  const sub = document.createElement("div");
+  sub.className = "sub";
+  sub.textContent = "ID：" + it.id;
+  card.appendChild(sub);
+
+  // どこから
+  const fromRow = document.createElement("div");
+  fromRow.className = "from-row";
+  fromRow.appendChild(document.createTextNode("どこから"));
+
+  if (it.places.length > 1) {
+
+    const select = document.createElement("select");
+
+    it.places.forEach(function (p) {
+      const opt = document.createElement("option");
+      opt.value = p.place;
+      opt.textContent = p.place + "（" + p.qty + "個）";
+      select.appendChild(opt);
+    });
+
+    select.value = it.from;
+
+    select.onchange = function () {
+      it.from = select.value;
+      refresh(it);
+    };
+
+    fromRow.appendChild(select);
+
+  } else {
+
+    const text = document.createElement("div");
+    text.style.fontSize = "16px";
+    text.style.marginTop = "4px";
+    text.textContent = it.places[0].place + "（" + it.places[0].qty + "個）";
+    fromRow.appendChild(text);
+  }
+
+  card.appendChild(fromRow);
+
+  // 個数(− 入力欄 ＋ すべて)
+  const qtyRow = document.createElement("div");
+  qtyRow.className = "qty-row";
+
+  const minus = document.createElement("button");
+  minus.type = "button";
+  minus.textContent = "−";
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.inputMode = "numeric";
+  input.min = "1";
+  input.value = it.qty;
+
+  const plus = document.createElement("button");
+  plus.type = "button";
+  plus.textContent = "＋";
+
+  const allBtn = document.createElement("button");
+  allBtn.type = "button";
+  allBtn.className = "all";
+  allBtn.textContent = "すべて";
+
+  const maxLabel = document.createElement("span");
+  maxLabel.className = "max";
+
+  it.qtyInput = input;
+  it.maxLabel = maxLabel;
+
+  minus.onclick = function () {
+    input.value = readQty(it) - 1;
+    refresh(it);
+  };
+
+  plus.onclick = function () {
+    input.value = readQty(it) + 1;
+    refresh(it);
+  };
+
+  allBtn.onclick = function () {
+    input.value = maxOf(it);
+    refresh(it);
+  };
+
+  input.onchange = function () {
+    refresh(it);
+  };
+
+  qtyRow.appendChild(minus);
+  qtyRow.appendChild(input);
+  qtyRow.appendChild(plus);
+  qtyRow.appendChild(allBtn);
+  qtyRow.appendChild(maxLabel);
+  card.appendChild(qtyRow);
+
+  // 「すでにこの場所にあります」の注意
+  const warn = document.createElement("div");
+  warn.className = "warn";
+  warn.textContent = "この備品は、すでに「" + place + "」にあります。この場所からは移動されません。";
+  it.warn = warn;
+  card.appendChild(warn);
+
+  document.getElementById("items").appendChild(card);
+
+  refresh(it);
+}
+
+
+function updateCount() {
+
+  document.getElementById("count")
+    .textContent = items.length;
+
+}
 
 
 // 登録（GASにfetchで送信）
@@ -339,7 +636,7 @@ function registerItems() {
     return;
   }
 
-  if (itemIds.length === 0) {
+  if (items.length === 0) {
 
     showError(
       "備品を1つ以上読み取ってください。"
@@ -348,12 +645,39 @@ function registerItems() {
     return;
   }
 
+  // すでに移動先にある備品は送らない
+  const moves = [];
+
+  items.forEach(function (it) {
+
+    if (it.from === place) {
+      return;
+    }
+
+    const mv = { id: it.id, qty: readQty(it) };
+
+    // 複数の場所にある備品だけ、「どこから」を送る
+    if (it.places.length > 1) {
+      mv.from = it.from;
+    }
+
+    moves.push(mv);
+  });
+
+  if (moves.length === 0) {
+    showError("移動できる備品がありません（すべて、すでに「" + place + "」にあります）。");
+    return;
+  }
+
   const url =
     GAS_URL +
     "?action=moveItems" +
     "&place=" + encodeURIComponent(place) +
-    "&ids=" + encodeURIComponent(JSON.stringify(itemIds)) +
+    "&moves=" + encodeURIComponent(JSON.stringify(moves)) +
     "&movedBy=" + encodeURIComponent(movedBy);
+
+  const btn = document.getElementById("registerBtn");
+  btn.disabled = true;
 
   fetch(url)
 
@@ -361,30 +685,61 @@ function registerItems() {
 
     .then(data => {
 
-     if (data.error) {
+      if (data.error) {
         showError(data.error);
         return;
       }
 
-      document.getElementById("message").innerHTML =
-        "<div class='success'>✅ " + data.results.length + "件を " + place + " に移動しました。</div>";
+      showSuccess(data.results);
 
-      itemIds = [];
-      updateList();
+      items = [];
+      seen.clear();
+      document.getElementById("items").innerHTML = "";
+      updateCount();
 
     })
-    .catch(err => showError("送信に失敗しました：" + err));
+    .catch(err => showError("送信に失敗しました：" + err))
+    .then(function () {
+      btn.disabled = false;
+    });
+}
+
+
+// 移動できたときのメッセージ(何を何個動かしたか)
+function showSuccess(results) {
+
+  const box = document.getElementById("message");
+  box.innerHTML = "";
+
+  const div = document.createElement("div");
+  div.className = "success";
+  div.appendChild(document.createTextNode(
+    "✅ " + results.length + "件を「" + place + "」に移動しました。"
+  ));
+
+  const ul = document.createElement("ul");
+
+  results.forEach(function (r) {
+    const li = document.createElement("li");
+    li.textContent = r.name + "　" + r.qty + "個（" + r.from + " から）";
+    ul.appendChild(li);
+  });
+
+  div.appendChild(ul);
+  box.appendChild(div);
 }
 
 
 function showError(message) {
 
   document.getElementById("message")
-    .innerHTML =
-      "<div class='error'>" +
-      "⚠️ " +
-      message +
-      "</div>";
+    .innerHTML = "";
+
+  const div = document.createElement("div");
+  div.className = "error";
+  div.textContent = "⚠️ " + message;
+
+  document.getElementById("message").appendChild(div);
 
 }
 
